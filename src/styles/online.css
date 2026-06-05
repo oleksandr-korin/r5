@@ -1,0 +1,94 @@
+/* R5 — Online Coaching (remote) page — layout.
+   Built on root tokens + components.css; reuses home.css (nav/footer/hero/eyebrow/
+   marker/sticky/proof/ctaband/form/vibe/surface) and training.css (.r5-flow step
+   strip, .r5-price plan cards). Only the page-specific sections live here:
+   the HRV method centrepiece, the who-it's-for grid, and the FAQ accordion. */
+
+/* ===== HERO TWEAK (reuses .r5-hero from home.css) ====================== */
+.r5-ohero .r5-hero__cta { margin-top: var(--space-2); }
+.r5-ohero__note { display: inline-flex; align-items: center; margin-top: var(--space-8);
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--text-tertiary-d); }
+.r5-ohero__note::before { content: ""; width: 28px; height: 2px; background: var(--accent); margin-right: 12px; }
+
+/* ===== THE METHOD — centrepiece (cream training-manual panel) ========== */
+.r5-mthd__panel { background: var(--surface); border: var(--border-w-heavy) solid var(--border-ink);
+  border-radius: var(--radius-md); box-shadow: var(--shadow-stamp); overflow: hidden; }
+.r5-mthd__head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-8);
+  padding: var(--space-10) var(--space-10) var(--space-8); border-bottom: var(--border-w) solid var(--border); flex-wrap: wrap; }
+.r5-mthd__head h2 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: var(--display-2);
+  line-height: var(--display-2-lh); letter-spacing: var(--display-2-ls); margin: 8px 0 0; white-space: pre-line; }
+.r5-mthd__tag { font-family: var(--font-mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-strong); }
+.r5-mthd__lead { font-size: var(--body-lg); line-height: 1.6; color: var(--text-secondary); margin: 0;
+  padding: var(--space-8) var(--space-10) 0; max-width: 76ch; }
+.r5-mthd__cols { display: grid; grid-template-columns: repeat(3, 1fr); padding: var(--space-8) 0 0; }
+.r5-mthd__col { padding: var(--space-8) var(--space-10) var(--space-10); border-top: var(--border-w) solid var(--border); }
+.r5-mthd__col:not(:last-child) { border-right: var(--border-w) solid var(--border); }
+.r5-mthd__n { font-family: var(--font-mono); font-weight: 700; font-size: 13px; color: var(--accent-strong); }
+.r5-mthd__t { font-family: var(--font-display); font-weight: 600; text-transform: uppercase; font-size: var(--h3); margin: 10px 0 8px; }
+.r5-mthd__d { font-size: var(--body-sm); line-height: 1.55; color: var(--text-secondary); margin: 0; }
+
+/* ===== CREDIBILITY (reuses .r5-proofc; adds head + link) =============== */
+.r5-cred__head { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-8);
+  margin-bottom: var(--space-12); flex-wrap: wrap; }
+.r5-cred__head .r5-sechead { margin: 0; }
+.r5-cred__head h2 { white-space: pre-line; }
+.r5-cred__row { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-8); }
+
+/* ===== WHO IT'S FOR (qualifier grid) ================================== */
+.r5-wfor__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); }
+.r5-wfor__item { display: flex; flex-direction: column; gap: var(--space-3); min-height: 150px; }
+.r5-wfor__item h3 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: var(--h3);
+  line-height: 1.04; margin: var(--space-2) 0 0; }
+.r5-wfor__item p { font-size: var(--body); line-height: 1.5; color: var(--text-secondary); margin: 0; }
+
+/* ===== FAQ (accordion) =============================================== */
+.r5-faq__wrap { max-width: 880px; margin: 0 auto; border-top: 3px solid var(--border-ink); }
+.r5-faq__item { border-bottom: var(--border-w) solid var(--border); }
+.r5-faq__q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: var(--space-6);
+  background: none; border: none; cursor: pointer; text-align: left; padding: var(--space-6) 0; color: var(--text-primary);
+  font-family: var(--font-display); font-weight: 600; text-transform: uppercase; letter-spacing: .02em; font-size: var(--h4);
+  line-height: 1.1; }
+.r5-faq__q:hover { color: var(--accent-strong); }
+.r5-faq__icon { flex: none; display: inline-block; width: 28px; height: 28px; position: relative; }
+.r5-faq__icon::before, .r5-faq__icon::after { content: ""; position: absolute; background: var(--accent-strong);
+  border-radius: 2px; transition: transform .16s ease, opacity .16s ease; }
+.r5-faq__icon::before { left: 4px; right: 4px; top: 13px; height: 2.5px; }
+.r5-faq__icon::after { top: 4px; bottom: 4px; left: 13px; width: 2.5px; }
+.r5-faq__item.is-open .r5-faq__icon::after { transform: scaleY(0); opacity: 0; }
+.r5-faq__a { overflow: hidden; max-height: 0; transition: max-height .22s ease; }
+.r5-faq__item.is-open .r5-faq__a { max-height: 320px; }
+.r5-faq__a p { font-size: var(--body-lg); line-height: 1.6; color: var(--text-secondary); margin: 0;
+  padding: 0 0 var(--space-6); max-width: 64ch; }
+[data-reduce="on"] .r5-faq__a, [data-reduce="on"] .r5-faq__icon::before, [data-reduce="on"] .r5-faq__icon::after { transition: none; }
+
+/* ===== APPLY BAND (reuses .r5-ctaband + .r5-form) ===================== */
+.r5-apply .r5-ctaband__sub { max-width: 42ch; }
+.r5-apply__local { margin-top: var(--space-8); display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  font-family: var(--font-mono); font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--text-tertiary); }
+
+/* ===== RESPONSIVE: MOBILE SURFACE TOGGLE ============================== */
+.r5-site[data-surface="mobile"] .r5-mthd__head { flex-direction: column; gap: var(--space-2); padding: var(--space-8); }
+.r5-site[data-surface="mobile"] .r5-mthd__head h2 { font-size: 40px; }
+.r5-site[data-surface="mobile"] .r5-mthd__lead { padding: var(--space-6) var(--space-8) 0; }
+.r5-site[data-surface="mobile"] .r5-mthd__cols { grid-template-columns: 1fr; }
+.r5-site[data-surface="mobile"] .r5-mthd__col { border-right: none; padding: var(--space-6) var(--space-8) var(--space-8); }
+.r5-site[data-surface="mobile"] .r5-cred__row { grid-template-columns: 1fr 1fr; gap: var(--space-6) var(--space-8); }
+.r5-site[data-surface="mobile"] .r5-wfor__grid { grid-template-columns: 1fr; }
+.r5-site[data-surface="mobile"] .r5-wfor__item { min-height: 0; }
+
+/* ===== RESPONSIVE: TRUE VIEWPORT ====================================== */
+@media (max-width: 860px) {
+  .r5-mthd__head { flex-direction: column; gap: var(--space-2); padding: var(--space-8); }
+  .r5-mthd__head h2 { font-size: 44px; }
+  .r5-mthd__lead { padding: var(--space-6) var(--space-8) 0; }
+  .r5-mthd__cols { grid-template-columns: 1fr; }
+  .r5-mthd__col { border-right: none; padding: var(--space-6) var(--space-8) var(--space-8); }
+  .r5-mthd__col:not(:last-child) { border-bottom: var(--border-w) solid var(--border); }
+  .r5-cred__row { grid-template-columns: 1fr 1fr; gap: var(--space-8); }
+  .r5-wfor__grid { grid-template-columns: 1fr; }
+  .r5-wfor__item { min-height: 0; }
+}
+@media (max-width: 480px) {
+  .r5-cred__row { grid-template-columns: 1fr 1fr; }
+}

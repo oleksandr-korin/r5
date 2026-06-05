@@ -1,0 +1,19 @@
+# build
+dist/
+.astro/
+
+# deps
+node_modules/
+
+# env
+.env
+.env.*
+
+# logs
+*.log
+
+# os
+.DS_Store
+
+# Original design handoff zip — extracted into r5-website/ which is committed.
+R5 Website Handoff.zip

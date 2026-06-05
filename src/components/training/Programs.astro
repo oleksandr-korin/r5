@@ -1,0 +1,48 @@
+---
+import Marker from "../Marker.astro";
+import Icon from "../Icon.astro";
+import T from "../T.astro";
+import { zipLocales } from "../../lib/strings";
+import { TRAINING } from "../../lib/training";
+const uk = TRAINING.uk.programs;
+const en = TRAINING.en.programs;
+const items = zipLocales(uk.items, en.items);
+// "featured" layout: the on-ramp card spans full width, the rest sit in a 3-up row.
+---
+<section class="r5-section" id="programs" style="background: var(--surface)">
+  <div class="r5-wrap">
+    <div class="r5-sechead">
+      <p class="r5-eyebrow-row"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
+      <h2>
+        <T uk={uk.title} en={en.title} />
+        {" "}
+        <Marker><T uk={uk.marked} en={en.marked} /></Marker>
+      </h2>
+    </div>
+    <div class="r5-progset r5-progset--featured">
+      {items.map(({ u, e }) => (
+        <div class={"r5-card r5-card--tab r5-card--stamp r5-progc" + (u.feature ? " r5-progc--feature" : "")}>
+          <div>
+            <div class="r5-progc__top">
+              <span class="r5-progc__n">{u.n}</span>
+              <span class="r5-badge r5-badge--amber"><T uk={u.tag} en={e.tag} /></span>
+            </div>
+            <h3><T uk={u.t} en={e.t} /></h3>
+            <p class="r5-progc__d"><T uk={u.d} en={e.d} /></p>
+            <div class="r5-progc__good">
+              <span class="r5-progc__goodlabel"><T uk={uk.goodLabel} en={en.goodLabel} /></span>
+              <span class="r5-progc__goodtext"><T uk={u.good} en={e.good} /></span>
+            </div>
+          </div>
+          <div class="r5-progc__foot">
+            <span class="r5-progc__price"><T uk={u.price} en={e.price} /></span>
+            <a class="r5-link" href="/contact">
+              <T uk={uk.bookCta} en={en.bookCta} />
+              <Icon name="arrow-right" size={16} />
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

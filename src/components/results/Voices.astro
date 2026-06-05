@@ -1,0 +1,49 @@
+---
+import Marker from "../Marker.astro";
+import T from "../T.astro";
+import { zipLocales } from "../../lib/strings";
+import { RESULTS } from "../../lib/results";
+const uk = RESULTS.uk.voices;
+const en = RESULTS.en.voices;
+const items = zipLocales(uk.items, en.items);
+const fInitial = uk.featured.name.charAt(0);
+---
+<section class="r5-section r5-voices" id="voices">
+  <div class="r5-wrap">
+    <div class="r5-sechead">
+      <p class="r5-eyebrow-row"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
+      <h2>
+        <T uk={uk.title} en={en.title} />
+        {" "}
+        <Marker><T uk={uk.marked} en={en.marked} /></Marker>
+      </h2>
+    </div>
+    <div class="r5-voices__grid">
+      <div class="r5-voice-feat">
+        <div class="r5-voice-feat__mark" aria-hidden="true">“</div>
+        <blockquote><T uk={uk.featured.text} en={en.featured.text} /></blockquote>
+        <div class="r5-voice-feat__by">
+          <div class="r5-voice__av">{fInitial}</div>
+          <div>
+            <div class="r5-voice-feat__name"><T uk={uk.featured.name} en={en.featured.name} /></div>
+            <div class="r5-voice-feat__role"><T uk={uk.featured.role} en={en.featured.role} /></div>
+          </div>
+        </div>
+      </div>
+      <div class="r5-voices__small">
+        {items.map(({ u, e }) => (
+          <div class="r5-card r5-card--tab r5-card--stamp r5-voice">
+            <p class="r5-voice__text">“<T uk={u.text} en={e.text} />”</p>
+            <div class="r5-voice__by">
+              <div class="r5-voice__av">{u.name.charAt(0)}</div>
+              <div>
+                <div class="r5-voice__name"><T uk={u.name} en={e.name} /></div>
+                <div class="r5-voice__role"><T uk={u.role} en={e.role} /></div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

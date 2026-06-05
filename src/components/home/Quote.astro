@@ -1,0 +1,36 @@
+---
+import Icon from "../Icon.astro";
+import T from "../T.astro";
+import { STRINGS } from "../../lib/strings";
+const uk = STRINGS.uk.quote;
+const en = STRINGS.en.quote;
+const initial = uk.name.charAt(0);
+---
+<section class="r5-section" id="community">
+  <div class="r5-wrap r5-quote">
+    <div class="r5-quote__head">
+      <p class="r5-eyebrow-row" style="margin:0">
+        <T uk={uk.eyebrow} en={en.eyebrow} />
+      </p>
+    </div>
+
+    <div class="r5-quote__mark">“</div>
+
+    <blockquote><T uk={uk.text} en={en.text} /></blockquote>
+
+    <div class="r5-quote__by">
+      <div class="r5-quote__av">{initial}</div>
+      <div>
+        <div class="r5-quote__name"><T uk={uk.name} en={en.name} /></div>
+        <div class="r5-quote__role"><T uk={uk.role} en={en.role} /></div>
+      </div>
+    </div>
+
+    <div class="r5-quote__link">
+      <a class="r5-link" href="/results">
+        <T uk={uk.link} en={en.link} />
+        <Icon name="arrow-right" size={18} />
+      </a>
+    </div>
+  </div>
+</section>

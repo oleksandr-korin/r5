@@ -1,0 +1,24 @@
+---
+import Icon from "../Icon.astro";
+import T from "../T.astro";
+import { STRINGS } from "../../lib/strings";
+const uk = STRINGS.uk.onlineband;
+const en = STRINGS.en.onlineband;
+---
+<section class="r5-section r5-online r5-dark" id="online">
+  <div class="r5-online__tag" aria-hidden="true">EN</div>
+  <div class="r5-wrap r5-online__grid">
+    <div>
+      <p class="r5-eyebrow-row"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
+      <h2><T uk={uk.title} en={en.title} /></h2>
+      <p><T uk={uk.body} en={en.body} /></p>
+    </div>
+
+    <div class="r5-online__cta">
+      <a class="r5-btn r5-btn--primary r5-btn--cta" href="/online">
+        <T uk={uk.cta} en={en.cta} />
+        <Icon name="arrow-right" size={20} />
+      </a>
+    </div>
+  </div>
+</section>

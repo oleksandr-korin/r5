@@ -1,0 +1,35 @@
+---
+import Tick from "../Tick.astro";
+import Marker from "../Marker.astro";
+import T from "../T.astro";
+import { STRINGS, zipLocales } from "../../lib/strings";
+const uk = STRINGS.uk.box;
+const en = STRINGS.en.box;
+const ticks = zipLocales(uk.ticks, en.ticks);
+---
+<section class="r5-section r5-box" id="gym">
+  <div class="r5-wrap r5-box__grid">
+    <div class="r5-box__photo">
+      <div class="r5-photo-ph"><T uk={uk.photo} en={en.photo} /></div>
+    </div>
+
+    <div>
+      <p class="r5-eyebrow-row"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
+
+      <h2 class="r5-h1" style="margin:0">
+        <T uk={uk.title} en={en.title} />
+        {" "}
+        <Marker><T uk={uk.marked} en={en.marked} /></Marker>
+      </h2>
+
+      <p class="r5-box__lead"><T uk={uk.lead} en={en.lead} /></p>
+      <p class="r5-box__body"><T uk={uk.body} en={en.body} /></p>
+
+      <ul class="r5-ticks">
+        {ticks.map(({ u, e }) => (
+          <li><Tick /><T uk={u} en={e} /></li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

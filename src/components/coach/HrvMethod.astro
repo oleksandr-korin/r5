@@ -1,0 +1,28 @@
+---
+import T from "../T.astro";
+import { zipLocales } from "../../lib/strings";
+import { COACH } from "../../lib/coach";
+const uk = COACH.uk.hrv;
+const en = COACH.en.hrv;
+const steps = zipLocales(uk.steps, en.steps);
+---
+<section class="r5-section r5-hrv r5-dark" id="method">
+  <div class="r5-wrap">
+    <div class="r5-hrv__panel">
+      <div class="r5-hrv__head">
+        <h2><T uk={uk.title} en={en.title} /></h2>
+        <span class="r5-hrv__tag"><T uk={uk.eyebrow} en={en.eyebrow} /></span>
+      </div>
+      <p class="r5-hrv__lead"><T uk={uk.lead} en={en.lead} /></p>
+      <div class="r5-hrv__steps">
+        {steps.map(({ u, e }) => (
+          <div class="r5-hrv__step">
+            <div class="r5-hrv__n">{u.n}</div>
+            <h3 class="r5-hrv__st"><T uk={u.t} en={e.t} /></h3>
+            <p class="r5-hrv__sd"><T uk={u.d} en={e.d} /></p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

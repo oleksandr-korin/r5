@@ -1,0 +1,18 @@
+---
+import Marker from "../Marker.astro";
+import T from "../T.astro";
+import { CONTACT } from "../../lib/contact";
+const uk = CONTACT.uk.header;
+const en = CONTACT.en.header;
+---
+<header class="r5-section r5-chead" id="top">
+  <div class="r5-wrap">
+    <p class="r5-eyebrow-row"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
+    <h1>
+      <T uk={uk.title} en={en.title} />
+      {" "}
+      <Marker><T uk={uk.marked} en={en.marked} /></Marker>
+    </h1>
+    <p class="r5-chead__lead"><T uk={uk.lead} en={en.lead} /></p>
+  </div>
+</header>

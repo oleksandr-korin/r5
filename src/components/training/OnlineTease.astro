@@ -1,0 +1,16 @@
+---
+import Icon from "../Icon.astro";
+import T from "../T.astro";
+import { TRAINING } from "../../lib/training";
+const uk = TRAINING.uk.online;
+const en = TRAINING.en.online;
+---
+<section class="r5-onlinetease" id="online-tease">
+  <div class="r5-wrap r5-onlinetease__in">
+    <span class="r5-onlinetease__text"><T uk={uk.text} en={en.text} /></span>
+    <a class="r5-link" href="/online">
+      <T uk={uk.link} en={en.link} />
+      <Icon name="arrow-right" size={16} />
+    </a>
+  </div>
+</section>

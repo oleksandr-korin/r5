@@ -1,0 +1,33 @@
+---
+import Icon from "../Icon.astro";
+import Marker from "../Marker.astro";
+import T from "../T.astro";
+import { TRAINING } from "../../lib/training";
+const uk = TRAINING.uk.header;
+const en = TRAINING.en.header;
+---
+<header class="r5-section r5-thead" id="top">
+  <div class="r5-wrap">
+    <div class="r5-thead__in">
+      <p class="r5-eyebrow-row"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
+      <h1>
+        <T uk={uk.title} en={en.title} />
+        {" "}
+        <Marker><T uk={uk.marked} en={en.marked} /></Marker>
+      </h1>
+      <p class="r5-thead__lead"><T uk={uk.lead} en={en.lead} /></p>
+      <div class="r5-thead__cta">
+        <a class="r5-btn r5-btn--primary r5-btn--cta" href="/contact">
+          <T uk={uk.cta} en={en.cta} />
+          <Icon name="arrow-right" size={20} />
+        </a>
+        <a class="r5-thead__online" href="/online">
+          <Icon name="monitor" size={18} />
+          <T uk={uk.online} en={en.online} />
+          <Icon name="arrow-right" size={16} />
+        </a>
+      </div>
+    </div>
+    <div class="r5-thead__band r5-dark"><div class="r5-photo-ph"><T uk={uk.photo} en={en.photo} /></div></div>
+  </div>
+</header>

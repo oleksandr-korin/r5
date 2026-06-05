@@ -1,0 +1,40 @@
+---
+import Icon from "../Icon.astro";
+import T from "../T.astro";
+import { STRINGS, zipLocales } from "../../lib/strings";
+import { ONLINE } from "../../lib/online";
+const uk = ONLINE.uk.cred;
+const en = ONLINE.en.cred;
+const items = zipLocales(STRINGS.uk.proof.items, STRINGS.en.proof.items);
+---
+<section class="r5-section r5-cred" id="cred" style="background: var(--surface)">
+  <div class="r5-wrap">
+    <div class="r5-cred__head">
+      <div class="r5-sechead">
+        <p class="r5-eyebrow-row"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
+        <h2><T uk={uk.title} en={en.title} /></h2>
+      </div>
+      <a class="r5-link" href="/coach#method">
+        <T uk={uk.link} en={en.link} />
+        <Icon name="arrow-right" size={18} />
+      </a>
+    </div>
+    <div class="r5-cred__row">
+      {items.map(({ u, e }) => (
+        <div class="r5-proofc">
+          <div class="r5-proofc__n">
+            {u.n === "#1" ? (
+              <span class="r5-circle">{u.n}
+                <svg class="r5-circle__ring" viewBox="0 0 200 120" fill="none" aria-hidden="true">
+                  <path d="M104 12 C 56 10 20 30 16 60 C 12 92 58 110 108 109 C 158 108 188 88 186 58 C 184 30 150 12 96 13 C 70 14 40 26 30 50" stroke="currentColor" stroke-width="4" stroke-linecap="round" fill="none"/>
+                </svg>
+              </span>
+            ) : u.n}
+          </div>
+          <div class="r5-proofc__l"><T uk={u.l} en={e.l} /></div>
+          <div class="r5-proofc__sub"><T uk={u.sub} en={e.sub} /></div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

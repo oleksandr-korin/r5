@@ -1,0 +1,24 @@
+---
+import Marker from "../Marker.astro";
+import T from "../T.astro";
+import { zipLocales } from "../../lib/strings";
+import { COACH } from "../../lib/coach";
+const uk = COACH.uk.opening;
+const en = COACH.en.opening;
+const paras = zipLocales(uk.paras, en.paras);
+---
+<section class="r5-section r5-open" id="approach">
+  <div class="r5-wrap r5-open__grid">
+    <div>
+      <p class="r5-eyebrow-row"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
+      <h2>
+        <T uk={uk.title} en={en.title} />
+        {" "}
+        <Marker><T uk={uk.marked} en={en.marked} /></Marker>
+      </h2>
+    </div>
+    <div class="r5-open__body">
+      {paras.map(({ u, e }) => (<p><T uk={u} en={e} /></p>))}
+    </div>
+  </div>
+</section>

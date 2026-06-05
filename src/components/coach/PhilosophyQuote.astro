@@ -1,0 +1,14 @@
+---
+import T from "../T.astro";
+import { COACH } from "../../lib/coach";
+const uk = COACH.uk.quote;
+const en = COACH.en.quote;
+---
+<section class="r5-section r5-pquote" id="philosophy">
+  <div class="r5-wrap">
+    <blockquote><T uk={uk.text} en={en.text} /></blockquote>
+    <div class="r5-pquote__rule"></div>
+    <div class="r5-pquote__by"><T uk={uk.by} en={en.by} /></div>
+    <div class="r5-pquote__role"><T uk={uk.role} en={en.role} /></div>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+---
+import T from "../T.astro";
+import { zipLocales } from "../../lib/strings";
+import { GYM } from "../../lib/gym";
+const uk = GYM.uk.expect;
+const en = GYM.en.expect;
+const steps = zipLocales(uk.steps, en.steps);
+---
+<section class="r5-section r5-class" id="class">
+  <div class="r5-wrap">
+    <div class="r5-class__panel">
+      <div class="r5-class__head">
+        <div>
+          <p class="r5-eyebrow-row"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
+          <h2><T uk={uk.title} en={en.title} /></h2>
+        </div>
+        <p class="r5-class__lead"><T uk={uk.lead} en={en.lead} /></p>
+      </div>
+      <div class="r5-class__steps">
+        {steps.map(({ u, e }) => (
+          <div class="r5-class__step">
+            <div class="r5-class__n">{u.n}</div>
+            <h3 class="r5-class__st"><T uk={u.t} en={e.t} /></h3>
+            <p class="r5-class__sd"><T uk={u.d} en={e.d} /></p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

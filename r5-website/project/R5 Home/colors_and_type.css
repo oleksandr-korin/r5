@@ -1,0 +1,290 @@
+/* ============================================================================
+   R5 — Rokytnyi5 — Brand Design Tokens
+   colour · type · spacing · radii · borders · elevation
+   ----------------------------------------------------------------------------
+   Brand in three words: RAW PLYWOOD + BLACK + WARM AMBER.
+   A real working CrossFit box. The whiteboard is the brand: hand-set heavy
+   headings, marker underlines, content over chrome. Ukrainian-first, bilingual.
+
+   Every token notes WHY — the brand reasoning, not just the hex.
+
+   Canvas model: LIGHT-FIRST (warm cream = the plywood-and-chalk metaphor,
+   reads as "training manual / whiteboard"). A dark scope (.r5-dark) dresses
+   hero sections and honours prefers-color-scheme: dark. Toggle a theme by
+   putting .r5-dark (or .r5-light) on any container; tokens resolve locally.
+   ========================================================================== */
+
+/* --- Webfonts -------------------------------------------------------------
+   Loaded from Google Fonts CDN here so previews render faithfully. For
+   production, SELF-HOST the woff2 files (all three are OFL) — see README.
+   Distinctly-Ukrainian production upgrade for the display face: e-Ukraine
+   Head (Ministry of Digital Transformation) or Fixel Display (MacPaw). */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  /* ======================================================================
+     1 · SURFACES — light canvas (primary)
+     Warm cream, not white. White reads "boutique SaaS"; cream reads
+     "melamine board / training manual / plywood box" — honest and warm.
+     ====================================================================== */
+  --canvas:          #F4ECDB; /* page background — warm cream, plywood-lightened */
+  --surface:         #FBF6EC; /* raised cards / panels — one step brighter than canvas */
+  --surface-sunken:  #E9DEC8; /* wells, inset fields, code blocks */
+  --wood:            #D9C098; /* OSB / plywood beige — tonal bands, never gloss (brief ref) */
+  --wood-deep:       #C4A878; /* darker plywood edge, hairline grain */
+
+  /* ======================================================================
+     2 · SURFACES — dark scope
+     Warm near-black (tungsten-lit box at night), never blue-black.
+     ====================================================================== */
+  --canvas-dark:     #181410; /* dark page / hero background — warm coal */
+  --surface-dark:    #221C15; /* raised panel on dark */
+  --surface-dark-2:  #2C251C; /* one step up — hover rows, inset */
+  --ink:             #0E0B07; /* structural pure-shadow black — borders, stamps */
+
+  /* ======================================================================
+     3 · TEXT — on light canvas (all AA-verified on --canvas #F4ECDB)
+     ====================================================================== */
+  --text-primary:    #1C1812; /* warm near-black — headings & body  ~14:1 */
+  --text-secondary:  #4A4236; /* sub-copy, captions                  ~8:1 */
+  --text-tertiary:   #6B6151; /* meta, placeholders, timestamps     ~4.7:1 AA */
+  --text-inverse:    #F4ECDB; /* text on dark/amber blocks */
+
+  /* TEXT — on dark scope (verified on --canvas-dark #181410) */
+  --text-primary-d:   #F4ECDB; /* ~14:1 */
+  --text-secondary-d: #C7BBA5; /* ~8:1 */
+  --text-tertiary-d:  #8E8470; /* ~4.6:1 AA */
+
+  /* ======================================================================
+     4 · ACCENT — warm amber / gold (tungsten + candle-light, never neon)
+     RULE: amber is a FILL colour with near-black text on top (plate-steel /
+     warning-sign energy, AA-safe). As TEXT on cream it fails AA, so use
+     --accent-strong (burnt amber) for any amber-coloured text on light.
+     ====================================================================== */
+  --accent:          #FDB032; /* BRAND GOLD (from the R5 logo) — fills, buttons, the mark */
+  --accent-hover:    #E89A1C; /* hover — deeper gold (never lighter) */
+  --accent-pressed:  #CC850F; /* pressed */
+  --accent-muted:    #FBC56B; /* soft gold — borders, dividers, chips on light */
+  --accent-subtle:   #FBEDD0; /* faintest gold wash — tinted section backgrounds */
+  --accent-strong:   #936012; /* BURNT amber — gold-coloured TEXT/links on cream, ~6:1 AA */
+
+  /* On-amber foreground — ALWAYS near-black (black on bright gold ~9:1; cream fails) */
+  --on-accent:       #1C1812;
+
+  /* ======================================================================
+     5 · SEMANTIC STATES — retuned warm (cool stock greens/blues look wrong
+     beside amber on cream). Each: base fill, -strong (text on cream, AA),
+     -subtle (tint background).
+     ====================================================================== */
+  --success:         #5E7D33; /* olive / avocado — "earned", not SaaS-green */
+  --success-strong:  #486221; /* text on cream ~5.2:1 */
+  --success-subtle:  #E8EBD4;
+
+  --warning:         #C99117; /* goldenrod / mustard — distinct from orange amber */
+  --warning-strong:  #876012; /* text on cream ~5.4:1 */
+  --warning-subtle:  #F6ECCB;
+
+  --error:           #B23A2B; /* warm brick red — chalk-on-board urgency */
+  --error-strong:    #97301F; /* text on cream ~6:1 */
+  --error-subtle:    #F4DDD6;
+
+  --info:            #3E6E78; /* muted teal-denim — informational, NOT corporate blue */
+  --info-strong:     #2E5860; /* text on cream ~5.8:1 */
+  --info-subtle:     #DBE7E8;
+
+  /* ======================================================================
+     6 · BORDERS — heavy / honest. Warm-black ink, not grey. Visible, drawn.
+     ====================================================================== */
+  --border-hairline: rgba(28,24,18,0.14); /* faint rule, table lines */
+  --border:          rgba(28,24,18,0.26); /* default card / field border */
+  --border-strong:   rgba(28,24,18,0.55); /* emphasis, focused field */
+  --border-ink:      #1C1812;             /* full-strength drawn border (stamp/plate) */
+  --border-d:        rgba(244,236,219,0.18); /* default border in dark scope */
+  --border-strong-d: rgba(244,236,219,0.42);
+
+  --border-w-hair:   1px;
+  --border-w:        1.5px;  /* default — slightly heavier than the web norm */
+  --border-w-heavy:  2px;    /* cards, primary buttons */
+  --border-w-stamp:  3px;    /* hero plates, the "stencilled" look */
+
+  /* ======================================================================
+     7 · RADII — minimal. Honest plate-steel, not glossy pills.
+     ====================================================================== */
+  --radius-xs:  2px;   /* inputs, chips */
+  --radius-sm:  3px;   /* buttons */
+  --radius-md:  5px;   /* cards, panels */
+  --radius-lg:  8px;   /* large media / hero plates (still restrained) */
+  --radius-pill: 999px; /* reserved for small status tags ONLY */
+
+  /* ======================================================================
+     8 · ELEVATION — "stacked paper / printed ink", not soft glossy float.
+     The signature is a HARD OFFSET block shadow (--shadow-stamp).
+     ====================================================================== */
+  --shadow-sm:    0 1px 2px rgba(28,24,18,0.10);
+  --shadow-card:  2px 3px 0 rgba(28,24,18,0.07), 0 1px 2px rgba(28,24,18,0.06);
+  --shadow-stamp: 5px 5px 0 rgba(28,24,18,0.16);   /* offset block — the R5 signature */
+  --shadow-stamp-amber: 5px 5px 0 var(--accent);   /* amber stamp for emphasis cards */
+  --shadow-pop:   0 10px 30px rgba(14,11,7,0.22);  /* menus / dialogs only */
+
+  /* ======================================================================
+     9 · SPACING — strict 8px grid (with 4px half-steps for dense UI)
+     ====================================================================== */
+  --space-0:   0;
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
+  --space-16:  64px;
+  --space-20:  80px;
+  --space-24:  96px;
+  --space-32:  128px;
+
+  /* Touch targets (brief: 44 min, 56 for primary conversion CTA) */
+  --tap-min:     44px;
+  --tap-primary: 56px;
+
+  /* Layout */
+  --container:     1200px;
+  --container-tight: 760px; /* reading measure for body copy */
+
+  /* ======================================================================
+     10 · TYPOGRAPHY — families
+     Display: Oswald (condensed industrial gothic, Cyrillic revised 2023).
+              Production upgrade: 'e-Ukraine Head', 'Fixel Display'.
+     Body:    Manrope (warm geometric grotesque, full Cyrillic).
+     Mono:    JetBrains Mono — whiteboard/WOD numbers, eyebrows, stat figures.
+     ====================================================================== */
+  --font-display: 'Oswald', 'e-Ukraine Head', 'PT Sans Narrow', 'Arial Narrow', sans-serif;
+  --font-body:    'Manrope', 'e-Ukraine', 'Segoe UI', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Martian Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  /* Weights — heavy does the work */
+  --w-regular:  400;
+  --w-medium:   500;
+  --w-semibold: 600;
+  --w-bold:     700;
+  --w-body:     500; /* Manrope body sits at 500 for sturdiness on cream */
+  --w-black:    800; /* Manrope display weight */
+
+  /* ======================================================================
+     11 · TYPE SCALE (desktop) — uppercase display, weight over size.
+     line-heights tight on display, open on body. Mobile overrides below.
+     ====================================================================== */
+  --display-1: 88px;  --display-1-lh: 0.94; --display-1-ls: 0.005em;
+  --display-2: 64px;  --display-2-lh: 0.96; --display-2-ls: 0.005em;
+  --h1: 46px;   --h1-lh: 1.02; --h1-ls: 0.01em;
+  --h2: 34px;   --h2-lh: 1.06; --h2-ls: 0.01em;
+  --h3: 25px;   --h3-lh: 1.12; --h3-ls: 0.012em;
+  --h4: 20px;   --h4-lh: 1.2;  --h4-ls: 0.02em;
+  --body-lg: 20px; --body-lg-lh: 1.55;
+  --body:    17px; --body-lh:    1.6;
+  --body-sm: 15px; --body-sm-lh: 1.55;
+  --caption: 13px; --caption-lh: 1.45;
+  --eyebrow: 13px; --eyebrow-ls: 0.18em; /* mono, uppercase, wide-tracked */
+}
+
+/* ==========================================================================
+   DARK SCOPE
+   Apply .r5-dark to a container (hero, footer) to flip surfaces + text.
+   prefers-color-scheme: dark flips the whole page unless .r5-light pins it.
+   ========================================================================== */
+.r5-dark {
+  --canvas:         var(--canvas-dark);
+  --surface:        var(--surface-dark);
+  --surface-sunken: var(--surface-dark-2);
+  --text-primary:   var(--text-primary-d);
+  --text-secondary: var(--text-secondary-d);
+  --text-tertiary:  var(--text-tertiary-d);
+  --text-inverse:   #1C1812;
+  --border-hairline: var(--border-d);
+  --border:          var(--border-d);
+  --border-strong:   var(--border-strong-d);
+  --border-ink:      #F4ECDB;
+  --accent-subtle:  rgba(253,176,50,0.14);
+  --shadow-stamp:   5px 5px 0 rgba(0,0,0,0.45);
+  --shadow-card:    2px 3px 0 rgba(0,0,0,0.35), 0 1px 2px rgba(0,0,0,0.4);
+  color: var(--text-primary);
+  background-color: var(--canvas);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.r5-light) {
+    --canvas:         #181410;
+    --surface:        #221C15;
+    --surface-sunken: #2C251C;
+    --text-primary:   #F4ECDB;
+    --text-secondary: #C7BBA5;
+    --text-tertiary:  #8E8470;
+    --text-inverse:   #1C1812;
+    --border-hairline: rgba(244,236,219,0.14);
+    --border:          rgba(244,236,219,0.18);
+    --border-strong:   rgba(244,236,219,0.42);
+    --border-ink:      #F4ECDB;
+    --accent-subtle:  rgba(253,176,50,0.14);
+  }
+}
+
+/* ==========================================================================
+   MOBILE — rescale display so weight (not size) keeps doing the work.
+   ≤480px: tighten the big end of the scale; body holds for readability.
+   ========================================================================== */
+@media (max-width: 480px) {
+  :root {
+    --display-1: 50px; --display-1-lh: 0.96;
+    --display-2: 40px; --display-2-lh: 0.98;
+    --h1: 32px;  --h1-lh: 1.04;
+    --h2: 26px;  --h2-lh: 1.08;
+    --h3: 21px;
+    --h4: 18px;
+    --body-lg: 18px;
+    --body:    16px; /* never below 16 on mobile body */
+    --container: 100%;
+  }
+}
+
+/* ==========================================================================
+   SEMANTIC ELEMENT STYLES — drop-in classes mapping tokens to roles.
+   Use .r5-display-1 … .r5-eyebrow etc. Headings are UPPERCASE by default.
+   ========================================================================== */
+.r5-display-1 { font-family: var(--font-display); font-weight: var(--w-bold);
+  font-size: var(--display-1); line-height: var(--display-1-lh);
+  letter-spacing: var(--display-1-ls); text-transform: uppercase; color: var(--text-primary); }
+.r5-display-2 { font-family: var(--font-display); font-weight: var(--w-bold);
+  font-size: var(--display-2); line-height: var(--display-2-lh);
+  letter-spacing: var(--display-2-ls); text-transform: uppercase; color: var(--text-primary); }
+.r5-h1 { font-family: var(--font-display); font-weight: var(--w-bold);
+  font-size: var(--h1); line-height: var(--h1-lh); letter-spacing: var(--h1-ls);
+  text-transform: uppercase; color: var(--text-primary); }
+.r5-h2 { font-family: var(--font-display); font-weight: var(--w-semibold);
+  font-size: var(--h2); line-height: var(--h2-lh); letter-spacing: var(--h2-ls);
+  text-transform: uppercase; color: var(--text-primary); }
+.r5-h3 { font-family: var(--font-display); font-weight: var(--w-semibold);
+  font-size: var(--h3); line-height: var(--h3-lh); letter-spacing: var(--h3-ls);
+  text-transform: uppercase; color: var(--text-primary); }
+.r5-h4 { font-family: var(--font-display); font-weight: var(--w-medium);
+  font-size: var(--h4); line-height: var(--h4-lh); letter-spacing: var(--h4-ls);
+  text-transform: uppercase; color: var(--text-primary); }
+
+.r5-body-lg { font-family: var(--font-body); font-weight: var(--w-body);
+  font-size: var(--body-lg); line-height: var(--body-lg-lh); color: var(--text-primary); }
+.r5-body { font-family: var(--font-body); font-weight: var(--w-body);
+  font-size: var(--body); line-height: var(--body-lh); color: var(--text-primary); }
+.r5-body-sm { font-family: var(--font-body); font-weight: var(--w-body);
+  font-size: var(--body-sm); line-height: var(--body-sm-lh); color: var(--text-secondary); }
+.r5-caption { font-family: var(--font-body); font-weight: var(--w-medium);
+  font-size: var(--caption); line-height: var(--caption-lh); color: var(--text-tertiary); }
+
+/* Eyebrow / overline — mono, uppercase, wide-tracked. The "label on the board". */
+.r5-eyebrow { font-family: var(--font-mono); font-weight: var(--w-medium);
+  font-size: var(--eyebrow); letter-spacing: var(--eyebrow-ls); text-transform: uppercase;
+  color: var(--accent-strong); }
+
+/* Stat figure — mono, the whiteboard number */
+.r5-stat { font-family: var(--font-mono); font-weight: var(--w-bold);
+  font-size: 56px; line-height: 1; letter-spacing: -0.02em; color: var(--text-primary);
+  font-variant-numeric: tabular-nums; }

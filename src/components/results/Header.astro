@@ -1,0 +1,26 @@
+---
+import Icon from "../Icon.astro";
+import Marker from "../Marker.astro";
+import T from "../T.astro";
+import { RESULTS } from "../../lib/results";
+const uk = RESULTS.uk.header;
+const en = RESULTS.en.header;
+---
+<header class="r5-section r5-rhead" id="top">
+  <div class="r5-wrap">
+    <div class="r5-rhead__in">
+      <p class="r5-eyebrow-row"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
+      <h1>
+        <T uk={uk.title} en={en.title} />
+        {" "}
+        <Marker><T uk={uk.marked} en={en.marked} /></Marker>
+      </h1>
+      <p class="r5-rhead__lead"><T uk={uk.lead} en={en.lead} /></p>
+      <a class="r5-btn r5-btn--primary r5-btn--cta" href="/contact">
+        <T uk={uk.cta} en={en.cta} />
+        <Icon name="arrow-right" size={20} />
+      </a>
+    </div>
+    <div class="r5-rhead__band r5-dark"><div class="r5-photo-ph"><T uk={uk.photo} en={en.photo} /></div></div>
+  </div>
+</header>

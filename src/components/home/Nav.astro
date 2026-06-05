@@ -1,0 +1,57 @@
+---
+import Wordmark from "../Wordmark.astro";
+import Icon from "../Icon.astro";
+import T from "../T.astro";
+import { STRINGS, NAV_ITEMS } from "../../lib/strings";
+
+interface Props { active?: typeof NAV_ITEMS[number]["id"]; }
+const { active } = Astro.props;
+
+const uk = STRINGS.uk;
+const en = STRINGS.en;
+const links = NAV_ITEMS.map((n) => ({
+  ...n,
+  uk: uk.nav[n.id],
+  en: en.nav[n.id],
+}));
+---
+<nav class="r5-nav">
+  <div class="r5-wrap r5-nav__in">
+    <Wordmark />
+
+    <div class="r5-nav__links">
+      {links.map((l) => (
+        <a class={"r5-nav__link" + (l.id === active ? " is-active" : "")} href={l.href}>
+          <T uk={l.uk} en={l.en} />
+        </a>
+      ))}
+    </div>
+
+    <div class="r5-nav__right">
+      <div class="r5-seg" role="group" aria-label="Language">
+        <button data-locale-btn="uk" aria-pressed="true">UA</button>
+        <button data-locale-btn="en" aria-pressed="false">EN</button>
+      </div>
+
+      <a class="r5-btn r5-btn--primary r5-nav__cta-wrap" href="/contact">
+        <T uk={uk.nav.book} en={en.nav.book} />
+      </a>
+
+      <button class="r5-nav__burger" aria-label="Menu">
+        <Icon name="menu" size={26} />
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="r5-mobnav">
+  <ul>
+    {links.map((l) => (
+      <li>
+        <a class={l.id === active ? "is-active" : ""} href={l.href}>
+          <T uk={l.uk} en={l.en} />
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>

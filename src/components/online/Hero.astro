@@ -1,0 +1,37 @@
+---
+import Icon from "../Icon.astro";
+import Marker from "../Marker.astro";
+import T from "../T.astro";
+import { splitMarked } from "../../lib/strings";
+import { ONLINE } from "../../lib/online";
+
+const uk = ONLINE.uk.hero;
+const en = ONLINE.en.hero;
+const ukT = splitMarked(uk.title, uk.marked);
+const enT = splitMarked(en.title, en.marked);
+---
+<header class="r5-hero r5-ohero r5-dark" id="top">
+  <div class="r5-hero__bg"></div>
+  <div class="r5-hero__scrim"></div>
+  <div class="r5-wrap r5-hero__grid">
+    <div>
+      <p class="r5-eyebrow-row"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
+      <h1>
+        <T uk={ukT.before} en={enT.before} />
+        <Marker><T uk={uk.marked} en={en.marked} /></Marker>
+        <T uk={ukT.after} en={enT.after} />
+      </h1>
+      <p class="r5-hero__sub"><T uk={uk.sub} en={en.sub} /></p>
+      <div class="r5-hero__cta">
+        <a class="r5-btn r5-btn--primary r5-btn--cta" href="#apply">
+          <T uk={uk.cta} en={en.cta} />
+          <Icon name="arrow-right" size={20} />
+        </a>
+      </div>
+      <div class="r5-ohero__note"><T uk={uk.note} en={en.note} /></div>
+    </div>
+    <div class="r5-hero__plate">
+      <div class="r5-photo-ph"><T uk={uk.photo} en={en.photo} /></div>
+    </div>
+  </div>
+</header>

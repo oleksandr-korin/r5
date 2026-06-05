@@ -1,0 +1,34 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/home/Nav.astro";
+import Footer from "../components/home/Footer.astro";
+import CtaBand from "../components/home/CtaBand.astro";
+import StickyCTA from "../components/home/StickyCTA.astro";
+import Hero from "../components/gym/Hero.astro";
+import WhatIs from "../components/gym/WhatIs.astro";
+import Ritual from "../components/gym/Ritual.astro";
+import Gallery from "../components/gym/Gallery.astro";
+import TypicalClass from "../components/gym/TypicalClass.astro";
+import Practical from "../components/gym/Practical.astro";
+---
+
+<Base
+  title="R5 — Наш простір / The Gym"
+  description="Робочий простір у Дніпрі: фанера, чавун, крейда в повітрі. Кожен клас веде тренер."
+  lang="uk"
+>
+  <div class="r5-site" data-vibe="expressive" data-stamp="on">
+    <Nav active="gym" />
+    <main id="main">
+      <Hero />
+      <WhatIs />
+      <Ritual />
+      <Gallery />
+      <TypicalClass />
+      <Practical />
+      <CtaBand />
+    </main>
+    <Footer />
+    <StickyCTA />
+  </div>
+</Base>

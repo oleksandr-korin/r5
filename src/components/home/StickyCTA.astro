@@ -1,0 +1,13 @@
+---
+import Icon from "../Icon.astro";
+import T from "../T.astro";
+import { STRINGS } from "../../lib/strings";
+const uk = STRINGS.uk.hero;
+const en = STRINGS.en.hero;
+---
+<div class="r5-stickycta">
+  <button class="r5-btn r5-btn--primary r5-btn--cta" data-go="contact">
+    <T uk={uk.cta} en={en.cta} />
+    <Icon name="arrow-right" size={20} />
+  </button>
+</div>

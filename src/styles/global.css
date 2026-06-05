@@ -1,0 +1,58 @@
+@import "./tokens.css";
+@import "./components.css";
+@import "./home.css";
+@import "./coach.css";
+@import "./gym.css";
+@import "./training.css";
+@import "./online.css";
+@import "./contact.css";
+@import "./results.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  /* Warm coal behind the page — visible only beyond .r5-site (e.g. mobile preview chrome). */
+  background: #2a2620;
+  min-height: 100dvh;
+}
+
+.r5-site {
+  background: var(--canvas);
+}
+
+img,
+picture,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Skip link — keyboard a11y, hidden until focus */
+.r5-skip {
+  position: absolute;
+  left: -9999px;
+}
+.r5-skip:focus {
+  left: 16px;
+  top: 16px;
+  background: var(--accent);
+  color: var(--on-accent);
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  z-index: 100;
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}

@@ -1,0 +1,27 @@
+---
+import Icon from "../Icon.astro";
+import Marker from "../Marker.astro";
+import T from "../T.astro";
+import { GYM } from "../../lib/gym";
+const uk = GYM.uk.hero;
+const en = GYM.en.hero;
+---
+<header class="r5-ghero r5-dark" id="top">
+  <div class="r5-ghero__photo"><div class="r5-photo-ph"><T uk={uk.photo} en={en.photo} /></div></div>
+  <div class="r5-ghero__scrim"></div>
+  <div class="r5-wrap">
+    <div class="r5-ghero__in">
+      <p class="r5-eyebrow-row"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
+      <h1>
+        <T uk={uk.title} en={en.title} />
+        {" "}
+        <Marker><T uk={uk.marked} en={en.marked} /></Marker>
+      </h1>
+      <p class="r5-ghero__sub"><T uk={uk.sub} en={en.sub} /></p>
+      <a class="r5-btn r5-btn--primary r5-btn--cta" href="/contact">
+        <T uk={uk.cta} en={en.cta} />
+        <Icon name="arrow-right" size={20} />
+      </a>
+    </div>
+  </div>
+</header>

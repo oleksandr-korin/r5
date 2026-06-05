@@ -1,0 +1,36 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/home/Nav.astro";
+import Footer from "../components/home/Footer.astro";
+import CtaBand from "../components/home/CtaBand.astro";
+import StickyCTA from "../components/home/StickyCTA.astro";
+import Header from "../components/training/Header.astro";
+import Programs from "../components/training/Programs.astro";
+import OnRamp from "../components/training/OnRamp.astro";
+import SessionFlow from "../components/training/SessionFlow.astro";
+import MethodBand from "../components/training/MethodBand.astro";
+import Pricing from "../components/training/Pricing.astro";
+import OnlineTease from "../components/training/OnlineTease.astro";
+---
+
+<Base
+  title="R5 — Напрямки / Training & Programs"
+  description="Групові класи, персональні, on-ramp для новачків, відкритий зал. Прозорі ціни. Перше тренування — безкоштовно."
+  lang="uk"
+>
+  <div class="r5-site" data-vibe="expressive" data-stamp="on">
+    <Nav active="services" />
+    <main id="main">
+      <Header />
+      <Programs />
+      <OnRamp />
+      <SessionFlow />
+      <MethodBand />
+      <Pricing />
+      <OnlineTease />
+      <CtaBand />
+    </main>
+    <Footer />
+    <StickyCTA />
+  </div>
+</Base>

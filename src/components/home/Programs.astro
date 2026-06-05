@@ -1,0 +1,44 @@
+---
+import Marker from "../Marker.astro";
+import Icon from "../Icon.astro";
+import T from "../T.astro";
+import { STRINGS, zipLocales } from "../../lib/strings";
+const uk = STRINGS.uk.programs;
+const en = STRINGS.en.programs;
+const items = zipLocales(uk.items, en.items);
+---
+<section class="r5-section r5-coach" id="services" style="background: var(--surface)">
+  <div class="r5-wrap">
+    <div class="r5-prog__head">
+      <div class="r5-sechead">
+        <p class="r5-eyebrow-row"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
+        <h2>
+          <T uk={uk.title} en={en.title} />
+          {" "}
+          <Marker><T uk={uk.marked} en={en.marked} /></Marker>
+        </h2>
+      </div>
+      <a class="r5-link" href="/training">
+        <T uk={uk.more} en={en.more} />
+        <Icon name="arrow-right" size={18} />
+      </a>
+    </div>
+
+    <div class="r5-grid">
+      {items.map(({ u, e }) => (
+        <div class="r5-card r5-card--tab r5-card--stamp r5-svc">
+          <span class="r5-svc__n">{u.n}</span>
+          <span class="r5-badge r5-badge--amber" style="align-self:flex-start">
+            <T uk={u.tag} en={e.tag} />
+          </span>
+          <h3><T uk={u.t} en={e.t} /></h3>
+          <p><T uk={u.d} en={e.d} /></p>
+          <a class="r5-link r5-svc__more" href="/training">
+            <T uk={uk.details} en={en.details} />
+            <Icon name="arrow-right" size={16} />
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

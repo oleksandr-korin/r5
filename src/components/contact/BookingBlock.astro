@@ -1,0 +1,118 @@
+---
+import Icon from "../Icon.astro";
+import Tick from "../Tick.astro";
+import T from "../T.astro";
+import { zipLocales } from "../../lib/strings";
+import { CONTACT } from "../../lib/contact";
+
+const uk = CONTACT.uk.booking;
+const en = CONTACT.en.booking;
+const f = uk.fields;
+const fEn = en.fields;
+const steps = zipLocales(uk.reassure.steps, en.reassure.steps);
+const bring = zipLocales(uk.reassure.bring, en.reassure.bring);
+---
+<section class="r5-section r5-book" id="book">
+  <div class="r5-wrap r5-book__grid">
+    <div class="r5-book__form">
+      <div class="r5-bform__done" hidden data-r5-form-done>
+        <Icon name="send" size={22} />
+        <T uk={uk.done} en={en.done} />
+      </div>
+
+      <div class="r5-form__fields">
+        <p class="r5-eyebrow-row"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
+        <h2><T uk={uk.title} en={en.title} /></h2>
+        <form class="r5-bform" data-r5-form>
+          <div class="r5-field">
+            <label class="r5-label" for="rc-name"><T uk={f.name} en={fEn.name} /></label>
+            <input id="rc-name" class="r5-input i18n-attr" required
+                   data-attr="placeholder" data-uk={f.namePh} data-en={fEn.namePh}
+                   placeholder={f.namePh} />
+          </div>
+          <div class="r5-field">
+            <label class="r5-label" for="rc-contact"><T uk={f.contact} en={fEn.contact} /></label>
+            <input id="rc-contact" class="r5-input i18n-attr" required
+                   data-attr="placeholder" data-uk={f.contactPh} data-en={fEn.contactPh}
+                   placeholder={f.contactPh} />
+          </div>
+          <div class="r5-field">
+            <label class="r5-label"><T uk={f.experience} en={fEn.experience} /></label>
+            <div class="r5-cseg" role="group" data-r5-seg>
+              <button type="button" data-val="new" aria-pressed="true"><T uk={f.expNew} en={fEn.expNew} /></button>
+              <button type="button" data-val="before" aria-pressed="false"><T uk={f.expBefore} en={fEn.expBefore} /></button>
+            </div>
+          </div>
+          <div class="r5-field">
+            <label class="r5-label" for="rc-when"><T uk={f.when} en={fEn.when} /></label>
+            <input id="rc-when" class="r5-input i18n-attr"
+                   data-attr="placeholder" data-uk={f.whenPh} data-en={fEn.whenPh}
+                   placeholder={f.whenPh} />
+          </div>
+          <div class="r5-field">
+            <label class="r5-label" for="rc-note"><T uk={f.note} en={fEn.note} /></label>
+            <textarea id="rc-note" class="r5-textarea i18n-attr"
+                      data-attr="placeholder" data-uk={f.notePh} data-en={fEn.notePh}
+                      placeholder={f.notePh}></textarea>
+          </div>
+          <div class="r5-bform__submit">
+            <button class="r5-btn r5-btn--primary r5-btn--cta" type="submit">
+              <T uk={f.submit} en={fEn.submit} />
+              <Icon name="arrow-right" size={20} />
+            </button>
+          </div>
+          <p class="r5-bform__consent"><T uk={uk.consent} en={en.consent} /></p>
+        </form>
+      </div>
+    </div>
+
+    <div class="r5-reassure">
+      <h2><T uk={uk.reassure.title} en={en.reassure.title} /></h2>
+      <ol class="r5-reassure__steps">
+        {steps.map(({ u, e }, i) => (
+          <li class="r5-reassure__step">
+            <span class="r5-reassure__n">{String(i + 1).padStart(2, "0")}</span>
+            <div>
+              <h3 class="r5-reassure__st"><T uk={u.t} en={e.t} /></h3>
+              <p class="r5-reassure__sd"><T uk={u.d} en={e.d} /></p>
+            </div>
+          </li>
+        ))}
+      </ol>
+      <div class="r5-reassure__bring">
+        <p class="r5-reassure__bringlabel"><T uk={uk.reassure.bringLabel} en={en.reassure.bringLabel} /></p>
+        <ul class="r5-ticks">
+          {bring.map(({ u, e }) => (<li><Tick /><T uk={u} en={e} /></li>))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .r5-form__fields { display: contents; }
+</style>
+
+<script>
+  // Submit handler — flips to the success panel (no backend wired yet).
+  document.querySelectorAll("[data-r5-form]").forEach((form) => {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const wrapper = form.closest(".r5-book__form");
+      if (!wrapper) return;
+      const done   = wrapper.querySelector("[data-r5-form-done]");
+      const fields = wrapper.querySelector(".r5-form__fields");
+      if (done)   (done   as HTMLElement).hidden = false;
+      if (fields) (fields as HTMLElement).hidden = true;
+    });
+  });
+  // Experience segmented control.
+  document.querySelectorAll("[data-r5-seg] button").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const group = btn.closest("[data-r5-seg]");
+      if (!group) return;
+      group.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", "false"));
+      btn.setAttribute("aria-pressed", "true");
+    });
+  });
+</script>

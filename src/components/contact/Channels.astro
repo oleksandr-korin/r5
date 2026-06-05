@@ -1,0 +1,38 @@
+---
+import Icon from "../Icon.astro";
+import Marker from "../Marker.astro";
+import T from "../T.astro";
+import { zipLocales } from "../../lib/strings";
+import { CONTACT } from "../../lib/contact";
+const uk = CONTACT.uk.channels;
+const en = CONTACT.en.channels;
+const items = zipLocales(uk.items, en.items);
+---
+<section class="r5-section" id="channels">
+  <div class="r5-wrap">
+    <div class="r5-sechead">
+      <p class="r5-eyebrow-row"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
+      <h2>
+        <T uk={uk.title} en={en.title} />
+        {" "}
+        <Marker><T uk={uk.marked} en={en.marked} /></Marker>
+      </h2>
+    </div>
+    <div class="r5-chan__grid">
+      {items.map(({ u, e }) => (
+        <a class="r5-card r5-card--tab r5-card--stamp r5-chan" href={u.href}
+           target={u.href.startsWith("http") ? "_blank" : undefined}
+           rel={u.href.startsWith("http") ? "noopener noreferrer" : undefined}>
+          <span class="r5-chan__icon"><Icon name={u.icon} size={24} /></span>
+          <span class="r5-chan__k"><T uk={u.k} en={e.k} /></span>
+          <span class="r5-chan__v">{u.v}</span>
+          <p class="r5-chan__sub"><T uk={u.sub} en={e.sub} /></p>
+          <span class="r5-chan__cta">
+            <T uk={u.cta} en={e.cta} />
+            <Icon name="arrow-right" size={16} />
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

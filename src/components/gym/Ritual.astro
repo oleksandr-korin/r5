@@ -1,0 +1,45 @@
+---
+import Marker from "../Marker.astro";
+import T from "../T.astro";
+import { zipLocales } from "../../lib/strings";
+import { GYM } from "../../lib/gym";
+const uk = GYM.uk.ritual;
+const en = GYM.en.ritual;
+const b = uk.board;   // names/scores are identical across locales; label/cap/etc differ.
+const bEn = en.board;
+const moves = zipLocales(b.moves, bEn.moves);
+---
+<section class="r5-section r5-ritual r5-dark" id="ritual">
+  <div class="r5-wrap r5-ritual__grid">
+    <div>
+      <p class="r5-eyebrow-row"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
+      <h2>
+        <T uk={uk.title} en={en.title} />
+        {" "}
+        <Marker><T uk={uk.marked} en={en.marked} /></Marker>
+      </h2>
+      <p class="r5-ritual__body"><T uk={uk.body} en={en.body} /></p>
+    </div>
+    <div class="r5-board">
+      <div class="r5-board__head">
+        <span class="r5-board__label"><T uk={b.label} en={bEn.label} /></span>
+        <span class="r5-board__cap"><T uk={b.cap} en={bEn.cap} /></span>
+      </div>
+      <div class="r5-board__scheme">{b.scheme}</div>
+      <ul class="r5-board__moves">
+        {moves.map(({ u, e }) => (<li><T uk={u} en={e} /></li>))}
+      </ul>
+      <div class="r5-board__tally">
+        <p class="r5-board__tlabel"><T uk={b.tallyLabel} en={bEn.tallyLabel} /></p>
+        {b.rows.map((row, i) => (
+          <div class={"r5-board__row" + (row.rx ? " r5-board__row--rx" : "")}>
+            <span class="r5-board__name"><T uk={row.n} en={bEn.rows[i].n} /></span>
+            <span class="r5-board__dots"></span>
+            <span class="r5-board__score">{row.s}</span>
+            {row.rx && <span class="r5-board__rx">RX</span>}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

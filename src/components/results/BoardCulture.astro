@@ -1,0 +1,40 @@
+---
+import Marker from "../Marker.astro";
+import T from "../T.astro";
+import { RESULTS } from "../../lib/results";
+const uk = RESULTS.uk.board;
+const en = RESULTS.en.board;
+const p = uk.panel;
+const pEn = en.panel;
+---
+<section class="r5-section r5-bculture r5-dark" id="board">
+  <div class="r5-wrap r5-bculture__grid">
+    <div>
+      <p class="r5-eyebrow-row"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
+      <h2>
+        <T uk={uk.title} en={en.title} />
+        {" "}
+        <Marker><T uk={uk.marked} en={en.marked} /></Marker>
+      </h2>
+      <p class="r5-bculture__body"><T uk={uk.body} en={en.body} /></p>
+    </div>
+    <div class="r5-lb">
+      <div class="r5-lb__head">
+        <span class="r5-lb__label">{p.label}</span>
+        <span class="r5-lb__cap"><T uk={p.cap} en={pEn.cap} /></span>
+      </div>
+      <div class="r5-lb__scheme">{p.scheme}</div>
+      <div class="r5-lb__rows">
+        {p.rows.map((row, i) => (
+          <div class="r5-lb__row">
+            <span class="r5-lb__rank">{row.r}</span>
+            <span class="r5-lb__name"><T uk={row.n} en={pEn.rows[i].n} /></span>
+            <span class="r5-lb__dots"></span>
+            <span class="r5-lb__score">{row.s}</span>
+            {row.rx && <span class="r5-lb__rx">RX</span>}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

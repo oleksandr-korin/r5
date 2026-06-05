@@ -1,0 +1,34 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/home/Nav.astro";
+import Footer from "../components/home/Footer.astro";
+import StickyCTA from "../components/home/StickyCTA.astro";
+import Header from "../components/results/Header.astro";
+import Wins from "../components/results/Wins.astro";
+import Voices from "../components/results/Voices.astro";
+import Stories from "../components/results/Stories.astro";
+import Filmstrip from "../components/results/Filmstrip.astro";
+import BoardCulture from "../components/results/BoardCulture.astro";
+import ResultsCTA from "../components/results/ResultsCTA.astro";
+---
+
+<Base
+  title="R5 — Результати та спільнота / Results & community"
+  description="Справжні люди, справжній прогрес і зала, що змагається разом."
+  lang="uk"
+>
+  <div class="r5-site" data-vibe="expressive" data-stamp="on">
+    <Nav />
+    <main id="main">
+      <Header />
+      <Wins />
+      <Voices />
+      <Stories />
+      <Filmstrip />
+      <BoardCulture />
+      <ResultsCTA />
+    </main>
+    <Footer />
+    <StickyCTA />
+  </div>
+</Base>

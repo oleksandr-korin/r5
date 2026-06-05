@@ -1,0 +1,24 @@
+---
+import T from "../T.astro";
+import { zipLocales } from "../../lib/strings";
+import { ONLINE } from "../../lib/online";
+const uk = ONLINE.uk.who;
+const en = ONLINE.en.who;
+const items = zipLocales(uk.items, en.items);
+---
+<section class="r5-section r5-wfor" id="who" style="background: var(--surface)">
+  <div class="r5-wrap">
+    <div class="r5-sechead">
+      <p class="r5-eyebrow-row"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
+      <h2><T uk={uk.title} en={en.title} /></h2>
+    </div>
+    <div class="r5-wfor__grid">
+      {items.map(({ u, e }) => (
+        <div class="r5-card r5-card--tab r5-card--stamp r5-wfor__item">
+          <h3><T uk={u.t} en={e.t} /></h3>
+          <p><T uk={u.d} en={e.d} /></p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,47 @@
+---
+import Icon from "../Icon.astro";
+import Marker from "../Marker.astro";
+import T from "../T.astro";
+import { splitMarked } from "../../lib/strings";
+import { COACH } from "../../lib/coach";
+const uk = COACH.uk.dual;
+const en = COACH.en.dual;
+const ukT = splitMarked(uk.title, uk.marked);
+const enT = splitMarked(en.title, en.marked);
+---
+<section class="r5-section r5-dual" id="dual">
+  <div class="r5-wrap">
+    <div class="r5-dual__head">
+      <p class="r5-eyebrow-row"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
+      <h2>
+        <T uk={ukT.before} en={enT.before} />
+        <Marker><T uk={uk.marked} en={en.marked} /></Marker>
+        <T uk={ukT.after} en={enT.after} />
+      </h2>
+    </div>
+    <div class="r5-dual__grid">
+      <div class="r5-dual__card r5-dual__card--local">
+        <p class="r5-dual__kicker"><T uk={uk.local.kicker} en={en.local.kicker} /></p>
+        <h3><T uk={uk.local.title} en={en.local.title} /></h3>
+        <p><T uk={uk.local.body} en={en.local.body} /></p>
+        <div>
+          <a class="r5-btn r5-btn--primary r5-btn--cta" href="/contact">
+            <T uk={uk.local.cta} en={en.local.cta} />
+            <Icon name="arrow-right" size={20} />
+          </a>
+        </div>
+      </div>
+      <div class="r5-dual__card r5-dual__card--online">
+        <p class="r5-dual__kicker"><T uk={uk.online.kicker} en={en.online.kicker} /></p>
+        <h3><T uk={uk.online.title} en={en.online.title} /></h3>
+        <p><T uk={uk.online.body} en={en.online.body} /></p>
+        <div>
+          <a class="r5-btn r5-btn--primary r5-btn--cta" href="/online">
+            <T uk={uk.online.cta} en={en.online.cta} />
+            <Icon name="monitor" size={20} />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

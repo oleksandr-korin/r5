@@ -1,0 +1,41 @@
+---
+import Icon from "../Icon.astro";
+import Marker from "../Marker.astro";
+import T from "../T.astro";
+import { splitMarked } from "../../lib/strings";
+import { COACH } from "../../lib/coach";
+
+const uk = COACH.uk.hero;
+const en = COACH.en.hero;
+const ukP = splitMarked(uk.punch, uk.marked);
+const enP = splitMarked(en.punch, en.marked);
+---
+<header class="r5-chero r5-dark" id="top">
+  <div class="r5-chero__bg"></div>
+  <div class="r5-chero__scrim"></div>
+  <div class="r5-wrap r5-chero__grid">
+    <div class="r5-chero__plate">
+      <div class="r5-photo-ph"><T uk={uk.portrait} en={en.portrait} /></div>
+    </div>
+    <div>
+      <p class="r5-chero__role"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
+      <h1 class="r5-chero__name"><T uk={uk.name} en={en.name} /></h1>
+      <p class="r5-chero__sub"><T uk={uk.role} en={en.role} /></p>
+      <p class="r5-chero__punch">
+        <T uk={ukP.before} en={enP.before} />
+        <Marker><T uk={uk.marked} en={en.marked} /></Marker>
+        <T uk={ukP.after} en={enP.after} />
+      </p>
+      <div class="r5-chero__cta">
+        <a class="r5-btn r5-btn--primary r5-btn--cta" href="/contact">
+          <T uk={uk.cta} en={en.cta} />
+          <Icon name="arrow-right" size={20} />
+        </a>
+        <a class="r5-chero__ghost" href="/online">
+          <Icon name="monitor" size={18} />
+          <T uk={uk.ghost} en={en.ghost} />
+        </a>
+      </div>
+    </div>
+  </div>
+</header>

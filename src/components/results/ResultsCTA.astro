@@ -1,0 +1,74 @@
+---
+import Icon from "../Icon.astro";
+import Marker from "../Marker.astro";
+import T from "../T.astro";
+import { splitMarked } from "../../lib/strings";
+import { RESULTS } from "../../lib/results";
+
+const uk = RESULTS.uk.cta;
+const en = RESULTS.en.cta;
+const ukT = splitMarked(uk.title, uk.marked);
+const enT = splitMarked(en.title, en.marked);
+---
+<section class="r5-section r5-ctaband" id="contact">
+  <div class="r5-wrap r5-ctaband__grid">
+    <div>
+      <p class="r5-eyebrow-row"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
+      <h2>
+        <T uk={ukT.before} en={enT.before} />
+        <Marker><T uk={uk.marked} en={en.marked} /></Marker>
+        <T uk={ukT.after} en={enT.after} />
+      </h2>
+      <p class="r5-ctaband__sub"><T uk={uk.sub} en={en.sub} /></p>
+    </div>
+
+    <form class="r5-form" data-r5-form>
+      <div class="r5-form__done" hidden data-r5-form-done>
+        <Icon name="send" size={22} />
+        <T uk={uk.done} en={en.done} />
+      </div>
+
+      <div class="r5-form__fields">
+        <div class="r5-field">
+          <label class="r5-label" for="rr-name"><T uk={uk.name} en={en.name} /></label>
+          <input id="rr-name" class="r5-input i18n-attr" required
+                 data-attr="placeholder" data-uk={uk.namePh} data-en={en.namePh}
+                 placeholder={uk.namePh} />
+        </div>
+        <div class="r5-field">
+          <label class="r5-label" for="rr-phone"><T uk={uk.phone} en={en.phone} /></label>
+          <input id="rr-phone" type="tel" class="r5-input" required placeholder="+38 0__ ___ __ __" />
+        </div>
+        <div class="r5-field full">
+          <label class="r5-label" for="rr-when"><T uk={uk.when} en={en.when} /></label>
+          <input id="rr-when" class="r5-input i18n-attr"
+                 data-attr="placeholder" data-uk={uk.whenPh} data-en={en.whenPh}
+                 placeholder={uk.whenPh} />
+        </div>
+        <div class="full">
+          <button class="r5-btn r5-btn--primary r5-btn--cta" type="submit">
+            <T uk={uk.submit} en={en.submit} />
+            <Icon name="send" size={20} />
+          </button>
+        </div>
+        <p class="r5-form__consent full"><T uk={uk.consent} en={en.consent} /></p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<style>
+  .r5-form__fields { display: contents; }
+</style>
+
+<script>
+  document.querySelectorAll("[data-r5-form]").forEach((form) => {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const done   = form.querySelector("[data-r5-form-done]");
+      const fields = form.querySelector(".r5-form__fields");
+      if (done)   (done   as HTMLElement).hidden = false;
+      if (fields) (fields as HTMLElement).hidden = true;
+    });
+  });
+</script>

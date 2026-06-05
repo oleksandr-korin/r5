@@ -1,0 +1,30 @@
+---
+import Icon from "../Icon.astro";
+import Tick from "../Tick.astro";
+import T from "../T.astro";
+import { zipLocales } from "../../lib/strings";
+import { TRAINING } from "../../lib/training";
+const uk = TRAINING.uk.onramp;
+const en = TRAINING.en.onramp;
+const ticks = zipLocales(uk.ticks, en.ticks);
+---
+<section class="r5-section r5-onramp" id="onramp">
+  <div class="r5-wrap">
+    <div class="r5-onramp__panel">
+      <div class="r5-onramp__left">
+        <p class="r5-eyebrow-row"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
+        <h2><T uk={uk.title} en={en.title} /></h2>
+        <p class="r5-onramp__body"><T uk={uk.body} en={en.body} /></p>
+        <a class="r5-btn r5-btn--primary r5-btn--cta" href="/contact">
+          <T uk={uk.cta} en={en.cta} />
+          <Icon name="arrow-right" size={20} />
+        </a>
+      </div>
+      <div class="r5-onramp__right">
+        <ul class="r5-ticks">
+          {ticks.map(({ u, e }) => (<li><Tick /><T uk={u} en={e} /></li>))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

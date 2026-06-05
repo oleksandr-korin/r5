@@ -1,0 +1,32 @@
+---
+import T from "../T.astro";
+import { STRINGS, zipLocales } from "../../lib/strings";
+const uk = STRINGS.uk.proof;
+const en = STRINGS.en.proof;
+const items = zipLocales(uk.items, en.items);
+---
+<section class="r5-proof" aria-label={uk.eyebrow}>
+  <div class="r5-wrap">
+    <p class="r5-eyebrow-row" style="margin-bottom: var(--space-8)">
+      <T uk={uk.eyebrow} en={en.eyebrow} />
+    </p>
+
+    <div class="r5-proof__row">
+      {items.map(({ u, e }) => (
+        <div class="r5-proofc">
+          <div class="r5-proofc__n">
+            {u.n === "#1" ? (
+              <span class="r5-circle">{u.n}
+                <svg class="r5-circle__ring" viewBox="0 0 200 120" fill="none" aria-hidden="true">
+                  <path d="M104 12 C 56 10 20 30 16 60 C 12 92 58 110 108 109 C 158 108 188 88 186 58 C 184 30 150 12 96 13 C 70 14 40 26 30 50" stroke="currentColor" stroke-width="4" stroke-linecap="round" fill="none"/>
+                </svg>
+              </span>
+            ) : u.n}
+          </div>
+          <div class="r5-proofc__l"><T uk={u.l} en={e.l} /></div>
+          <div class="r5-proofc__sub"><T uk={u.sub} en={e.sub} /></div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

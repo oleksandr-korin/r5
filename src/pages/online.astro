@@ -1,0 +1,34 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/home/Nav.astro";
+import Footer from "../components/home/Footer.astro";
+import Hero from "../components/online/Hero.astro";
+import MethodCentre from "../components/online/MethodCentre.astro";
+import Credibility from "../components/online/Credibility.astro";
+import HowItWorks from "../components/online/HowItWorks.astro";
+import WhoFor from "../components/online/WhoFor.astro";
+import Plans from "../components/online/Plans.astro";
+import Faq from "../components/online/Faq.astro";
+import ApplyBand from "../components/online/ApplyBand.astro";
+---
+
+<Base
+  title="R5 — Онлайн / Online coaching"
+  description="Програмування Дмитра та HRV-метод відновлення — дистанційно, будь-де."
+  lang="uk"
+>
+  <div class="r5-site" data-vibe="expressive" data-stamp="on">
+    <Nav active="online" />
+    <main id="main">
+      <Hero />
+      <MethodCentre />
+      <Credibility />
+      <HowItWorks />
+      <WhoFor />
+      <Plans />
+      <Faq />
+      <ApplyBand />
+    </main>
+    <Footer />
+  </div>
+</Base>

@@ -1,0 +1,30 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/home/Nav.astro";
+import Footer from "../components/home/Footer.astro";
+import Header from "../components/contact/Header.astro";
+import BookingBlock from "../components/contact/BookingBlock.astro";
+import Channels from "../components/contact/Channels.astro";
+import FindUs from "../components/contact/FindUs.astro";
+import QuickFaq from "../components/contact/QuickFaq.astro";
+import OnlineAlt from "../components/contact/OnlineAlt.astro";
+---
+
+<Base
+  title="R5 — Почни тут / Start here"
+  description="Безкоштовне перше тренування. Запишись — або напиши, як зручно: Instagram, Telegram, телефон, email."
+  lang="uk"
+>
+  <div class="r5-site" data-vibe="expressive" data-stamp="on">
+    <Nav active="contact" />
+    <main id="main">
+      <Header />
+      <BookingBlock />
+      <Channels />
+      <FindUs />
+      <QuickFaq />
+      <OnlineAlt />
+    </main>
+    <Footer />
+  </div>
+</Base>

@@ -1,0 +1,7 @@
+---
+/* Bilingual text node. Server-renders UK; Base.astro's locale toggle swaps
+   textContent based on data-uk / data-en. */
+interface Props { uk: string; en: string; }
+const { uk, en } = Astro.props;
+---
+<span class="i18n" data-uk={uk} data-en={en}>{uk}</span>

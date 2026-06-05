@@ -1,0 +1,177 @@
+/* R5 — Training & Programs page — layout.
+   Built on root tokens + components.css; reuses home.css for nav/footer/eyebrow/
+   marker/sticky/vibe/surface/CtaBand/form. Training-specific sections live here.
+   Two layout knobs: the programs card set switches grid <-> featured via Tweak. */
+
+/* ===== HEADER (cream, heavy headline + slim photo band) ================ */
+.r5-thead { padding: var(--space-24) 0 0; }
+.r5-thead__in { max-width: 30ch; }
+.r5-thead h1 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: var(--display-1);
+  line-height: var(--display-1-lh); letter-spacing: var(--display-1-ls); margin: 14px 0 0; }
+.r5-thead__lead { font-size: var(--body-lg); line-height: 1.55; color: var(--text-secondary); margin: var(--space-6) 0 var(--space-8); max-width: 52ch; }
+.r5-thead__cta { display: flex; gap: var(--space-5); flex-wrap: wrap; align-items: center; }
+.r5-thead__online { font-family: var(--font-display); font-weight: 600; text-transform: uppercase; letter-spacing: .03em;
+  font-size: 15px; color: var(--text-secondary); background: none; border: none; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 8px; padding: 10px 2px; }
+.r5-thead__online:hover { color: var(--accent-strong); }
+.r5-thead__online svg { transition: transform .14s ease; }
+.r5-thead__online:hover svg { transform: translateX(3px); }
+/* slim photo band beneath the header */
+.r5-thead__band { position: relative; margin-top: var(--space-12); height: 220px; border-radius: var(--radius-md);
+  overflow: hidden; border: var(--border-w-heavy) solid var(--border-ink); box-shadow: var(--shadow-stamp); }
+.r5-thead__band .r5-photo-ph { position: absolute; inset: 0; }
+
+/* ===== PROGRAMS CARD SET =============================================== */
+.r5-progset { display: grid; gap: var(--space-6); }
+/* — grid layout: 2 x 2 equal cards — */
+.r5-progset--grid { grid-template-columns: 1fr 1fr; }
+/* — featured layout: on-ramp spans full width, the rest in a 3-up row — */
+.r5-progset--featured { grid-template-columns: repeat(3, 1fr); }
+.r5-progset--featured .r5-progc--feature { grid-column: 1 / -1; }
+
+.r5-progc { display: flex; flex-direction: column; gap: var(--space-3); min-height: 280px; }
+.r5-progc__top { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); }
+.r5-progc__n { font-family: var(--font-mono); font-size: 13px; font-weight: 700; color: var(--accent-strong); }
+.r5-progc h3 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: var(--h2);
+  line-height: 1.02; margin: var(--space-2) 0 0; }
+.r5-progc__d { font-size: var(--body-sm); line-height: 1.5; color: var(--text-secondary); margin: 0; }
+.r5-progc__good { margin: var(--space-2) 0 0; }
+.r5-progc__goodlabel { font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--text-tertiary); display: block; margin-bottom: 4px; }
+.r5-progc__goodtext { font-size: var(--body-sm); line-height: 1.4; color: var(--text-primary); font-weight: 600; }
+.r5-progc__foot { margin-top: auto; padding-top: var(--space-5); display: flex; align-items: center;
+  justify-content: space-between; gap: var(--space-4); border-top: var(--border-w) solid var(--border); }
+.r5-progc__price { font-family: var(--font-mono); font-size: 13px; font-weight: 700; letter-spacing: .02em;
+  color: var(--text-primary); }
+
+/* feature card (the beginner on-ramp) — wider, two-column, amber-warm panel */
+.r5-progc--feature { background: var(--accent-subtle); border-color: var(--accent-muted); }
+.r5-progset--featured .r5-progc--feature { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-10);
+  align-items: center; min-height: 0; }
+.r5-progset--featured .r5-progc--feature .r5-progc__foot { margin-top: var(--space-5); border-top: none; padding-top: 0;
+  flex-direction: column; align-items: flex-start; gap: var(--space-5); }
+.r5-progset--featured .r5-progc--feature h3 { font-size: var(--h1); }
+.r5-progset--featured .r5-progc--feature .r5-progc__d { font-size: var(--body); max-width: 46ch; }
+
+/* ===== ON-RAMP REASSURANCE PANEL (cream manual page) =================== */
+.r5-onramp__panel { background: var(--surface); border: var(--border-w-heavy) solid var(--border-ink);
+  border-radius: var(--radius-md); box-shadow: var(--shadow-stamp); overflow: hidden;
+  display: grid; grid-template-columns: 1fr 1fr; }
+.r5-onramp__left { padding: var(--space-12) var(--space-12) var(--space-12); border-right: var(--border-w) solid var(--border); }
+.r5-onramp__left h2 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: var(--h1);
+  line-height: 1.04; letter-spacing: var(--h1-ls); margin: 8px 0 0; white-space: pre-line; }
+.r5-onramp__body { font-size: var(--body-lg); line-height: 1.55; color: var(--text-secondary); margin: var(--space-6) 0 var(--space-8); max-width: 42ch; }
+.r5-onramp__right { padding: var(--space-12); display: flex; flex-direction: column; justify-content: center;
+  background: var(--surface-sunken); }
+.r5-onramp__right .r5-ticks { margin-bottom: var(--space-8); }
+.r5-onramp__right .r5-ticks li { font-size: var(--body-lg); }
+
+/* ===== SESSION FLOW (cream manual page — mirrors gym "typical class") == */
+.r5-flow__panel { background: var(--surface); border: var(--border-w-heavy) solid var(--border-ink); border-radius: var(--radius-md);
+  box-shadow: var(--shadow-stamp); overflow: hidden; }
+.r5-flow__head { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); align-items: end;
+  padding: var(--space-8) var(--space-10); border-bottom: var(--border-w) solid var(--border); }
+.r5-flow__head h2 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: var(--h1);
+  line-height: 1.04; letter-spacing: var(--h1-ls); margin: 8px 0 0; white-space: pre-line; }
+.r5-flow__lead { font-size: var(--body-lg); line-height: 1.5; color: var(--text-secondary); margin: 0; }
+.r5-flow__steps { display: grid; grid-template-columns: repeat(4, 1fr); }
+.r5-flow__step { padding: var(--space-8) var(--space-8) var(--space-10); position: relative; }
+.r5-flow__step:not(:last-child) { border-right: var(--border-w) solid var(--border); }
+.r5-flow__n { font-family: var(--font-mono); font-weight: 700; font-size: 13px; color: var(--accent-strong); }
+.r5-flow__st { font-family: var(--font-display); font-weight: 600; text-transform: uppercase; font-size: var(--h3); margin: 10px 0 8px; }
+.r5-flow__sd { font-size: var(--body-sm); line-height: 1.5; color: var(--text-secondary); margin: 0; }
+
+/* ===== R5 METHOD (HRV) BAND — dark, links to coach ===================== */
+.r5-method { background: var(--canvas-dark); color: var(--text-primary-d); position: relative; overflow: hidden; }
+.r5-method__grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: var(--space-12); align-items: center; }
+.r5-method h2 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: var(--h1);
+  line-height: 1.04; letter-spacing: var(--h1-ls); margin: 0; white-space: pre-line; color: var(--text-primary-d); }
+.r5-method__body { font-size: var(--body-lg); line-height: 1.55; color: var(--text-secondary-d); margin: var(--space-6) 0 0; max-width: 52ch; }
+.r5-method__cta { display: flex; justify-content: flex-end; }
+.r5-method .r5-link { color: var(--accent); }
+.r5-method .r5-link:hover { color: var(--text-primary-d); }
+.r5-method__tag { position: absolute; top: -50px; right: -10px; font-family: var(--font-display); font-weight: 700;
+  font-size: 200px; line-height: 1; color: rgba(253,176,50,.06); pointer-events: none; user-select: none; }
+
+/* ===== PRICING / MEMBERSHIP =========================================== */
+.r5-pricing__head { margin-bottom: var(--space-12); }
+.r5-pricing__head .r5-sechead { margin-bottom: var(--space-4); }
+.r5-pricing__note { font-family: var(--font-mono); font-size: 13px; letter-spacing: .04em; color: var(--text-tertiary); margin: 0; }
+.r5-prices { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); align-items: stretch; }
+.r5-price { background: var(--surface); border: var(--border-w-heavy) solid var(--border-ink); border-radius: var(--radius-md);
+  box-shadow: var(--shadow-stamp); padding: var(--space-10) var(--space-8) var(--space-8); display: flex; flex-direction: column;
+  position: relative; }
+.r5-price--popular { background: var(--canvas-dark); color: var(--text-primary-d); border-color: var(--accent); }
+.r5-price__flag { position: absolute; top: -14px; left: var(--space-8); font-family: var(--font-mono); font-weight: 700;
+  font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--on-accent); background: var(--accent);
+  padding: 5px 12px; border-radius: var(--radius-pill); white-space: nowrap; }
+.r5-price__name { font-family: var(--font-display); font-weight: 600; text-transform: uppercase; font-size: var(--h3);
+  letter-spacing: .02em; margin: 0; }
+.r5-price--popular .r5-price__name { color: var(--text-primary-d); }
+.r5-price__amount { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin: var(--space-5) 0 var(--space-6);
+  padding-bottom: var(--space-6); border-bottom: var(--border-w) solid var(--border); }
+.r5-price--popular .r5-price__amount { border-bottom-color: var(--border-strong-d); }
+.r5-price__num { font-family: var(--font-mono); font-weight: 700; font-size: 38px; line-height: .9; letter-spacing: -.02em;
+  color: var(--text-primary); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.r5-price--popular .r5-price__num { color: var(--accent); }
+.r5-price__per { font-family: var(--font-mono); font-size: 13px; color: var(--text-tertiary); }
+.r5-price--popular .r5-price__per { color: var(--text-secondary-d); }
+.r5-price__items { list-style: none; margin: 0 0 var(--space-8); padding: 0; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+.r5-price__items li { display: flex; gap: 12px; align-items: flex-start; font-size: var(--body-sm); line-height: 1.4;
+  color: var(--text-primary); font-weight: 500; }
+.r5-price--popular .r5-price__items li { color: var(--text-secondary-d); }
+.r5-price__items .r5-tick { flex: none; width: 20px; height: 20px; margin-top: 1px; }
+.r5-price__items .r5-tick path { stroke: var(--success-strong); }
+.r5-price--popular .r5-price__items .r5-tick path { stroke: var(--accent); }
+.r5-price .r5-btn { width: 100%; }
+
+/* ===== ONLINE TEASER (slim, low emphasis) ============================= */
+.r5-onlinetease { background: var(--surface); border-top: var(--border-w) solid var(--border);
+  border-bottom: var(--border-w) solid var(--border); padding: var(--space-10) 0; }
+.r5-onlinetease__in { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; text-align: center; }
+.r5-onlinetease__text { font-family: var(--font-mono); font-size: 13px; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--text-tertiary); }
+.r5-onlinetease .r5-link { font-size: 15px; }
+
+/* ===== RESPONSIVE: MOBILE SURFACE TOGGLE ============================== */
+.r5-site[data-surface="mobile"] .r5-thead__in { max-width: none; }
+.r5-site[data-surface="mobile"] .r5-thead h1 { font-size: 52px; }
+.r5-site[data-surface="mobile"] .r5-thead__band { height: 160px; }
+.r5-site[data-surface="mobile"] .r5-progset--grid,
+.r5-site[data-surface="mobile"] .r5-progset--featured { grid-template-columns: 1fr; }
+.r5-site[data-surface="mobile"] .r5-progset--featured .r5-progc--feature { grid-template-columns: 1fr; gap: var(--space-6);
+  min-height: 280px; }
+.r5-site[data-surface="mobile"] .r5-progset--featured .r5-progc--feature h3 { font-size: var(--h2); }
+.r5-site[data-surface="mobile"] .r5-progc { min-height: 0; }
+.r5-site[data-surface="mobile"] .r5-onramp__panel { grid-template-columns: 1fr; }
+.r5-site[data-surface="mobile"] .r5-onramp__left { border-right: none; border-bottom: var(--border-w) solid var(--border);
+  padding: var(--space-8); }
+.r5-site[data-surface="mobile"] .r5-onramp__right { padding: var(--space-8); }
+.r5-site[data-surface="mobile"] .r5-flow__head,
+.r5-site[data-surface="mobile"] .r5-flow__steps { grid-template-columns: 1fr; }
+.r5-site[data-surface="mobile"] .r5-flow__step:not(:last-child) { border-right: none; border-bottom: var(--border-w) solid var(--border); }
+.r5-site[data-surface="mobile"] .r5-method__grid { grid-template-columns: 1fr; gap: var(--space-8); }
+.r5-site[data-surface="mobile"] .r5-method__cta { justify-content: flex-start; }
+.r5-site[data-surface="mobile"] .r5-method__tag { display: none; }
+.r5-site[data-surface="mobile"] .r5-prices { grid-template-columns: 1fr; }
+
+/* ===== RESPONSIVE: TRUE VIEWPORT ====================================== */
+@media (max-width: 860px) {
+  .r5-thead h1 { font-size: 56px; }
+  .r5-progset--grid, .r5-progset--featured { grid-template-columns: 1fr; }
+  .r5-progset--featured .r5-progc--feature { grid-template-columns: 1fr; gap: var(--space-6); min-height: 280px; }
+  .r5-progset--featured .r5-progc--feature h3 { font-size: var(--h2); }
+  .r5-progc { min-height: 0; }
+  .r5-onramp__panel { grid-template-columns: 1fr; }
+  .r5-onramp__left { border-right: none; border-bottom: var(--border-w) solid var(--border); padding: var(--space-8); }
+  .r5-onramp__right { padding: var(--space-8); }
+  .r5-flow__head, .r5-flow__steps { grid-template-columns: 1fr; }
+  .r5-flow__step:not(:last-child) { border-right: none; border-bottom: var(--border-w) solid var(--border); }
+  .r5-method__grid { grid-template-columns: 1fr; gap: var(--space-8); }
+  .r5-method__cta { justify-content: flex-start; }
+  .r5-method__tag { display: none; }
+  .r5-prices { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .r5-onlinetease__in { flex-direction: column; gap: 8px; }
+}

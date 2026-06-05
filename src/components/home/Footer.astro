@@ -1,0 +1,77 @@
+---
+import Wordmark from "../Wordmark.astro";
+import Icon from "../Icon.astro";
+import T from "../T.astro";
+import { STRINGS, NAV_ITEMS } from "../../lib/strings";
+
+const uk = STRINGS.uk.footer;
+const en = STRINGS.en.footer;
+const uknav = STRINGS.uk.nav;
+const ennav = STRINGS.en.nav;
+const links = NAV_ITEMS.filter((n) => n.id !== "contact").map((n) => ({
+  href: n.href,
+  uk: uknav[n.id],
+  en: ennav[n.id],
+}));
+---
+<footer class="r5-footer r5-dark" id="footer">
+  <div class="r5-wrap">
+    <div class="r5-footer__grid">
+      <div>
+        <Wordmark />
+        <p class="r5-footer__tag"><T uk={uk.tagline} en={en.tagline} /></p>
+      </div>
+
+      <div>
+        <h4><T uk={uk.nav} en={en.nav} /></h4>
+        <ul>
+          {links.map((l) => (
+            <li>
+              <a class="r5-footer__navlink" href={l.href}>
+                <T uk={l.uk} en={l.en} />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h4><T uk={uk.contacts} en={en.contacts} /></h4>
+        <ul>
+          <li style="display:flex;gap:8px;align-items:flex-start">
+            <Icon name="map-pin" size={18} />
+            <T uk={uk.address} en={en.address} />
+          </li>
+          <li style="display:flex;gap:8px;align-items:center">
+            <Icon name="clock" size={18} />
+            <T uk={uk.hours} en={en.hours} />
+          </li>
+          <li style="display:flex;gap:8px;align-items:center">
+            <Icon name="phone" size={18} />
+            <a href={`tel:${uk.phone.replace(/\s/g, "")}`}>{uk.phone}</a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4><T uk={uk.social} en={en.social} /></h4>
+        <ul>
+          <li style="display:flex;gap:8px;align-items:center">
+            <Icon name="instagram" size={18} />
+            {uk.ig}
+          </li>
+        </ul>
+        <div class="r5-socials" style="margin-top:16px">
+          <a class="r5-iconbtn" href={`https://instagram.com/${uk.ig.replace("@", "")}`} target="_blank" rel="noopener" aria-label="Instagram">
+            <Icon name="instagram" size={20} />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="r5-footer__bottom">
+      <T uk={uk.rights} en={en.rights} />
+      <T uk={uk.meta} en={en.meta} />
+    </div>
+  </div>
+</footer>

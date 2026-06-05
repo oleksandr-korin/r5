@@ -1,0 +1,38 @@
+---
+import Marker from "../Marker.astro";
+import Icon from "../Icon.astro";
+import T from "../T.astro";
+import { zipLocales } from "../../lib/strings";
+import { COACH } from "../../lib/coach";
+const uk = COACH.uk.athletes;
+const en = COACH.en.athletes;
+const items = zipLocales(uk.items, en.items);
+---
+<section class="r5-section r5-ath" id="athletes">
+  <div class="r5-wrap">
+    <div class="r5-ath__head">
+      <p class="r5-eyebrow-row"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
+      <h2 class="r5-h1" style="margin:0">
+        <T uk={uk.title} en={en.title} />
+        {" "}
+        <Marker><T uk={uk.marked} en={en.marked} /></Marker>
+      </h2>
+      <p class="r5-ath__lead"><T uk={uk.lead} en={en.lead} /></p>
+    </div>
+    <div class="r5-ath__grid">
+      {items.map(({ u, e }) => (
+        <div class="r5-card r5-card--tab r5-card--stamp r5-ath__card">
+          <span class="r5-badge r5-badge--amber" style="align-self:flex-start"><T uk={u.tag} en={e.tag} /></span>
+          <h3><T uk={u.t} en={e.t} /></h3>
+          <p><T uk={u.d} en={e.d} /></p>
+        </div>
+      ))}
+    </div>
+    <div class="r5-ath__link">
+      <a class="r5-link" href="/results">
+        <T uk={uk.link} en={en.link} />
+        <Icon name="arrow-right" size={18} />
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+---
+import Marker from "../Marker.astro";
+import T from "../T.astro";
+import { zipLocales } from "../../lib/strings";
+import { RESULTS } from "../../lib/results";
+const uk = RESULTS.uk.wins;
+const en = RESULTS.en.wins;
+const items = zipLocales(uk.items, en.items);
+---
+<section class="r5-section r5-wins" id="wins">
+  <div class="r5-wrap">
+    <div class="r5-sechead">
+      <p class="r5-eyebrow-row"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
+      <h2>
+        <T uk={uk.title} en={en.title} />
+        {" "}
+        <Marker><T uk={uk.marked} en={en.marked} /></Marker>
+      </h2>
+    </div>
+    <div class="r5-wins__row">
+      {items.map(({ u, e }) => (
+        <div class="r5-win">
+          <div class="r5-win__n">{u.n}</div>
+          <div class="r5-win__l"><T uk={u.l} en={e.l} /></div>
+          <div class="r5-win__who"><T uk={u.who} en={e.who} /></div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

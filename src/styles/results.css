@@ -1,0 +1,121 @@
+/* R5 — Results & Community page — layout.
+   Built on root tokens + components.css; reuses home.css (nav/footer/eyebrow/
+   marker/sticky/ctaband/form/vibe/surface). Page-specific sections live here:
+   achievements strip, testimonial grid, transformation stories, community
+   filmstrip, and the whiteboard leaderboard (mirrors the gym "ritual board"). */
+
+/* ===== HEADER (cream, heavy headline + slim community band) ============ */
+.r5-rhead { padding: var(--space-24) 0 0; }
+.r5-rhead__in { max-width: 26ch; }
+.r5-rhead h1 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: var(--display-1);
+  line-height: var(--display-1-lh); letter-spacing: var(--display-1-ls); margin: 14px 0 0; }
+.r5-rhead__lead { font-size: var(--body-lg); line-height: 1.55; color: var(--text-secondary); margin: var(--space-6) 0 var(--space-8); max-width: 52ch; }
+.r5-rhead__band { position: relative; margin-top: var(--space-12); height: 240px; border-radius: var(--radius-md);
+  overflow: hidden; border: var(--border-w-heavy) solid var(--border-ink); box-shadow: var(--shadow-stamp); }
+.r5-rhead__band .r5-photo-ph { position: absolute; inset: 0; }
+
+/* ===== ACHIEVEMENTS STRIP (earned, not gamified) ====================== */
+.r5-wins { background: var(--surface); }
+.r5-wins__row { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-8); margin-top: var(--space-12); }
+.r5-win { padding-left: 20px; position: relative; }
+.r5-win::before { content: ""; position: absolute; left: 0; top: 6px; bottom: 10px; width: 3px; background: var(--accent); }
+.r5-win__n { font-family: var(--font-mono); font-weight: 700; font-size: 50px; line-height: .9; letter-spacing: -.02em;
+  color: var(--text-primary); font-variant-numeric: tabular-nums; }
+.r5-win__l { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-top: 14px; line-height: 1.25; }
+.r5-win__who { font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--text-tertiary); margin-top: 8px; line-height: 1.4; }
+
+/* ===== TESTIMONIALS (featured quote + grid) =========================== */
+.r5-voices__grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: var(--space-6); align-items: stretch; }
+.r5-voice-feat { background: var(--canvas-dark); color: var(--text-primary-d); border: var(--border-w-heavy) solid var(--border-ink);
+  border-radius: var(--radius-md); box-shadow: var(--shadow-stamp); padding: var(--space-12) var(--space-10);
+  display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+.r5-voice-feat__mark { font-family: var(--font-display); font-weight: 700; font-size: 90px; line-height: 1; color: var(--accent); margin-bottom: -18px; }
+.r5-voice-feat blockquote { font-family: var(--font-display); font-weight: 600; text-transform: uppercase;
+  font-size: clamp(30px, 3.4vw, 46px); line-height: 1.04; letter-spacing: .01em; margin: 0 0 var(--space-8);
+  white-space: pre-line; text-wrap: balance; color: var(--text-primary-d); }
+.r5-voice-feat__by { display: flex; align-items: center; gap: 14px; }
+.r5-voice__av { width: 50px; height: 50px; border-radius: 50%; background: var(--surface-dark-2); border: 2px solid var(--accent);
+  display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; font-size: 20px; color: var(--accent); flex: none; }
+.r5-voice-feat__name { font-weight: 700; font-size: 16px; color: var(--text-primary-d); }
+.r5-voice-feat__role { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-tertiary-d); margin-top: 2px; }
+.r5-voices__small { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); }
+.r5-voice { display: flex; flex-direction: column; gap: var(--space-5); }
+.r5-voice__text { font-size: var(--body); line-height: 1.5; color: var(--text-primary); font-weight: 500; margin: 0; flex: 1; }
+.r5-voice__by { display: flex; align-items: center; gap: 12px; }
+.r5-voice .r5-voice__av { width: 42px; height: 42px; font-size: 17px; background: var(--surface-sunken); border-color: var(--border-ink); color: var(--text-primary); }
+.r5-voice__name { font-weight: 700; font-size: 15px; color: var(--text-primary); }
+.r5-voice__role { font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--text-tertiary); margin-top: 2px; }
+
+/* ===== TRANSFORMATION STORIES ========================================= */
+.r5-stories__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+.r5-story { display: flex; flex-direction: column; overflow: hidden; padding: 0; }
+.r5-story__photo { position: relative; aspect-ratio: 4/3; border-bottom: var(--border-w) solid var(--border); overflow: hidden; }
+.r5-story__photo .r5-photo-ph { position: absolute; inset: 0; font-size: 11px; }
+.r5-story__body { padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-3); }
+.r5-story__tag { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent-strong); }
+.r5-story h3 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: var(--h3); margin: 4px 0 0; }
+.r5-story__arc { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: var(--space-2) 0; }
+.r5-story__chip { font-family: var(--font-mono); font-size: 11px; letter-spacing: .04em; padding: 5px 10px; border-radius: var(--radius-pill);
+  border: 1px solid var(--border); color: var(--text-secondary); background: var(--surface-sunken); }
+.r5-story__chip--now { color: var(--success-strong); border-color: var(--success); background: var(--success-subtle); }
+.r5-story__arrow { color: var(--accent-strong); }
+.r5-story__text { font-size: var(--body-sm); line-height: 1.55; color: var(--text-secondary); margin: 0; }
+
+/* ===== COMMUNITY FILMSTRIP =========================================== */
+.r5-film { display: flex; gap: var(--space-4); overflow-x: auto; padding-bottom: var(--space-4); scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; }
+.r5-film__item { flex: 0 0 320px; position: relative; aspect-ratio: 4/3; border-radius: var(--radius-md); overflow: hidden;
+  border: var(--border-w-heavy) solid var(--border-ink); scroll-snap-align: start; }
+.r5-film__item .r5-photo-ph { position: absolute; inset: 0; font-size: 11px; }
+.r5-film__cap { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: .1em; text-transform: uppercase; color: #F4ECDB; padding: 10px 12px;
+  background: linear-gradient(0deg, rgba(15,11,7,.85), transparent); }
+
+/* ===== BOARD CULTURE (coal wall + lit cream leaderboard) ============== */
+.r5-bculture { background: var(--canvas-dark); color: var(--text-primary-d); }
+.r5-bculture__grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: var(--space-16); align-items: center; }
+.r5-bculture h2 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: var(--display-2);
+  line-height: var(--display-2-lh); letter-spacing: var(--display-2-ls); margin: 8px 0 0; color: var(--text-primary-d); }
+.r5-bculture__body { font-size: var(--body-lg); line-height: 1.6; color: var(--text-secondary-d); margin: var(--space-6) 0 0; max-width: 44ch; }
+
+.r5-lb { background: #FBF6EC; color: #1C1812; border: var(--border-w-stamp) solid #F4ECDB; border-radius: var(--radius-sm);
+  box-shadow: 6px 6px 0 rgba(0,0,0,.5); padding: var(--space-8) var(--space-10) var(--space-10);
+  --text-primary: #1C1812; --text-secondary: #4A4236; --text-tertiary: #6B6151; }
+.r5-lb__head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4);
+  padding-bottom: var(--space-4); border-bottom: 2px dashed rgba(28,24,18,.3); }
+.r5-lb__label { font-family: var(--font-mono); font-weight: 700; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #1C1812; }
+.r5-lb__cap { font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--accent-strong); }
+.r5-lb__scheme { font-family: var(--font-mono); font-weight: 700; font-size: 30px; letter-spacing: -.01em; color: #1C1812; margin: var(--space-5) 0 var(--space-4); }
+.r5-lb__rows { display: flex; flex-direction: column; }
+.r5-lb__row { display: flex; align-items: baseline; gap: 12px; padding: 10px 0; }
+.r5-lb__row:not(:last-child) { border-bottom: 1px solid rgba(28,24,18,.12); }
+.r5-lb__rank { font-family: var(--font-mono); font-weight: 700; font-size: 14px; color: var(--accent-strong); width: 18px; flex: none; }
+.r5-lb__name { font-family: var(--font-display); font-weight: 600; text-transform: uppercase; font-size: 18px; letter-spacing: .02em; color: #1C1812; }
+.r5-lb__dots { flex: 1; border-bottom: 1.5px dotted rgba(28,24,18,.35); transform: translateY(-3px); }
+.r5-lb__score { font-family: var(--font-mono); font-weight: 700; font-size: 16px; color: #1C1812; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.r5-lb__rx { font-family: var(--font-mono); font-weight: 700; font-size: 10px; letter-spacing: .08em; color: var(--on-accent);
+  background: var(--accent); padding: 2px 6px; border-radius: var(--radius-pill); margin-left: 8px; }
+
+/* ===== RESPONSIVE: MOBILE SURFACE TOGGLE ============================== */
+.r5-site[data-surface="mobile"] .r5-rhead__in { max-width: none; }
+.r5-site[data-surface="mobile"] .r5-rhead h1 { font-size: 50px; }
+.r5-site[data-surface="mobile"] .r5-rhead__band { height: 170px; }
+.r5-site[data-surface="mobile"] .r5-wins__row { grid-template-columns: 1fr 1fr; gap: var(--space-8); }
+.r5-site[data-surface="mobile"] .r5-voices__grid,
+.r5-site[data-surface="mobile"] .r5-voices__small,
+.r5-site[data-surface="mobile"] .r5-stories__grid { grid-template-columns: 1fr; }
+.r5-site[data-surface="mobile"] .r5-bculture__grid { grid-template-columns: 1fr; gap: var(--space-8); }
+.r5-site[data-surface="mobile"] .r5-film__item { flex-basis: 260px; }
+
+/* ===== RESPONSIVE: TRUE VIEWPORT ====================================== */
+@media (max-width: 860px) {
+  .r5-rhead h1 { font-size: 54px; }
+  .r5-wins__row { grid-template-columns: 1fr 1fr; gap: var(--space-8); }
+  .r5-voices__grid, .r5-stories__grid { grid-template-columns: 1fr; }
+  .r5-bculture__grid { grid-template-columns: 1fr; gap: var(--space-8); }
+}
+@media (max-width: 480px) {
+  .r5-wins__row, .r5-voices__small { grid-template-columns: 1fr; }
+  .r5-film__item { flex-basis: 78vw; }
+}

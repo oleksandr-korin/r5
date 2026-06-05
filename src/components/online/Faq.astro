@@ -1,0 +1,46 @@
+---
+import T from "../T.astro";
+import { zipLocales } from "../../lib/strings";
+import { ONLINE } from "../../lib/online";
+const uk = ONLINE.uk.faq;
+const en = ONLINE.en.faq;
+const items = zipLocales(uk.items, en.items);
+---
+<section class="r5-section" id="faq" style="background: var(--surface)">
+  <div class="r5-wrap">
+    <div class="r5-sechead" style="margin: 0 auto var(--space-12); text-align: center; max-width: none">
+      <p class="r5-eyebrow-row" style="justify-content: center"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
+      <h2><T uk={uk.title} en={en.title} /></h2>
+    </div>
+    <div class="r5-faq__wrap">
+      {items.map(({ u, e }, i) => (
+        <div class={"r5-faq__item" + (i === 0 ? " is-open" : "")}>
+          <button class="r5-faq__q" aria-expanded={i === 0 ? "true" : "false"} data-r5-faq>
+            <T uk={u.q} en={e.q} />
+            <span class="r5-faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="r5-faq__a"><p><T uk={u.a} en={e.a} /></p></div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  // Accordion: only one item open at a time. CSS handles open/close animation.
+  document.querySelectorAll("[data-r5-faq]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const item = btn.closest(".r5-faq__item");
+      if (!item) return;
+      const opening = !item.classList.contains("is-open");
+      document.querySelectorAll(".r5-faq__item.is-open").forEach((el) => {
+        el.classList.remove("is-open");
+        el.querySelector("[data-r5-faq]")?.setAttribute("aria-expanded", "false");
+      });
+      if (opening) {
+        item.classList.add("is-open");
+        btn.setAttribute("aria-expanded", "true");
+      }
+    });
+  });
+</script>
