@@ -6,7 +6,7 @@
 .r5-chero { position: relative; isolation: isolate; padding: var(--space-20) 0 var(--space-20);
   background: var(--canvas-dark); color: var(--text-primary-d); overflow: hidden; }
 .r5-chero__bg { position: absolute; inset: 0; z-index: -2;
-  background: repeating-linear-gradient(115deg, #221C15 0 26px, #1b160f 26px 52px); }
+  background: #1b160f url("/images/hero-bg.jpg") center / cover no-repeat; }
 .r5-chero__scrim { position: absolute; inset: 0; z-index: -1;
   background: linear-gradient(75deg, rgba(15,11,7,.55) 0%, rgba(15,11,7,.78) 60%, rgba(15,11,7,.94) 100%); }
 .r5-chero__grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: var(--space-12); align-items: center; min-height: 64vh; }

@@ -3,8 +3,13 @@
    marker/sticky/vibe/surface (and CtaBand). Coach-specific sections live here. */
 
 /* ===== ATMOSPHERE HERO (dark, side-by-side: copy + vertical plate) ===== */
-.r5-ghero { background: var(--canvas-dark); color: var(--text-primary-d);
+.r5-ghero { position: relative; isolation: isolate;
+  background: var(--canvas-dark); color: var(--text-primary-d);
   padding: var(--space-20) 0 var(--space-16); overflow: hidden; }
+.r5-ghero__bg { position: absolute; inset: 0; z-index: -2;
+  background: #1b160f url("/images/hero-bg.jpg") center / cover no-repeat; }
+.r5-ghero__scrim { position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(90deg, rgba(15,11,7,.92) 0%, rgba(15,11,7,.72) 48%, rgba(15,11,7,.34) 100%); }
 .r5-ghero__grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: var(--space-12);
   align-items: center; }
 .r5-ghero__in { max-width: 34ch; }

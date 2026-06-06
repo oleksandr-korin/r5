@@ -1,0 +1,153 @@
+/* ============================================================================
+   Case + letter-spacing override.
+   ----------------------------------------------------------------------------
+   The original design system sets text-transform: uppercase across nearly
+   every UI element — headings, card titles, plan names, leads, quotes,
+   athlete names, FAQ questions. The result is shouting fatigue: no
+   typographic hierarchy because everything is in caps.
+
+   This file restores caps to the "label" role only — eyebrows, badges,
+   buttons, wordmark, mono numbers/tags, plus the single hero H1 per page
+   (the brand poster moment). Headings, card titles, names, plan labels,
+   leads and quotes flip to natural mixed case as the i18n strings were
+   written.
+
+   Imported LAST in global.css so its declarations win at equal specificity.
+   ============================================================================ */
+
+/* ── Semantic helpers (tokens.css ships .r5-h1…h4 as uppercase) ──────────── */
+.r5-h1, .r5-h2, .r5-h3, .r5-h4 {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ── Section h2s across every page ───────────────────────────────────────── */
+.r5-sechead h2,
+.r5-coach h2,
+.r5-online h2,
+.r5-ctaband h2,
+.r5-onramp__left h2,
+.r5-flow__head h2,
+.r5-method h2,
+.r5-mthd__head h2,
+.r5-bculture h2,
+.r5-dual__head h2,
+.r5-open h2,
+.r5-hrv__head h2,
+.r5-gbeyond h2,
+.r5-whatis h2,
+.r5-ritual h2,
+.r5-class__head h2,
+.r5-book__form h2,
+.r5-reassure h2 {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ── Card titles (h3 inside cards) ───────────────────────────────────────── */
+.r5-pillar h3,
+.r5-svc h3,
+.r5-progc h3,
+.r5-ath__card h3,
+.r5-wfor__item h3,
+.r5-dual__card h3,
+.r5-story h3 {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ── Step / list-item titles (mid-prominence headings) ───────────────────── */
+.r5-class__st,
+.r5-flow__st,
+.r5-mthd__t,
+.r5-hrv__st,
+.r5-tl__t,
+.r5-cred__t,
+.r5-reassure__st {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ── Lead sentences (not labels) ─────────────────────────────────────────── */
+.r5-box__lead,
+.r5-chero__punch {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ── Proper names (people, channels, scoreboard rows) ────────────────────── */
+.r5-chero__name,
+.r5-pquote__by,
+.r5-board__name,
+.r5-lb__name,
+.r5-chan__v {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ── Member testimonials & community quotes (long sentences) ─────────────── */
+.r5-quote blockquote,
+.r5-voice-feat blockquote {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ── Plan / membership names ─────────────────────────────────────────────── */
+.r5-price__name {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ── FAQ questions (sentences with punctuation) ──────────────────────────── */
+.r5-faq__q,
+.r5-cfaq__q {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ── Inline CTA links (read more as button labels than headings) ─────────── */
+.r5-link,
+.r5-chan__cta {
+  text-transform: none;
+  letter-spacing: 0.01em;
+}
+
+/* ── Nav links — more editorial in title case.
+   `capitalize` (instead of `none`) keeps the gym noun rendered with an
+   initial capital — "Простір" / "Space" — while leaving already-capitalised
+   labels (Тренер, Coach, Training …) untouched. ──────────────────────── */
+.r5-nav__link,
+.r5-mobnav button {
+  text-transform: capitalize;
+  letter-spacing: 0;
+}
+
+/* ── Footer tagline (a sentence, not a label) ────────────────────────────── */
+.r5-footer__tag {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ── Stays uppercase (kept here for clarity, no rule needed — these are
+      the "label / poster" patterns the override does NOT touch):
+   - .r5-eyebrow, .r5-eyebrow-row    (eyebrows / kickers)
+   - .r5-btn                          (buttons)
+   - .r5-badge                        (badges / tags)
+   - .r5-label                        (form labels)
+   - .r5-mark__word                   (wordmark)
+   - .r5-stat                         (mono stat figures)
+   - .r5-hero h1, .r5-thead h1,
+     .r5-rhead h1, .r5-chead h1,
+     .r5-ghero h1                    (page-hero brand moment)
+   - .r5-pquote blockquote           (the single Dmytro philosophy poster)
+   - mono labels: footer h4, .r5-board__label, .r5-board__cap,
+     .r5-lb__label, .r5-lb__cap, .r5-hrv__tag, .r5-mthd__tag,
+     .r5-coach__name (eyebrow), .r5-chero__role, .r5-chero__sub,
+     .r5-cred__s, .r5-win__who, .r5-voice__role, .r5-voice-feat__role,
+     .r5-story__tag, .r5-film__cap, .r5-gphoto__cap, .r5-prac__b h4,
+     .r5-find__b h4, .r5-chan__k, .r5-calt__text, .r5-onlinetease__text,
+     .r5-pquote__role, .r5-quote__role, .r5-proofc__sub,
+     .r5-reassure__bringlabel, .r5-dual__kicker, .r5-price__flag,
+     .r5-progc__goodlabel, .r5-coach__name, .r5-cseg button
+   - ghost CTA labels: .r5-hero__ghost, .r5-chero__ghost, .r5-thead__online
+*/
