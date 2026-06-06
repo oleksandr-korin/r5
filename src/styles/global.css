@@ -29,6 +29,25 @@ body {
   background: var(--canvas);
 }
 
+/* Photos placed inside a framed plate (.r5-hero__plate, .r5-chero__plate, etc.):
+   fill the plate, crop to its aspect ratio, no scrollbar in the parent. */
+.r5-plate__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Hero-plate videos (home + gym) — fill the 9:16 plate; no crop needed. */
+.r5-ghero__video,
+.r5-hero__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: contrast(1.05) saturate(0.92);
+}
+
 img,
 picture,
 video,

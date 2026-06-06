@@ -31,10 +31,10 @@ const enT = splitMarked(en.title, en.marked);
           <Icon name="arrow-right" size={20} />
         </button>
 
-        <button class="r5-hero__ghost" data-go="online">
+        <a class="r5-hero__ghost" href="/online">
           <Icon name="monitor" size={18} />
           <T uk={uk.ghost} en={en.ghost} />
-        </button>
+        </a>
       </div>
 
       <div class="r5-hero__scrollcue">
@@ -44,9 +44,14 @@ const enT = splitMarked(en.title, en.marked);
     </div>
 
     <div class="r5-hero__plate">
-      <div class="r5-photo-ph">
-        <T uk={STRINGS.uk.coach.photo} en={STRINGS.en.coach.photo} />
-      </div>
+      {/* Brand sizzle — silent loop ending on the R5 wordmark. Poster paints first. */}
+      <video
+        class="r5-hero__video"
+        src="/videos/home-hero.mp4"
+        poster="/images/home-hero-poster.jpg"
+        autoplay muted loop playsinline preload="metadata"
+        aria-hidden="true"
+      ></video>
     </div>
   </div>
 </header>

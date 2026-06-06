@@ -1,0 +1,37 @@
+---
+import Marker from "../Marker.astro";
+import Tick from "../Tick.astro";
+import T from "../T.astro";
+import { zipLocales } from "../../lib/strings";
+import { GYM } from "../../lib/gym";
+
+const uk = GYM.uk.beyond;
+const en = GYM.en.beyond;
+const ticks = zipLocales(uk.ticks, en.ticks);
+---
+<section class="r5-section r5-gbeyond" id="beyond">
+  <div class="r5-wrap r5-gbeyond__grid">
+    <div class="r5-gbeyond__plate">
+      <video
+        class="r5-gbeyond__video"
+        src="/videos/gym-beyond.mp4"
+        poster="/images/gym-beyond-poster.jpg"
+        autoplay muted loop playsinline preload="metadata"
+        aria-hidden="true"
+      ></video>
+    </div>
+
+    <div>
+      <p class="r5-eyebrow-row"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
+      <h2>
+        <T uk={uk.title} en={en.title} />
+        {" "}
+        <Marker><T uk={uk.marked} en={en.marked} /></Marker>
+      </h2>
+      <p class="r5-gbeyond__body"><T uk={uk.body} en={en.body} /></p>
+      <ul class="r5-ticks">
+        {ticks.map(({ u, e }) => (<li><Tick /><T uk={u} en={e} /></li>))}
+      </ul>
+    </div>
+  </div>
+</section>

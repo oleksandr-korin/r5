@@ -2,19 +2,35 @@
    Built on root tokens + components.css; reuses home.css for nav/footer/eyebrow/
    marker/sticky/vibe/surface (and CtaBand). Coach-specific sections live here. */
 
-/* ===== ATMOSPHERE HERO (dark, photo-led, full-bleed) =================== */
-.r5-ghero { position: relative; isolation: isolate; min-height: 80vh; display: flex; align-items: flex-end;
-  background: var(--canvas-dark); color: var(--text-primary-d); overflow: hidden; padding: var(--space-24) 0 var(--space-16); }
-.r5-ghero > .r5-wrap { width: 100%; }
-.r5-ghero__photo { position: absolute; inset: 0; z-index: -2; }
-.r5-ghero__photo .r5-photo-ph { position: absolute; inset: 0; font-size: 12px; place-items: start;
-  text-align: left; padding: 96px var(--space-8); opacity: .45; }
-.r5-ghero__scrim { position: absolute; inset: 0; z-index: -1;
-  background: linear-gradient(0deg, rgba(15,11,7,.94) 0%, rgba(15,11,7,.55) 45%, rgba(15,11,7,.30) 100%); }
-.r5-ghero__in { max-width: 22ch; }
+/* ===== ATMOSPHERE HERO (dark, side-by-side: copy + vertical plate) ===== */
+.r5-ghero { background: var(--canvas-dark); color: var(--text-primary-d);
+  padding: var(--space-20) 0 var(--space-16); overflow: hidden; }
+.r5-ghero__grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: var(--space-12);
+  align-items: center; }
+.r5-ghero__in { max-width: 34ch; }
 .r5-ghero h1 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: var(--display-1);
   line-height: .92; letter-spacing: var(--display-1-ls); margin: 14px 0 0; color: var(--text-primary-d); }
-.r5-ghero__sub { font-size: var(--body-lg); line-height: 1.5; color: var(--text-secondary-d); margin: var(--space-6) 0 var(--space-8); max-width: 50ch; }
+.r5-ghero__sub { font-size: var(--body-lg); line-height: 1.5; color: var(--text-secondary-d); margin: var(--space-6) 0 var(--space-8); max-width: 46ch; }
+/* Vertical video plate — shows the native 9:16 frame, capped so the section
+   doesn't run away on tall viewports. */
+.r5-ghero__plate { position: relative; aspect-ratio: 9 / 16; max-height: 78vh;
+  border-radius: var(--radius-lg); overflow: hidden;
+  border: var(--border-w-stamp) solid #F4ECDB; box-shadow: var(--shadow-stamp);
+  justify-self: end; width: 100%; max-width: 480px; }
+
+/* ===== BEYOND THE FLOOR (lifestyle / amenities band) =================== */
+.r5-gbeyond__grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: var(--space-12);
+  align-items: center; }
+.r5-gbeyond__plate { position: relative; aspect-ratio: 9 / 16; max-height: 78vh;
+  width: 100%; max-width: 420px; justify-self: start;
+  border-radius: var(--radius-md); overflow: hidden;
+  border: var(--border-w-heavy) solid var(--border-ink); box-shadow: var(--shadow-stamp); }
+.r5-gbeyond__video { width: 100%; height: 100%; object-fit: cover; display: block;
+  filter: contrast(1.05) saturate(0.92); }
+.r5-gbeyond h2 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase;
+  font-size: var(--h1); line-height: var(--h1-lh); letter-spacing: var(--h1-ls); margin: 0; }
+.r5-gbeyond__body { font-size: var(--body-lg); line-height: 1.55; color: var(--text-secondary);
+  margin: var(--space-6) 0 var(--space-8); max-width: 46ch; }
 
 /* ===== WHAT R5 IS (and isn't) — photo + honest text ==================== */
 .r5-whatis__grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: var(--space-16); align-items: center; }
@@ -111,8 +127,11 @@
 .r5-site[data-surface="mobile"] .r5-board__scheme { font-size: 38px; }
 
 @media (max-width: 860px) {
-  .r5-whatis__grid, .r5-ritual__grid, .r5-prac__grid { grid-template-columns: 1fr; gap: var(--space-8); }
-  .r5-ghero { min-height: 0; padding: var(--space-16) 0; }
+  .r5-whatis__grid, .r5-ritual__grid, .r5-prac__grid, .r5-gbeyond__grid { grid-template-columns: 1fr; gap: var(--space-8); }
+  .r5-gbeyond__plate { order: -1; max-width: 100%; max-height: 70vh; justify-self: stretch; aspect-ratio: 4/5; }
+  .r5-ghero { padding: var(--space-16) 0; }
+  .r5-ghero__grid { grid-template-columns: 1fr; gap: var(--space-8); }
+  .r5-ghero__plate { max-width: 100%; max-height: 70vh; justify-self: stretch; aspect-ratio: 4/5; }
   .r5-whatis__photo { order: -1; }
   .r5-gallery__grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 200px; }
   .r5-gphoto:nth-child(1), .r5-gphoto:nth-child(4) { grid-row: span 1; }

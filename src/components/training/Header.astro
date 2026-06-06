@@ -7,7 +7,7 @@ const uk = TRAINING.uk.header;
 const en = TRAINING.en.header;
 ---
 <header class="r5-section r5-thead" id="top">
-  <div class="r5-wrap">
+  <div class="r5-wrap r5-thead__grid">
     <div class="r5-thead__in">
       <p class="r5-eyebrow-row"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
       <h1>
@@ -28,6 +28,15 @@ const en = TRAINING.en.header;
         </a>
       </div>
     </div>
-    <div class="r5-thead__band r5-dark"><div class="r5-photo-ph"><T uk={uk.photo} en={en.photo} /></div></div>
+
+    <div class="r5-thead__plate">
+      <video
+        class="r5-thead__video"
+        src="/videos/training-hero.mp4"
+        poster="/images/training-hero-poster.jpg"
+        autoplay muted loop playsinline preload="metadata"
+        aria-hidden="true"
+      ></video>
+    </div>
   </div>
 </header>

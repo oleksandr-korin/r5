@@ -17,3 +17,9 @@ node_modules/
 
 # Original design handoff zip — extracted into r5-website/ which is committed.
 R5 Website Handoff.zip
+
+# Source media in the repo root — the optimized versions live in public/ and
+# are what ships. Keep originals local for re-encoding without committing tens
+# of MB of raw assets.
+/Screenshot*.png
+/Эпизод*.mp4

@@ -10,6 +10,7 @@ interface PracticalBlock { h: string; items: string[]; }
 export interface GymStrings {
   hero:    { eyebrow: string; title: string; marked: string; sub: string; cta: string; photo: string; };
   whatis:  { eyebrow: string; title: string; marked: string; body: string; ticks: string[]; photo: string; };
+  beyond:  { eyebrow: string; title: string; marked: string; body: string; ticks: string[]; };
   ritual:  { eyebrow: string; title: string; marked: string; body: string; board: BoardData; };
   gallery: { eyebrow: string; title: string; marked: string; items: GalleryItem[]; };
   expect:  { eyebrow: string; title: string; lead: string; steps: ExpectStep[]; };
@@ -37,6 +38,17 @@ const RAW: Record<"uk" | "en", GymStrings> = {
         "Спільнота, а не абонемент",
       ],
       photo: "// кадр із залу —\nлюди тренуються, тренер поряд",
+    },
+    beyond: {
+      eyebrow: "Не лише зал",
+      title: "Місце, куди хочеш",
+      marked: "повертатися",
+      body: "Дровʼяний камін, душові, тепло і місце для роботи. Тренування — це початок. Тут є де відновитися й переключити голову.",
+      ticks: [
+        "Дровʼяний камін і м’яка зона",
+        "Душові та чисті роздягальні",
+        "Стіл і Wi-Fi для роботи після класу",
+      ],
     },
     ritual: {
       eyebrow: "Ритуал",
@@ -115,6 +127,17 @@ const RAW: Record<"uk" | "en", GymStrings> = {
         "A community, not a membership card",
       ],
       photo: "// candid floor shot —\npeople training, coach nearby",
+    },
+    beyond: {
+      eyebrow: "More than a gym",
+      title: "A place you",
+      marked: "come back to",
+      body: "A wood-burning stove, hot showers, warmth and somewhere to work. The session is the start — there's space for what comes after.",
+      ticks: [
+        "A wood-burning stove and a soft corner",
+        "Hot showers and clean changing rooms",
+        "A desk and Wi-Fi for after class",
+      ],
     },
     ritual: {
       eyebrow: "The ritual",

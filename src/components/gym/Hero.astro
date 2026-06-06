@@ -7,9 +7,7 @@ const uk = GYM.uk.hero;
 const en = GYM.en.hero;
 ---
 <header class="r5-ghero r5-dark" id="top">
-  <div class="r5-ghero__photo"><div class="r5-photo-ph"><T uk={uk.photo} en={en.photo} /></div></div>
-  <div class="r5-ghero__scrim"></div>
-  <div class="r5-wrap">
+  <div class="r5-wrap r5-ghero__grid">
     <div class="r5-ghero__in">
       <p class="r5-eyebrow-row"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
       <h1>
@@ -22,6 +20,17 @@ const en = GYM.en.hero;
         <T uk={uk.cta} en={en.cta} />
         <Icon name="arrow-right" size={20} />
       </a>
+    </div>
+
+    <div class="r5-ghero__plate">
+      {/* Silent loop — vertical native frame. Poster paints first so LCP isn't blocked. */}
+      <video
+        class="r5-ghero__video"
+        src="/videos/gym-hero.mp4"
+        poster="/images/gym-hero-poster.jpg"
+        autoplay muted loop playsinline preload="metadata"
+        aria-hidden="true"
+      ></video>
     </div>
   </div>
 </header>

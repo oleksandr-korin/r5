@@ -7,7 +7,7 @@ const uk = RESULTS.uk.header;
 const en = RESULTS.en.header;
 ---
 <header class="r5-section r5-rhead" id="top">
-  <div class="r5-wrap">
+  <div class="r5-wrap r5-rhead__grid">
     <div class="r5-rhead__in">
       <p class="r5-eyebrow-row"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
       <h1>
@@ -21,6 +21,15 @@ const en = RESULTS.en.header;
         <Icon name="arrow-right" size={20} />
       </a>
     </div>
-    <div class="r5-rhead__band r5-dark"><div class="r5-photo-ph"><T uk={uk.photo} en={en.photo} /></div></div>
+
+    <div class="r5-rhead__plate">
+      <video
+        class="r5-rhead__video"
+        src="/videos/results-hero.mp4"
+        poster="/images/results-hero-poster.jpg"
+        autoplay muted loop playsinline preload="metadata"
+        aria-hidden="true"
+      ></video>
+    </div>
   </div>
 </header>
