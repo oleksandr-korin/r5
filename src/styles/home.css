@@ -69,9 +69,13 @@ img { max-width: 100%; }
 .r5-mobnav { display: none; border-bottom: var(--border-w) solid var(--border); background: var(--surface); }
 .r5-mobnav.open { display: block; }
 .r5-mobnav ul { list-style: none; margin: 0; padding: var(--space-4) var(--space-8); display: flex; flex-direction: column; }
-.r5-mobnav button { font-family: var(--font-display); font-weight: 600; text-transform: uppercase; letter-spacing: .03em;
+.r5-mobnav li { display: block; }
+.r5-mobnav a,
+.r5-mobnav button { display: block; font-family: var(--font-display); font-weight: 600; text-transform: uppercase; letter-spacing: .03em;
   font-size: 22px; color: var(--text-primary); background: none; border: none; text-align: left; padding: 14px 0;
-  border-bottom: var(--border-w-hair) solid var(--border-hairline); cursor: pointer; }
+  border-bottom: var(--border-w-hair) solid var(--border-hairline); cursor: pointer; text-decoration: none; }
+.r5-mobnav a.is-active { color: var(--accent-strong); }
+.r5-mobnav a:hover { color: var(--accent-strong); }
 
 /* ===== HERO (dark, full-bleed) ========================================== */
 .r5-hero { position: relative; isolation: isolate; padding: var(--space-24) 0 var(--space-20);
@@ -255,6 +259,9 @@ img { max-width: 100%; }
 .r5-site[data-surface="mobile"] .r5-nav__links { display: none; }
 .r5-site[data-surface="mobile"] .r5-nav__cta-wrap { display: none !important; }
 .r5-site[data-surface="mobile"] .r5-nav__burger { display: grid; place-items: center; }
+.r5-site[data-surface="mobile"] .r5-nav__in { height: 64px; gap: var(--space-4); }
+.r5-site[data-surface="mobile"] .r5-nav .r5-mark { font-size: 18px !important; gap: 8px; }
+.r5-site[data-surface="mobile"] .r5-seg button { padding: 6px 9px; min-height: 32px; font-size: 11px; }
 .r5-site[data-surface="mobile"] .r5-section { padding: var(--space-16) 0; }
 .r5-site[data-surface="mobile"] .r5-hero { padding: var(--space-16) 0; }
 .r5-site[data-surface="mobile"] .r5-hero__grid { grid-template-columns: 1fr; gap: var(--space-8); min-height: 0; }
@@ -281,6 +288,9 @@ img { max-width: 100%; }
   .r5-nav__links { display: none; }
   .r5-nav__cta-wrap { display: none !important; }
   .r5-nav__burger { display: grid; place-items: center; }
+  .r5-nav__in { height: 64px; gap: var(--space-4); }
+  .r5-nav .r5-mark { font-size: 18px !important; gap: 8px; }
+  .r5-seg button { padding: 6px 9px; min-height: 32px; font-size: 11px; }
   .r5-hero__grid, .r5-box__grid, .r5-coach__grid, .r5-online__grid, .r5-ctaband__grid { grid-template-columns: 1fr; gap: var(--space-8); }
   .r5-hero__grid { min-height: 0; }
   .r5-hero__plate { aspect-ratio: 4/5; max-width: 100%; max-height: 70vh; justify-self: stretch; }
