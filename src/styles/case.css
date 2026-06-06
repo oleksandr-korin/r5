@@ -117,6 +117,7 @@
    initial capital — "Простір" / "Space" — while leaving already-capitalised
    labels (Тренер, Coach, Training …) untouched. ──────────────────────── */
 .r5-nav__link,
+.r5-mobnav a,
 .r5-mobnav button {
   text-transform: capitalize;
   letter-spacing: 0;
