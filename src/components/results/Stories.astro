@@ -7,6 +7,13 @@ import { RESULTS } from "../../lib/results";
 const uk = RESULTS.uk.stories;
 const en = RESULTS.en.stories;
 const items = zipLocales(uk.items, en.items);
+// Photo paths matched to stories.items order in src/lib/results.ts:
+// 0 Iryna, 1 Andrii, 2 Serhii
+const photos = [
+  "/images/site/story-iryna.jpg",
+  "/images/site/story-andrii.jpg",
+  "/images/site/r-warmup.jpg",
+];
 ---
 <section class="r5-section" id="stories" style="background: var(--surface)">
   <div class="r5-wrap">
@@ -19,9 +26,12 @@ const items = zipLocales(uk.items, en.items);
       </h2>
     </div>
     <div class="r5-stories__grid">
-      {items.map(({ u, e }) => (
+      {items.map(({ u, e }, i) => (
         <div class="r5-card r5-card--stamp r5-story">
-          <div class="r5-story__photo"><div class="r5-photo-ph"><T uk={u.photo} en={e.photo} /></div></div>
+          <div class="r5-story__photo">
+            <img class="r5-plate__img" src={photos[i]} alt={u.name}
+                 width="1000" height="1333" loading="lazy" />
+          </div>
           <div class="r5-story__body">
             <span class="r5-story__tag"><T uk={u.tag} en={e.tag} /></span>
             <h3><T uk={u.name} en={e.name} /></h3>

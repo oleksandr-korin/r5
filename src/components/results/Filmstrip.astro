@@ -6,6 +6,16 @@ import { RESULTS } from "../../lib/results";
 const uk = RESULTS.uk.gallery;
 const en = RESULTS.en.gallery;
 const items = zipLocales(uk.items, en.items);
+// Photo paths in the same order as gallery.items in src/lib/results.ts:
+// 0 full floor, 1 competition day, 2 scoreboard, 3 after session, 4 platform, 5 warm-up
+const photos = [
+  "/images/site/box.jpg",
+  "/images/site/coach-card.jpg",
+  "/images/site/r-platform.jpg",
+  "/images/site/r-after.jpg",
+  "/images/site/g-platform.jpg",
+  "/images/site/r-warmup.jpg",
+];
 ---
 <section class="r5-section" id="community">
   <div class="r5-wrap">
@@ -18,9 +28,10 @@ const items = zipLocales(uk.items, en.items);
       </h2>
     </div>
     <div class="r5-film">
-      {items.map(({ u, e }) => (
+      {items.map(({ u, e }, i) => (
         <div class="r5-film__item">
-          <div class="r5-photo-ph"><T uk={u.k} en={e.k} /></div>
+          <img class="r5-plate__img" src={photos[i]} alt={u.t}
+               width="1000" height="1500" loading="lazy" />
           <span class="r5-film__cap"><T uk={u.t} en={e.t} /></span>
         </div>
       ))}
