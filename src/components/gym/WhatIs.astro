@@ -10,7 +10,11 @@ const ticks = zipLocales(uk.ticks, en.ticks);
 ---
 <section class="r5-section r5-whatis" id="about">
   <div class="r5-wrap r5-whatis__grid">
-    <div class="r5-whatis__photo"><div class="r5-photo-ph"><T uk={uk.photo} en={en.photo} /></div></div>
+    <div class="r5-whatis__photo">
+      <img class="r5-plate__img" src="/images/site/whatis.jpg"
+           alt="The R5 floor — concrete walls, plywood plates, black ceiling"
+           width="1800" height="1200" loading="lazy" />
+    </div>
     <div>
       <p class="r5-eyebrow-row"><T uk={uk.eyebrow} en={en.eyebrow} /></p>
       <h2>

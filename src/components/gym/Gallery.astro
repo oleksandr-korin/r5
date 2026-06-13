@@ -6,6 +6,16 @@ import { GYM } from "../../lib/gym";
 const uk = GYM.uk.gallery;
 const en = GYM.en.gallery;
 const items = zipLocales(uk.items, en.items);
+// Photo paths in the same order as gallery.items in src/lib/gym.ts:
+// 0 rig & rings, 1 platform, 2 kettlebells & iron, 3 WOD board, 4 open floor, 5 warm light
+const photos = [
+  "/images/site/g-rig.jpg",
+  "/images/site/g-platform.jpg",
+  "/images/site/g-iron.jpg",
+  "/images/site/g-wodboard.jpg",
+  "/images/site/g-floor.jpg",
+  "/images/site/g-light.jpg",
+];
 ---
 <section class="r5-section r5-gallery" id="gallery">
   <div class="r5-wrap">
@@ -18,9 +28,10 @@ const items = zipLocales(uk.items, en.items);
       </h2>
     </div>
     <div class="r5-gallery__grid">
-      {items.map(({ u, e }) => (
+      {items.map(({ u, e }, i) => (
         <div class="r5-gphoto">
-          <div class="r5-photo-ph"><T uk={u.k} en={e.k} /></div>
+          <img class="r5-plate__img" src={photos[i]} alt={u.t}
+               width="1000" height="1500" loading="lazy" />
           <span class="r5-gphoto__cap"><T uk={u.t} en={e.t} /></span>
         </div>
       ))}
