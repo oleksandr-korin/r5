@@ -80,6 +80,5 @@ svg {
   z-index: 100;
   font-family: var(--font-display);
   font-weight: 600;
-  text-transform: uppercase;
   letter-spacing: 0.04em;
 }

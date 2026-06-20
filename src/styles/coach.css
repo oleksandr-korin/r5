@@ -13,24 +13,22 @@
 .r5-chero__plate { position: relative; aspect-ratio: 3/4; border-radius: var(--radius-lg); overflow: hidden;
   border: var(--border-w-stamp) solid #F4ECDB; box-shadow: var(--shadow-stamp); }
 .r5-chero__plate .r5-photo-ph { position: absolute; inset: 0; }
-.r5-chero__role { font-family: var(--font-mono); font-size: 13px; letter-spacing: .16em; text-transform: uppercase;
-  color: var(--accent); margin: 0 0 14px; display: flex; align-items: center; gap: 10px; }
+.r5-chero__role { font-family: var(--font-mono); font-size: 13px; letter-spacing: .16em;  color: var(--accent); margin: 0 0 14px; display: flex; align-items: center; gap: 10px; }
 .r5-chero__role::before { content: ""; width: 30px; height: 2px; background: var(--accent); flex: none; }
-.r5-chero__name { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: var(--display-1);
+.r5-chero__name { font-family: var(--font-display); font-weight: 700; font-size: var(--display-1);
   line-height: .92; letter-spacing: var(--display-1-ls); margin: 0; white-space: pre-line; color: var(--text-primary-d); }
-.r5-chero__sub { font-family: var(--font-mono); font-size: 14px; letter-spacing: .08em; text-transform: uppercase;
-  color: var(--text-secondary-d); margin: var(--space-5) 0 0; }
-.r5-chero__punch { font-family: var(--font-display); font-weight: 500; text-transform: uppercase; font-size: var(--h2);
+.r5-chero__sub { font-family: var(--font-mono); font-size: 14px; letter-spacing: .08em;  color: var(--text-secondary-d); margin: var(--space-5) 0 0; }
+.r5-chero__punch { font-family: var(--font-display); font-weight: 500; font-size: var(--h2);
   line-height: 1.08; margin: var(--space-6) 0 var(--space-8); max-width: 22ch; color: var(--text-primary-d); }
 .r5-chero__cta { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
-.r5-chero__ghost { font-family: var(--font-display); font-weight: 600; text-transform: uppercase; letter-spacing: .03em;
+.r5-chero__ghost { font-family: var(--font-display); font-weight: 600; letter-spacing: .03em;
   font-size: 16px; color: var(--text-primary-d); background: none; border: none; cursor: pointer;
   display: inline-flex; align-items: center; gap: 8px; padding: 10px 4px; opacity: .85; }
 .r5-chero__ghost:hover { opacity: 1; color: var(--accent); }
 
 /* ===== OPENING STATEMENT (cream, reading width) ======================== */
 .r5-open__grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: var(--space-16); align-items: start; }
-.r5-open h2 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: var(--display-2);
+.r5-open h2 { font-family: var(--font-display); font-weight: 700; font-size: var(--display-2);
   line-height: var(--display-2-lh); letter-spacing: var(--display-2-ls); margin: 8px 0 0; }
 .r5-open__body { display: flex; flex-direction: column; gap: var(--space-6); }
 .r5-open__body p { font-family: var(--font-body); font-weight: 500; font-size: var(--body-lg); line-height: 1.6;
@@ -51,7 +49,7 @@
 .r5-tl__row:last-child .r5-tl__body::before { display: none; }
 .r5-tl__node { position: absolute; left: -7px; top: 2px; width: 16px; height: 16px; border-radius: 50%;
   background: var(--accent); border: 3px solid var(--canvas); box-shadow: 0 0 0 2px var(--border-ink); }
-.r5-tl__t { font-family: var(--font-display); font-weight: 600; text-transform: uppercase; font-size: var(--h3);
+.r5-tl__t { font-family: var(--font-display); font-weight: 600; font-size: var(--h3);
   line-height: 1.1; margin: 0; }
 .r5-tl__d { font-size: var(--body-sm); line-height: 1.5; color: var(--text-secondary); margin: 8px 0 0; }
 
@@ -61,25 +59,24 @@
   box-shadow: var(--shadow-stamp); overflow: hidden; }
 .r5-hrv__head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-8);
   padding: var(--space-8) var(--space-10); border-bottom: var(--border-w) solid var(--border-strong-d); flex-wrap: wrap; }
-.r5-hrv__head h2 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: var(--h1);
+.r5-hrv__head h2 { font-family: var(--font-display); font-weight: 700; font-size: var(--h1);
   line-height: 1.04; letter-spacing: var(--h1-ls); margin: 0; white-space: pre-line; color: var(--text-primary-d); }
-.r5-hrv__tag { font-family: var(--font-mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+.r5-hrv__tag { font-family: var(--font-mono); font-size: 12px; letter-spacing: .14em; color: var(--accent); }
 .r5-hrv__lead { font-size: var(--body-lg); line-height: 1.55; color: var(--text-secondary-d); margin: 0;
   padding: var(--space-8) var(--space-10) 0; max-width: 70ch; }
 .r5-hrv__steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; padding: var(--space-8) 0 0; }
 .r5-hrv__step { padding: var(--space-8) var(--space-10) var(--space-10); border-top: var(--border-w) solid var(--border-strong-d); }
 .r5-hrv__step:not(:last-child) { border-right: var(--border-w) solid var(--border-strong-d); }
 .r5-hrv__n { font-family: var(--font-mono); font-weight: 700; font-size: 13px; color: var(--accent); }
-.r5-hrv__st { font-family: var(--font-display); font-weight: 600; text-transform: uppercase; font-size: var(--h3); margin: 10px 0 8px; color: var(--text-primary-d); }
+.r5-hrv__st { font-family: var(--font-display); font-weight: 600; font-size: var(--h3); margin: 10px 0 8px; color: var(--text-primary-d); }
 .r5-hrv__sd { font-size: var(--body-sm); line-height: 1.55; color: var(--text-secondary-d); margin: 0; }
 
 /* ===== CREDENTIALS GRID ================================================ */
 .r5-creds { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); margin-top: var(--space-4); }
 .r5-cred { border-top: 3px solid var(--border-ink); padding: var(--space-5) 0 0; }
-.r5-cred__t { font-family: var(--font-display); font-weight: 600; text-transform: uppercase; font-size: var(--h4);
+.r5-cred__t { font-family: var(--font-display); font-weight: 600; font-size: var(--h4);
   line-height: 1.12; margin: 0; }
-.r5-cred__s { font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
-  color: var(--text-tertiary); margin: 10px 0 0; }
+.r5-cred__s { font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em;  color: var(--text-tertiary); margin: 10px 0 0; }
 
 /* ===== ATHLETES HE'S BUILT ============================================= */
 .r5-ath { background: var(--surface); }
@@ -87,24 +84,23 @@
 .r5-ath__lead { font-size: var(--body-lg); color: var(--text-secondary); margin: var(--space-4) 0 0; }
 .r5-ath__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); }
 .r5-ath__card { display: flex; flex-direction: column; gap: var(--space-3); min-height: 200px; }
-.r5-ath__card h3 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: var(--h2);
+.r5-ath__card h3 { font-family: var(--font-display); font-weight: 700; font-size: var(--h2);
   line-height: 1.04; margin: 6px 0 0; }
 .r5-ath__card p { font-size: var(--body); line-height: 1.5; color: var(--text-secondary); margin: 0; flex: 1; }
 .r5-ath__link { margin-top: var(--space-10); }
 
 /* ===== PHILOSOPHY QUOTE ================================================ */
 .r5-pquote { text-align: center; }
-.r5-pquote blockquote { font-family: var(--font-display); font-weight: 700; text-transform: uppercase;
-  font-size: clamp(34px, 5.2vw, 72px); line-height: 1.02; letter-spacing: .005em; margin: 0 auto;
+.r5-pquote blockquote { font-family: var(--font-display); font-weight: 700;  font-size: clamp(34px, 5.2vw, 72px); line-height: 1.02; letter-spacing: .005em; margin: 0 auto;
   max-width: 16ch; white-space: pre-line; text-wrap: balance; color: var(--text-primary); }
 .r5-pquote__rule { width: 64px; height: 4px; background: var(--accent); margin: var(--space-10) auto var(--space-6); }
-.r5-pquote__by { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: 18px; color: var(--text-primary); }
-.r5-pquote__role { font-family: var(--font-mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--text-tertiary); margin-top: 6px; }
+.r5-pquote__by { font-family: var(--font-display); font-weight: 700; font-size: 18px; color: var(--text-primary); }
+.r5-pquote__role { font-family: var(--font-mono); font-size: 12px; letter-spacing: .1em; color: var(--text-tertiary); margin-top: 6px; }
 
 /* ===== DUAL CTA BAND ==================================================== */
 .r5-dual { background: var(--canvas); border-top: 3px solid var(--border-ink); }
 .r5-dual__head { text-align: center; margin-bottom: var(--space-12); }
-.r5-dual__head h2 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: var(--display-2);
+.r5-dual__head h2 { font-family: var(--font-display); font-weight: 700; font-size: var(--display-2);
   line-height: var(--display-2-lh); margin: 8px 0 0; }
 .r5-dual__head .r5-eyebrow-row { justify-content: center; }
 .r5-dual__head .r5-eyebrow-row::before { display: none; }
@@ -113,10 +109,10 @@
   box-shadow: var(--shadow-stamp); border: var(--border-w-heavy) solid var(--border-ink); }
 .r5-dual__card--local { background: var(--accent); color: var(--on-accent); }
 .r5-dual__card--online { background: var(--surface-dark); color: var(--text-primary-d); border-color: var(--border-ink); }
-.r5-dual__kicker { font-family: var(--font-mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 var(--space-4); }
+.r5-dual__kicker { font-family: var(--font-mono); font-size: 12px; letter-spacing: .14em; margin: 0 0 var(--space-4); }
 .r5-dual__card--local .r5-dual__kicker { color: #6B4310; }
 .r5-dual__card--online .r5-dual__kicker { color: var(--accent); }
-.r5-dual__card h3 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: var(--h1);
+.r5-dual__card h3 { font-family: var(--font-display); font-weight: 700; font-size: var(--h1);
   line-height: 1.02; margin: 0 0 var(--space-4); }
 .r5-dual__card p { font-size: var(--body); line-height: 1.55; margin: 0 0 var(--space-8); flex: 1; }
 .r5-dual__card--local p { color: #3A2806; }

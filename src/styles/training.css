@@ -7,11 +7,11 @@
 .r5-thead { padding: var(--space-20) 0 var(--space-12); }
 .r5-thead__grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: var(--space-12); align-items: center; }
 .r5-thead__in { max-width: 34ch; }
-.r5-thead h1 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: var(--display-1);
+.r5-thead h1 { font-family: var(--font-display); font-weight: 700; font-size: var(--display-1);
   line-height: var(--display-1-lh); letter-spacing: var(--display-1-ls); margin: 14px 0 0; }
 .r5-thead__lead { font-size: var(--body-lg); line-height: 1.55; color: var(--text-secondary); margin: var(--space-6) 0 var(--space-8); max-width: 46ch; }
 .r5-thead__cta { display: flex; gap: var(--space-5); flex-wrap: wrap; align-items: center; }
-.r5-thead__online { font-family: var(--font-display); font-weight: 600; text-transform: uppercase; letter-spacing: .03em;
+.r5-thead__online { font-family: var(--font-display); font-weight: 600; letter-spacing: .03em;
   font-size: 15px; color: var(--text-secondary); background: none; border: none; cursor: pointer;
   display: inline-flex; align-items: center; gap: 8px; padding: 10px 2px; text-decoration: none; }
 .r5-thead__online:hover { color: var(--accent-strong); }
@@ -35,12 +35,11 @@
 .r5-progc { display: flex; flex-direction: column; gap: var(--space-3); min-height: 280px; }
 .r5-progc__top { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); }
 .r5-progc__n { font-family: var(--font-mono); font-size: 13px; font-weight: 700; color: var(--accent-strong); }
-.r5-progc h3 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: var(--h2);
+.r5-progc h3 { font-family: var(--font-display); font-weight: 700; font-size: var(--h2);
   line-height: 1.02; margin: var(--space-2) 0 0; }
 .r5-progc__d { font-size: var(--body-sm); line-height: 1.5; color: var(--text-secondary); margin: 0; }
 .r5-progc__good { margin: var(--space-2) 0 0; }
-.r5-progc__goodlabel { font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
-  color: var(--text-tertiary); display: block; margin-bottom: 4px; }
+.r5-progc__goodlabel { font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em;  color: var(--text-tertiary); display: block; margin-bottom: 4px; }
 .r5-progc__goodtext { font-size: var(--body-sm); line-height: 1.4; color: var(--text-primary); font-weight: 600; }
 .r5-progc__foot { margin-top: auto; padding-top: var(--space-5); display: flex; align-items: center;
   justify-content: space-between; gap: var(--space-4); border-top: var(--border-w) solid var(--border); }
@@ -61,7 +60,7 @@
   border-radius: var(--radius-md); box-shadow: var(--shadow-stamp); overflow: hidden;
   display: grid; grid-template-columns: 1fr 1fr; }
 .r5-onramp__left { padding: var(--space-12) var(--space-12) var(--space-12); border-right: var(--border-w) solid var(--border); }
-.r5-onramp__left h2 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: var(--h1);
+.r5-onramp__left h2 { font-family: var(--font-display); font-weight: 700; font-size: var(--h1);
   line-height: 1.04; letter-spacing: var(--h1-ls); margin: 8px 0 0; white-space: pre-line; }
 .r5-onramp__body { font-size: var(--body-lg); line-height: 1.55; color: var(--text-secondary); margin: var(--space-6) 0 var(--space-8); max-width: 42ch; }
 .r5-onramp__right { padding: var(--space-12); display: flex; flex-direction: column; justify-content: center;
@@ -74,20 +73,20 @@
   box-shadow: var(--shadow-stamp); overflow: hidden; }
 .r5-flow__head { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); align-items: end;
   padding: var(--space-8) var(--space-10); border-bottom: var(--border-w) solid var(--border); }
-.r5-flow__head h2 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: var(--h1);
+.r5-flow__head h2 { font-family: var(--font-display); font-weight: 700; font-size: var(--h1);
   line-height: 1.04; letter-spacing: var(--h1-ls); margin: 8px 0 0; white-space: pre-line; }
 .r5-flow__lead { font-size: var(--body-lg); line-height: 1.5; color: var(--text-secondary); margin: 0; }
 .r5-flow__steps { display: grid; grid-template-columns: repeat(4, 1fr); }
 .r5-flow__step { padding: var(--space-8) var(--space-8) var(--space-10); position: relative; }
 .r5-flow__step:not(:last-child) { border-right: var(--border-w) solid var(--border); }
 .r5-flow__n { font-family: var(--font-mono); font-weight: 700; font-size: 13px; color: var(--accent-strong); }
-.r5-flow__st { font-family: var(--font-display); font-weight: 600; text-transform: uppercase; font-size: var(--h3); margin: 10px 0 8px; }
+.r5-flow__st { font-family: var(--font-display); font-weight: 600; font-size: var(--h3); margin: 10px 0 8px; }
 .r5-flow__sd { font-size: var(--body-sm); line-height: 1.5; color: var(--text-secondary); margin: 0; }
 
 /* ===== R5 METHOD (HRV) BAND — dark, links to coach ===================== */
 .r5-method { background: var(--canvas-dark); color: var(--text-primary-d); position: relative; overflow: hidden; }
 .r5-method__grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: var(--space-12); align-items: center; }
-.r5-method h2 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: var(--h1);
+.r5-method h2 { font-family: var(--font-display); font-weight: 700; font-size: var(--h1);
   line-height: 1.04; letter-spacing: var(--h1-ls); margin: 0; white-space: pre-line; color: var(--text-primary-d); }
 .r5-method__body { font-size: var(--body-lg); line-height: 1.55; color: var(--text-secondary-d); margin: var(--space-6) 0 0; max-width: 52ch; }
 .r5-method__cta { display: flex; justify-content: flex-end; }
@@ -106,9 +105,9 @@
   position: relative; }
 .r5-price--popular { background: var(--canvas-dark); color: var(--text-primary-d); border-color: var(--accent); }
 .r5-price__flag { position: absolute; top: -14px; left: var(--space-8); font-family: var(--font-mono); font-weight: 700;
-  font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--on-accent); background: var(--accent);
+  font-size: 11px; letter-spacing: .1em; color: var(--on-accent); background: var(--accent);
   padding: 5px 12px; border-radius: var(--radius-pill); white-space: nowrap; }
-.r5-price__name { font-family: var(--font-display); font-weight: 600; text-transform: uppercase; font-size: var(--h3);
+.r5-price__name { font-family: var(--font-display); font-weight: 600; font-size: var(--h3);
   letter-spacing: .02em; margin: 0; }
 .r5-price--popular .r5-price__name { color: var(--text-primary-d); }
 .r5-price__amount { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin: var(--space-5) 0 var(--space-6);
@@ -132,8 +131,7 @@
 .r5-onlinetease { background: var(--surface); border-top: var(--border-w) solid var(--border);
   border-bottom: var(--border-w) solid var(--border); padding: var(--space-10) 0; }
 .r5-onlinetease__in { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; text-align: center; }
-.r5-onlinetease__text { font-family: var(--font-mono); font-size: 13px; letter-spacing: .06em; text-transform: uppercase;
-  color: var(--text-tertiary); }
+.r5-onlinetease__text { font-family: var(--font-mono); font-size: 13px; letter-spacing: .06em;  color: var(--text-tertiary); }
 .r5-onlinetease .r5-link { font-size: 15px; }
 
 /* ===== RESPONSIVE: MOBILE SURFACE TOGGLE ============================== */

@@ -13,7 +13,7 @@
 .r5-ghero__grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: var(--space-12);
   align-items: center; }
 .r5-ghero__in { max-width: 34ch; }
-.r5-ghero h1 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: var(--display-1);
+.r5-ghero h1 { font-family: var(--font-display); font-weight: 700; font-size: var(--display-1);
   line-height: .92; letter-spacing: var(--display-1-ls); margin: 14px 0 0; color: var(--text-primary-d); }
 .r5-ghero__sub { font-size: var(--body-lg); line-height: 1.5; color: var(--text-secondary-d); margin: var(--space-6) 0 var(--space-8); max-width: 46ch; }
 /* Vertical video plate — shows the native 9:16 frame, capped so the section
@@ -32,8 +32,7 @@
   border: var(--border-w-heavy) solid var(--border-ink); box-shadow: var(--shadow-stamp); }
 .r5-gbeyond__video { width: 100%; height: 100%; object-fit: cover; display: block;
   filter: contrast(1.05) saturate(0.92); }
-.r5-gbeyond h2 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase;
-  font-size: var(--h1); line-height: var(--h1-lh); letter-spacing: var(--h1-ls); margin: 0; }
+.r5-gbeyond h2 { font-family: var(--font-display); font-weight: 700;  font-size: var(--h1); line-height: var(--h1-lh); letter-spacing: var(--h1-ls); margin: 0; }
 .r5-gbeyond__body { font-size: var(--body-lg); line-height: 1.55; color: var(--text-secondary);
   margin: var(--space-6) 0 var(--space-8); max-width: 46ch; }
 
@@ -42,14 +41,14 @@
 .r5-whatis__photo { position: relative; aspect-ratio: 4/3; border-radius: var(--radius-md); overflow: hidden;
   border: var(--border-w-heavy) solid var(--border-ink); box-shadow: var(--shadow-stamp); }
 .r5-whatis__photo .r5-photo-ph { position: absolute; inset: 0; }
-.r5-whatis h2 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: var(--h1);
+.r5-whatis h2 { font-family: var(--font-display); font-weight: 700; font-size: var(--h1);
   line-height: var(--h1-lh); letter-spacing: var(--h1-ls); margin: 0; }
 .r5-whatis__body { font-size: var(--body-lg); line-height: 1.55; color: var(--text-secondary); margin: var(--space-6) 0 var(--space-8); max-width: 48ch; }
 
 /* ===== WHITEBOARD RITUAL (coal wall + lit cream board) ================= */
 .r5-ritual { background: var(--canvas-dark); color: var(--text-primary-d); }
 .r5-ritual__grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: var(--space-16); align-items: center; }
-.r5-ritual h2 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: var(--display-2);
+.r5-ritual h2 { font-family: var(--font-display); font-weight: 700; font-size: var(--display-2);
   line-height: var(--display-2-lh); letter-spacing: var(--display-2-ls); margin: 8px 0 0; color: var(--text-primary-d); }
 .r5-ritual__body { font-size: var(--body-lg); line-height: 1.6; color: var(--text-secondary-d); margin: var(--space-6) 0 0; max-width: 46ch; }
 
@@ -60,17 +59,17 @@
   --text-primary: #1C1812; --text-secondary: #4A4236; --text-tertiary: #6B6151; }
 .r5-board__head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4);
   padding-bottom: var(--space-4); border-bottom: 2px dashed rgba(28,24,18,.3); }
-.r5-board__label { font-family: var(--font-mono); font-weight: 700; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #1C1812; }
-.r5-board__cap { font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--accent-strong); }
+.r5-board__label { font-family: var(--font-mono); font-weight: 700; font-size: 13px; letter-spacing: .12em; color: #1C1812; }
+.r5-board__cap { font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em; color: var(--accent-strong); }
 .r5-board__scheme { font-family: var(--font-mono); font-weight: 700; font-size: 46px; letter-spacing: -.01em; color: #1C1812; margin: var(--space-5) 0 var(--space-4); }
 .r5-board__moves { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
 .r5-board__moves li { font-family: var(--font-mono); font-size: 16px; color: #2A241B; display: flex; gap: 10px; align-items: baseline; }
 .r5-board__moves li::before { content: "—"; color: var(--accent-strong); font-weight: 700; }
 .r5-board__tally { margin-top: var(--space-6); padding-top: var(--space-5); border-top: 2px dashed rgba(28,24,18,.3); }
-.r5-board__tlabel { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #6B6151; margin: 0 0 var(--space-3); }
+.r5-board__tlabel { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; color: #6B6151; margin: 0 0 var(--space-3); }
 .r5-board__row { display: flex; align-items: baseline; gap: 8px; padding: 7px 0; }
 .r5-board__row:not(:last-child) { border-bottom: 1px solid rgba(28,24,18,.12); }
-.r5-board__name { font-family: var(--font-display); font-weight: 600; text-transform: uppercase; font-size: 17px; letter-spacing: .02em; color: #1C1812; }
+.r5-board__name { font-family: var(--font-display); font-weight: 600; font-size: 17px; letter-spacing: .02em; color: #1C1812; }
 .r5-board__dots { flex: 1; border-bottom: 1.5px dotted rgba(28,24,18,.35); transform: translateY(-3px); }
 .r5-board__score { font-family: var(--font-mono); font-weight: 700; font-size: 16px; color: #1C1812; font-variant-numeric: tabular-nums; }
 .r5-board__row--rx { position: relative; }
@@ -85,7 +84,7 @@
 .r5-gphoto:nth-child(4) { grid-row: span 2; }
 .r5-gphoto .r5-photo-ph { position: absolute; inset: 0; font-size: 11px; }
 .r5-gphoto__cap { position: absolute; left: 0; bottom: 0; right: 0; z-index: 2;
-  font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #F4ECDB;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; color: #F4ECDB;
   padding: 10px 12px; background: linear-gradient(0deg, rgba(15,11,7,.85), transparent); }
 
 /* ===== TYPICAL CLASS (cream manual page) ============================== */
@@ -93,14 +92,14 @@
   box-shadow: var(--shadow-stamp); overflow: hidden; }
 .r5-class__head { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); align-items: end;
   padding: var(--space-8) var(--space-10); border-bottom: var(--border-w) solid var(--border); }
-.r5-class__head h2 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: var(--h1);
+.r5-class__head h2 { font-family: var(--font-display); font-weight: 700; font-size: var(--h1);
   line-height: 1.04; letter-spacing: var(--h1-ls); margin: 8px 0 0; white-space: pre-line; }
 .r5-class__lead { font-size: var(--body-lg); line-height: 1.5; color: var(--text-secondary); margin: 0; }
 .r5-class__steps { display: grid; grid-template-columns: repeat(4, 1fr); }
 .r5-class__step { padding: var(--space-8) var(--space-8) var(--space-10); }
 .r5-class__step:not(:last-child) { border-right: var(--border-w) solid var(--border); }
 .r5-class__n { font-family: var(--font-mono); font-weight: 700; font-size: 13px; color: var(--accent-strong); }
-.r5-class__st { font-family: var(--font-display); font-weight: 600; text-transform: uppercase; font-size: var(--h3); margin: 10px 0 8px; }
+.r5-class__st { font-family: var(--font-display); font-weight: 600; font-size: var(--h3); margin: 10px 0 8px; }
 .r5-class__sd { font-size: var(--body-sm); line-height: 1.5; color: var(--text-secondary); margin: 0; }
 
 /* ===== PRACTICAL INFO (map + blocks) ================================== */
@@ -110,8 +109,7 @@
 .r5-prac__map .r5-photo-ph { position: absolute; inset: 0; }
 .r5-prac__mapcta { position: relative; z-index: 2; margin: var(--space-6); }
 .r5-prac__blocks { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8) var(--space-6); align-content: center; }
-.r5-prac__b h4 { font-family: var(--font-mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
-  color: var(--accent-strong); margin: 0 0 12px; font-weight: 500; }
+.r5-prac__b h4 { font-family: var(--font-mono); font-size: 12px; letter-spacing: .14em;  color: var(--accent-strong); margin: 0 0 12px; font-weight: 500; }
 .r5-prac__b ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
 .r5-prac__b li { font-size: var(--body); line-height: 1.4; color: var(--text-primary); font-weight: 500; }
 
