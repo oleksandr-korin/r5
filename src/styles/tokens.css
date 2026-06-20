@@ -19,7 +19,7 @@
    production, SELF-HOST the woff2 files (all three are OFL) — see README.
    Distinctly-Ukrainian production upgrade for the display face: e-Ukraine
    Head (Ministry of Digital Transformation) or Fixel Display (MacPaw). */
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400;500;600;700;800;900&family=Oswald:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 :root {
   /* ======================================================================
@@ -159,7 +159,7 @@
      Body:    Manrope (warm geometric grotesque, full Cyrillic).
      Mono:    JetBrains Mono — whiteboard/WOD numbers, eyebrows, stat figures.
      ====================================================================== */
-  --font-display: 'Oswald', 'e-Ukraine Head', 'PT Sans Narrow', 'Arial Narrow', sans-serif;
+  --font-display: 'Tektur', 'Oswald', 'e-Ukraine Head', 'PT Sans Narrow', 'Arial Narrow', sans-serif;
   --font-body:    'Manrope', 'e-Ukraine', 'Segoe UI', system-ui, sans-serif;
   --font-mono:    'JetBrains Mono', 'Martian Mono', ui-monospace, 'SFMono-Regular', monospace;
 
