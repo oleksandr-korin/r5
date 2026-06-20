@@ -39,13 +39,6 @@ body {
   display: block;
 }
 
-/* Display face follows the active locale. The Base.astro script sets
-   data-fontset="anton" on <html> when the locale is UK; otherwise the
-   default Oswald from tokens.css applies. */
-:root[data-fontset="anton"] {
-  --font-display: 'Anton', 'Oswald', 'Impact', sans-serif;
-}
-
 /* Ensure the HTML `hidden` attribute wins over any author display rules.
    Without this, a class like `.r5-bform__done { display: flex }` overrides
    the user-agent `[hidden]{display:none}` and the success panel leaks. */
