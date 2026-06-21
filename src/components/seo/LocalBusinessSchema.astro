@@ -1,0 +1,48 @@
+---
+// NOTE: telephone is a placeholder. Swap in the real number once Dmytro
+// confirms it (also update src/lib/contact.ts). Geo coords are approximate
+// for Дніпро centre — replace with exact coords for the gym once known.
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "HealthClub",
+  "@id": "https://rokytnyi5.com/#gym",
+  "name": "R5 — Rokytnyi5",
+  "alternateName": ["R5", "Rokytnyi5", "Кросфіт R5"],
+  "description":
+    "Зал функціонального тренінгу та кросфіту в Дніпрі. Головний тренер — Дмитро Пасічний.",
+  "url": "https://rokytnyi5.com",
+  "image": "https://rokytnyi5.com/images/site/box.jpg",
+  "logo": "https://rokytnyi5.com/assets/r5-logo.svg",
+  "priceRange": "₴₴",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "вул. Робоча 5",
+    "addressLocality": "Дніпро",
+    "addressRegion": "Дніпропетровська область",
+    "addressCountry": "UA",
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 48.4647,
+    "longitude": 35.0462,
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",
+      ],
+      "opens": "07:00",
+      "closes": "22:00",
+    },
+  ],
+  "sameAs": [
+    "https://www.instagram.com/rokytnyi5",
+  ],
+  "areaServed": {
+    "@type": "City",
+    "name": "Дніпро",
+  },
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
