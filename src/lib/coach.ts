@@ -1,5 +1,5 @@
 /* R5 Coach page (Dmytro Pasichnyi) — bilingual content.
-   UA canonical · EN equal. Voice: his own, on the floor — plain, earned, "ти".
+   UA canonical · EN equal. Voice: his own, on the floor — plain, thoughtful, "ти".
    Facts verified from the coach brief. No emoji. %G% resolved from the shared gym noun. */
 import { replaceG, GYM_TERM } from "./strings";
 
@@ -29,26 +29,26 @@ const RAW: Record<"uk" | "en", CoachStrings> = {
       eyebrow: "Власник · головний тренер",
       name: "Дмитро\nПасічний",
       role: "Засновник і головний тренер R5",
-      punch: "Досі найсильніший у своєму дивізіоні.",
-      marked: "найсильніший",
+      punch: "Тренер, який досі виходить на старт.",
+      marked: "виходить на старт",
       cta: "Перше тренування — безкоштовно",
       ghost: "Тренуйся онлайн",
       portrait: "// портрет —\nтепле тунгстенове світло, фанера за спиною",
     },
     opening: {
       eyebrow: "Підхід",
-      title: "Залізо",
-      marked: "не бреше",
+      title: "Не вимагаю.",
+      marked: "Розумію.",
       paras: [
-        "Я тренуюся 25 років і досі виходжу на старт. Не тому, що мушу — тому, що залізо не бреше. Воно показує, де ти насправді.",
+        "Я тренуюся 25 років і досі виходжу на старт. Не тому, що маю щось довести — тому, що хочу знати, чи працює те, чому вчу інших. Мої тренування — це перевірка методу на собі.",
         "Я будую силу, яка лишається. Не на сезон — на десятиліття. Тому ми тренуємо не лише мʼязи, а нервову систему: навантаження, відновлення, сон. HRV каже мені, коли тиснути, а коли відступити.",
-        "Моя робота — щоб ти став сильнішим і дотягнув цю силу до того віку, коли вона потрібна найбільше.",
+        "Моя робота — щоб ти став сильнішим і доніс цю силу до того віку, коли вона потрібна найбільше. І щоб дорога туди була такою, на яку хочеться повертатись.",
       ],
     },
     timeline: {
       eyebrow: "Шлях",
       title: "Двадцять пʼять років",
-      marked: "у строю",
+      marked: "у справі",
       items: [
         { y: "2001", t: "Початок тренерської роботи" },
         { y: "2005", t: "Диплом зі спортивної науки", d: "Дніпропетровський інститут фізкультури і спорту" },
@@ -61,16 +61,16 @@ const RAW: Record<"uk" | "en", CoachStrings> = {
     hrv: {
       eyebrow: "Метод",
       title: "Тренуй сигнали,\nне лише годинник",
-      lead: "HRV — варіабельність серцевого ритму: різниця в долях секунди між ударами серця. Вона показує, наскільки відновилася твоя нервова система. Це наш головний прилад.",
+      lead: "HRV — варіабельність серцевого ритму: різниця в долях секунди між ударами серця. Вона показує, наскільки відновилася твоя нервова система. Це наш головний прилад — щоб ти тиснув розумно, а не сліпо.",
       steps: [
         { n: "01", t: "Вимірюємо", d: "Щоранку, одна хвилина. Спокійний вимір одразу після пробудження." },
-        { n: "02", t: "Читаємо",   d: "Високий HRV — нервова система готова тиснути. Низький — час відновлюватись." },
-        { n: "03", t: "Програмуємо", d: "Навантаження під твій сьогоднішній стан, а не під вчорашній план." },
+        { n: "02", t: "Читаємо",   d: "Високий HRV — нервова система готова до навантаження. Низький — час відновлюватись." },
+        { n: "03", t: "Програмуємо", d: "Тренування під твій сьогоднішній стан, а не під вчорашній план." },
       ],
     },
     creds: {
       eyebrow: "Кваліфікація",
-      title: "Зароблено,",
+      title: "Заслужено,",
       marked: "не куплено",
       items: [
         { t: "CrossFit L2 Trainer", s: "Сертифікація рівня 2" },
@@ -85,7 +85,7 @@ const RAW: Record<"uk" | "en", CoachStrings> = {
       eyebrow: "Виховує чемпіонів",
       title: "Він тренує не лише",
       marked: "себе",
-      lead: "Найкращий доказ тренера — це його атлети.",
+      lead: "Найкращий доказ тренера — це його атлети. І те, як довго вони поруч із ним.",
       items: [
         { t: "Чемпіон світу зі стронгмену", d: "Багаторазовий титул світового рівня — під його наставництвом.", tag: "Стронгмен" },
         { t: "Чемпіон Masters 40–49",       d: "Перемога на ЧС з кетлбелу, Мілан 2018.",                         tag: "Кетлбел" },
@@ -97,8 +97,8 @@ const RAW: Record<"uk" | "en", CoachStrings> = {
       eyebrow: "Два шляхи",
       title: "Тренуйся з Дмитром",
       marked: "з Дмитром",
-      local:  { kicker: "У Дніпрі",  title: "Приходь тренуватись", body: "Перше тренування безкоштовне, без зобовʼязань. Тренер підбере зручний час.",            cta: "Записатись на безкоштовне" },
-      online: { kicker: "Будь-де",   title: "Тренуйся онлайн",      body: "Його програмування та HRV-метод дистанційно. Індивідуальний план і контроль відновлення.", cta: "Дізнатись про онлайн" },
+      local:  { kicker: "У Дніпрі",  title: "Приходь подивитись", body: "Перше тренування безкоштовне, без зобовʼязань. Тренер підбере зручний час.",                cta: "Записатись на пробне" },
+      online: { kicker: "Будь-де",   title: "Тренуйся онлайн",      body: "Його програмування та HRV-метод дистанційно. Індивідуальний план і підтримка на кожному кроці.", cta: "Дізнатись про онлайн" },
     },
   },
   en: {
@@ -106,26 +106,26 @@ const RAW: Record<"uk" | "en", CoachStrings> = {
       eyebrow: "Owner · Head coach",
       name: "Dmytro\nPasichnyi",
       role: "Founder & Head Coach, R5",
-      punch: "Still the fittest in his division.",
-      marked: "fittest",
+      punch: "The coach who's still on the start line.",
+      marked: "on the start line",
       cta: "First session — free",
       ghost: "Train online",
       portrait: "// portrait —\nwarm tungsten light, plywood behind",
     },
     opening: {
       eyebrow: "The approach",
-      title: "Iron never",
-      marked: "lies",
+      title: "Not demanding.",
+      marked: "Understanding.",
       paras: [
-        "I've been training for 25 years and I still toe the start line. Not because I have to — because iron never lies. It shows you where you really are.",
+        "I've been training for 25 years and I still toe the start line. Not because I have something to prove — because I want to know whether the method I teach actually works. My training is testing the method on myself.",
         "I build strength that lasts. Not for a season — for decades. So we train more than muscle: the nervous system, recovery, sleep. HRV tells me when to push and when to back off.",
-        "My job is to make you stronger — and to carry that strength to the age when you'll need it most.",
+        "My job is to make you stronger — and to carry that strength to the age you'll need it most. And to make the road there one you'll want to keep walking.",
       ],
     },
     timeline: {
       eyebrow: "The record",
       title: "Twenty-five years",
-      marked: "in it",
+      marked: "in the work",
       items: [
         { y: "2001", t: "Started coaching" },
         { y: "2005", t: "Sports-science degree", d: "Dnipropetrovsk Institute of Physical Culture & Sport" },
@@ -138,11 +138,11 @@ const RAW: Record<"uk" | "en", CoachStrings> = {
     hrv: {
       eyebrow: "The method",
       title: "Train your signals,\nnot just the clock",
-      lead: "HRV — heart-rate variability — is the split-second difference between heartbeats. It shows how far your nervous system has recovered. It's our most important instrument.",
+      lead: "HRV — heart-rate variability — is the split-second difference between heartbeats. It shows how far your nervous system has recovered. It's our most important instrument — so you push smart, not blindly.",
       steps: [
         { n: "01", t: "Measure", d: "One minute every morning. A calm reading right after you wake." },
-        { n: "02", t: "Read",    d: "High HRV — your nervous system is ready to push. Low — time to recover." },
-        { n: "03", t: "Program", d: "Load built for the state you're in today, not yesterday's plan." },
+        { n: "02", t: "Read",    d: "High HRV — your nervous system is ready for load. Low — time to recover." },
+        { n: "03", t: "Program", d: "Training built for the state you're in today, not yesterday's plan." },
       ],
     },
     creds: {
@@ -162,7 +162,7 @@ const RAW: Record<"uk" | "en", CoachStrings> = {
       eyebrow: "Builds champions",
       title: "He doesn't just train",
       marked: "himself",
-      lead: "The truest proof of a coach is his athletes.",
+      lead: "The truest proof of a coach is his athletes — and how long they stay by his side.",
       items: [
         { t: "Strongman world champion", d: "A multiple-time world title — built under his mentorship.", tag: "Strongman" },
         { t: "Masters 40–49 champion",   d: "Won the kettlebell World Championship, Milan 2018.",       tag: "Kettlebell" },
@@ -174,8 +174,8 @@ const RAW: Record<"uk" | "en", CoachStrings> = {
       eyebrow: "Two ways",
       title: "Train with Dmytro",
       marked: "with Dmytro",
-      local:  { kicker: "In Dnipro", title: "Come and train", body: "Your first session is free, no strings. A coach will find a time that works for you.", cta: "Book a free session" },
-      online: { kicker: "Anywhere",  title: "Train online",   body: "His programming and HRV method, remotely. An individual plan with recovery under control.", cta: "Ask about online" },
+      local:  { kicker: "In Dnipro", title: "Come see for yourself", body: "Your first session is free, no strings. A coach will find a time that works for you.", cta: "Book a free session" },
+      online: { kicker: "Anywhere",  title: "Train online",           body: "His programming and HRV method, remotely. An individual plan with support at every step.", cta: "Ask about online" },
     },
   },
 };
