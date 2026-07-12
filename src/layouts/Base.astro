@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import LocalBusinessSchema from "../components/seo/LocalBusinessSchema.astro";
 
 interface Props {
   title: string;
@@ -43,6 +44,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link rel="icon" href="/assets/r5-logo.svg" />
+
+    <LocalBusinessSchema />
 
     <slot name="head" />
   </head>
