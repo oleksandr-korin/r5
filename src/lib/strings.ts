@@ -1,6 +1,6 @@
 /* R5 bilingual copy. UA is canonical; EN is a true equal.
-   Voice: direct, plain, earned, "ти/you". %G% is resolved at build time
-   from the chosen gym noun (we commit to "простір / space"). */
+   Voice: warm, thoughtful, "ти/you" — the space that lifts you.
+   %G% is resolved at build time from the chosen gym noun ("простір / space"). */
 
 type Locale = "uk" | "en";
 
@@ -41,39 +41,39 @@ const RAW: Record<Locale, Strings> = {
     nav: { coach: "Тренер", gym: "%G%", services: "Напрямки", online: "Онлайн", contact: "Контакти", book: "Записатись" },
     hero: {
       eyebrow: "Функціональний тренінг · Дніпро",
-      title: "Залізо не\nбреше",
-      marked: "бреше",
-      sub: "Чесний %G% у Дніпрі. Тренер, який досі #1 у своєму дивізіоні — і вчить тренуватися так, щоб вистачило на десятиліття.",
+      title: "Люди, з якими\nростеш",
+      marked: "ростеш",
+      sub: "R5 — %G%, який зустрічає тебе на твоєму рівні. Продумане обладнання, науковий підхід і люди, з якими хочеться повертатись.",
       cta: "Перше тренування — безкоштовно",
       ghost: "Тренуйся онлайн",
       scroll: "Гортай",
     },
     proof: {
-      eyebrow: "Зароблено, не подаровано",
+      eyebrow: "Продумано до дрібниць",
       items: [
         { n: "#1", l: "Masters 40+ в Україні", sub: "CFX Open 2026 · 2:59" },
-        { n: "25",  l: "років тренує",            sub: "із 2001" },
+        { n: "25",  l: "років коучингу",           sub: "із 2001" },
         { n: "HRV", l: "сертифікований тренер",   sub: "відновлення · нервова система" },
         { n: "L2",  l: "CrossFit + Gymnastics",   sub: "Master of Sport · кетлбел" },
       ],
     },
     box: {
       eyebrow: "Хто ми",
-      title: "Чесний",
-      marked: "%G%",
-      lead: "R5 — це не бутик із дзеркалами. Це робочий %G%: фанера, чавун, крейда в повітрі.",
-      body: "Ми тренуємо серйозно й масштабуємо під будь-який рівень — від першого присіду до помосту. Тут спільнота, яка змагається, і тренер, який досі виходить на старт сам.",
-      ticks: ["Тренування щодня, окрім неділі", "Масштабуємо під будь-який рівень", "Спільнота, що змагається"],
-      photo: "// інтер’єр —\nфанера, чавун, тунгстенове світло",
+      title: "%G%, продуманий",
+      marked: "до дрібниць",
+      lead: "R5 — не бутик із дзеркалами і не зала «на характер». Це %G%, у якому подумали про все: від обладнання світових брендів до фільтрованої води, індивідуальних сейфів і кави після тренування.",
+      body: "Ми зустрінемо тебе на будь-якому рівні — від першого присіду до помосту. Найголовніше тут — люди, які тягнуть одне одного вгору, і тренер, який досі виходить на старт сам, щоб перевіряти те, чому вчить.",
+      ticks: ["Зустрінемо на будь-якому рівні", "Продумане обладнання й комфорт", "Люди, з якими хочеться повертатись"],
+      photo: "// інтер’єр —\nсвітло, обладнання, простір після тренування",
     },
     pillars: {
       eyebrow: "Чому R5",
       title: "Три причини",
-      marked: "лишитись",
+      marked: "залишитись",
       items: [
-        { n: "01", t: "Перевірено.\nІ досі в строю",   d: "Майже 25 років коучингу й зараз — #1 Masters 40+ (чоловіки) в Україні. Не вицвіле резюме, а жива форма.", tag: "Доказ" },
-        { n: "02", t: "Тренує сигнали,\nне лише годинник", d: "Сертифікований HRV-тренер. Програмує навколо відновлення нервової системи — щоб тренуватися розумно й надовго.", tag: "HRV-метод" },
-        { n: "03", t: "Виховує\nчемпіонів",             d: "Ментор багаторазового чемпіона світу зі стронгмену та призера ЧС серед Masters (кетлбел, Мілан 2018).", tag: "Результат" },
+        { n: "01", t: "Правильне\nоточення",       d: "Ти стаєш тим, з ким тренуєшся. У R5 ти оточений людьми, які підштовхують тебе вгору — і поруч із тобою, коли важко.", tag: "Люди" },
+        { n: "02", t: "Наука,\nа не виснаження",   d: "Сертифікований HRV-тренер. Програмуємо навколо відновлення нервової системи — щоб ти прогресував десятиліттями, а не один сезон.", tag: "HRV-метод" },
+        { n: "03", t: "Продумано\nдо дрібниць",    d: "Обладнання світових брендів, індивідуальні сейфи, душові преміум-класу, фільтрована вода, кава. Комфорт, щоб хотілося повертатись.", tag: "Комфорт" },
       ],
     },
     programs: {
@@ -83,15 +83,15 @@ const RAW: Record<Locale, Strings> = {
       more: "Усі напрямки",
       details: "Деталі",
       items: [
-        { n: "01", t: "Групові класи",   d: "Функціональні класи під наглядом тренера. Кожен клас масштабується під твій рівень.", tag: "Пн–Сб" },
-        { n: "02", t: "Персональні",     d: "Один на один. Техніка, програма й прогрес, зібрані саме під тебе.",                  tag: "Популярне" },
-        { n: "03", t: "Для новачків",    d: "On-ramp: базова техніка й рухи з нуля. М’який вхід у функціональний тренінг.",      tag: "З нуля" },
+        { n: "01", t: "Групові класи",   d: "Функціональні класи під наглядом тренера. Кожен клас масштабується під твій рівень — і твій сьогоднішній стан.", tag: "Пн–Сб" },
+        { n: "02", t: "Персональні",     d: "Один на один або невеликі групи до 2 людей. Максимум уваги від тренера — техніка, програма й прогрес під тебе.", tag: "Популярне" },
+        { n: "03", t: "Для новачків",    d: "On-ramp: базова техніка й рухи з нуля. Спокійний вхід у функціональний тренінг — без «а ти зможеш?».",           tag: "З нуля" },
       ],
     },
     coach: {
       eyebrow: "Тренер", name: "Дмитро",
-      title: "Досі найсильніший\nу своєму дивізіоні",
-      body: "Майстер спорту України з гирьового спорту, призер чемпіонатів світу, CrossFit L2 + Gymnastics і сертифікований HRV-тренер. Тренує з 2001 року — і досі виходить на старт сам.",
+      title: "Все ще на старті —\nщоб знати, чому вчить",
+      body: "Майстер спорту України з гирьового спорту, призер чемпіонатів світу, CrossFit L2 + Gymnastics і сертифікований HRV-тренер. Тренує з 2001 року — і досі виходить на старт сам, щоб перевіряти те, чому вчить інших.",
       creds: [
         "#1 Masters 40+ (чол.) в Україні, CFX Open 2026",
         "Майстер спорту України · гирьовий спорт",
@@ -110,22 +110,22 @@ const RAW: Record<Locale, Strings> = {
     onlineband: {
       eyebrow: "Онлайн-коучинг",
       title: "Не в Дніпрі?\nТренуйся з Дмитром онлайн",
-      body: "Його програмування та HRV-метод — де б ти не був. Індивідуальний план, контроль навантаження й відновлення.",
+      body: "Індивідуальне програмування та HRV-метод відновлення — де б ти не був. Контроль навантаження й підтримка на кожному кроці.",
       cta: "Дізнатись про онлайн",
     },
     cta: {
       eyebrow: "Перше тренування",
-      title: "Готовий почати?",
-      marked: "почати",
-      sub: "Залиш контакти — тренер передзвонить і підбере зручний час. Перше тренування безкоштовне, без зобов’язань.",
+      title: "Приходь подивитись",
+      marked: "подивитись",
+      sub: "Залиш контакти — тренер передзвонить і підбере зручний час. Перше тренування безкоштовне, без зобовʼязань і без «а ти зможеш?».",
       name: "Імʼя", phone: "Телефон", when: "Коли тобі зручно?",
-      whenPh: "Будній вечір", submit: "Записатись на безкоштовне",
+      whenPh: "Будній вечір", submit: "Записатись на пробне",
       done: "Готово! Тренер зателефонує тобі найближчим часом.",
       consent: "Натискаючи, ти погоджуєшся, що з тобою звʼяжуться щодо тренування.",
       namePh: "Олена",
     },
     footer: {
-      tagline: "Чесний %G%. Дніпро.",
+      tagline: "%G%, який тягне вгору. Дніпро.",
       nav: "Навігація", contacts: "Контакти", social: "Ми тут",
       address: "вул. Робоча 5, Дніпро", hours: "Пн–Сб · 07:00–22:00",
       phone: "+38 067 000 00 00", ig: "@rokytnyi5.crossbox",
@@ -138,15 +138,15 @@ const RAW: Record<Locale, Strings> = {
     nav: { coach: "Coach", gym: "%G%", services: "Training", online: "Online", contact: "Contact", book: "Book" },
     hero: {
       eyebrow: "Functional training · Dnipro",
-      title: "Iron never\nlies",
-      marked: "lies",
-      sub: "An honest %G% in Dnipro. A coach who's still #1 in his division — and trains you to last decades, not just to sweat.",
+      title: "The people who\nlift you",
+      marked: "lift you",
+      sub: "R5 is a %G% that meets you where you are. Thoughtful equipment, science-informed coaching, and the kind of people you'll want to come back to.",
       cta: "First session — free",
       ghost: "Train online",
       scroll: "Scroll",
     },
     proof: {
-      eyebrow: "Earned, not gifted",
+      eyebrow: "Thoughtful to the detail",
       items: [
         { n: "#1", l: "Masters 40+ in Ukraine",  sub: "CFX Open 2026 · 2:59" },
         { n: "25",  l: "years coaching",         sub: "since 2001" },
@@ -156,21 +156,21 @@ const RAW: Record<Locale, Strings> = {
     },
     box: {
       eyebrow: "Who we are",
-      title: "An honest",
-      marked: "%G%",
-      lead: "R5 isn't a boutique full of mirrors. It's a working %G%: plywood, cast iron, chalk in the air.",
-      body: "We train seriously and scale for every level — from your first squat to the competition platform. A community that competes, and a coach who still toes the line himself.",
-      ticks: ["Training every day except Sunday", "Scaled for every level", "A community that competes"],
-      photo: "// interior —\nplywood, cast iron, tungsten light",
+      title: "A %G% thought",
+      marked: "through",
+      lead: "R5 isn't a boutique full of mirrors, and it isn't a grit-for-grit's-sake gym either. It's a %G% where every detail is considered — from world-brand equipment to filtered water, individual lockers, and coffee after training.",
+      body: "We meet you at whatever level you're at — from your first squat to the competition platform. What matters most: the people who lift each other up, and a coach who still competes himself to test what he teaches.",
+      ticks: ["Meets you at every level", "Thoughtful equipment and comfort", "People you'll want to come back to"],
+      photo: "// interior —\nlight, equipment, room to breathe after training",
     },
     pillars: {
       eyebrow: "Why R5",
       title: "Three reasons",
       marked: "to stay",
       items: [
-        { n: "01", t: "Proven.\nStill competing",          d: "Nearly 25 years coaching and, right now, #1 Masters 40+ (Men) in Ukraine. Not a faded résumé — living proof.", tag: "Proof" },
-        { n: "02", t: "Trains signals,\nnot just the clock", d: "A certified HRV coach. Programs around nervous-system recovery — so you train smart and last for decades.", tag: "HRV method" },
-        { n: "03", t: "Builds\nchampions",                  d: "Mentor to a multiple-time Strongman world champion and a Masters world medallist (kettlebell, Milan 2018).", tag: "Results" },
+        { n: "01", t: "The right\nenvironment",   d: "You become who you train with. At R5 you're surrounded by people pushing you upward — and beside you when it's hard.", tag: "People" },
+        { n: "02", t: "Science, not\nexhaustion", d: "A certified HRV coach. We program around nervous-system recovery — so you progress for decades, not one season.", tag: "HRV method" },
+        { n: "03", t: "Thought through\nto the detail", d: "World-brand equipment, individual lockers, premium showers, filtered water, coffee. Comfort that makes you want to come back.", tag: "Comfort" },
       ],
     },
     programs: {
@@ -180,15 +180,15 @@ const RAW: Record<Locale, Strings> = {
       more: "All training",
       details: "Details",
       items: [
-        { n: "01", t: "Group classes",      d: "Coach-led functional classes. Every class scales to your level.",                tag: "Mon–Sat" },
-        { n: "02", t: "Personal training",  d: "One-on-one. Technique, programming and progress built around you.",              tag: "Popular" },
-        { n: "03", t: "Beginner on-ramp",   d: "Learn the movements from zero. A soft, safe entry into functional training.",   tag: "From zero" },
+        { n: "01", t: "Group classes",      d: "Coach-led functional classes. Every class scales to your level — and to the state you're in today.", tag: "Mon–Sat" },
+        { n: "02", t: "Personal training",  d: "One-on-one or small groups of up to 2. Maximum coach attention — technique, programming and progress built around you.", tag: "Popular" },
+        { n: "03", t: "Beginner on-ramp",   d: "Learn the movements from zero. A calm, welcoming entry into functional training — no 'can you handle it?'.", tag: "From zero" },
       ],
     },
     coach: {
       eyebrow: "Coach", name: "Dmytro",
-      title: "Still the fittest\nin his division",
-      body: "Master of Sport of Ukraine in kettlebell, a world-championship medallist, CrossFit L2 + Gymnastics and a certified HRV coach. Coaching since 2001 — and still on the start line himself.",
+      title: "Still on the start line —\nso he knows what he teaches",
+      body: "Master of Sport of Ukraine in kettlebell, a world-championship medallist, CrossFit L2 + Gymnastics and a certified HRV coach. Coaching since 2001 — and still competing himself, so he knows what actually works.",
       creds: [
         "#1 Masters 40+ (Men) in Ukraine, CFX Open 2026",
         "Master of Sport of Ukraine · kettlebell",
@@ -207,14 +207,14 @@ const RAW: Record<Locale, Strings> = {
     onlineband: {
       eyebrow: "Online coaching",
       title: "Not in Dnipro?\nTrain with Dmytro online",
-      body: "His programming and HRV method, wherever you are. An individual plan with load and recovery under control.",
+      body: "Individual programming and HRV-based recovery — wherever you are. Load managed, and support at every step.",
       cta: "Ask about online",
     },
     cta: {
       eyebrow: "First session",
-      title: "Ready to start?",
-      marked: "start",
-      sub: "Leave your details — a coach will call and find a time that works. The first session is free, no strings.",
+      title: "Come see for yourself",
+      marked: "for yourself",
+      sub: "Leave your details — a coach will call and find a time that works. Your first session is free, no pressure and no 'can you handle it?'.",
       name: "Name", phone: "Phone", when: "When suits you?",
       whenPh: "Weekday evening", submit: "Book my free session",
       done: "Done! A coach will call you shortly.",
@@ -222,7 +222,7 @@ const RAW: Record<Locale, Strings> = {
       namePh: "Olena",
     },
     footer: {
-      tagline: "An honest %G%. Dnipro.",
+      tagline: "A %G% that lifts you. Dnipro.",
       nav: "Navigation", contacts: "Contact", social: "Find us",
       address: "5 Robocha St, Dnipro", hours: "Mon–Sat · 07:00–22:00",
       phone: "+38 067 000 00 00", ig: "@rokytnyi5.crossbox",
