@@ -27,17 +27,17 @@ export interface ResultsStrings {
 const RAW: Record<"uk" | "en", ResultsStrings> = {
   uk: {
     header: {
-      eyebrow: "Результати та спільнота",
-      title: "Що будує",
-      marked: "R5",
-      lead: "Справжні люди, справжній прогрес і зала, що змагається разом. Ось чого досягають ті, хто залишився.",
+      eyebrow: "Шляхи та спільнота",
+      title: "Люди, які тут",
+      marked: "виросли",
+      lead: "Справжні люди, справжні шляхи і зала, у яку хочеться повертатись. Ось історії тих, хто залишився — і чому.",
       cta: "Перше тренування — безкоштовно",
       photo: "// повна зала на класі —\nтепле світло, робота, спільнота",
     },
     wins: {
-      eyebrow: "Зароблено, не подаровано",
-      title: "Гучні",
-      marked: "перемоги",
+      eyebrow: "Що бачив цей простір",
+      title: "Значні",
+      marked: "здобутки",
       items: [
         { n: "#1",    l: "Masters 40+ в Україні",         who: "Дмитро · CFX Open 2026" },
         { n: "WORLD", l: "Чемпіон світу зі стронгмену",   who: "Атлет під менторством Дмитра" },
@@ -62,9 +62,9 @@ const RAW: Record<"uk" | "en", ResultsStrings> = {
       title: "Де почали —",
       marked: "де зараз",
       items: [
-        { name: "Ірина",  tag: "З нуля до першого старту",
+        { name: "Ірина",  tag: "З нуля — і поруч із людьми",
           from: "Ніколи не займалась спортом",      to: "Перший local Open за плечима",
-          body: "Прийшла, бо боялася залів. Почала з on-ramp, де кожен рух мав легший варіант. За рік — перші змагання й місце в середині таблиці. Лишилась не заради медалі, а заради зали.",
+          body: "Прийшла, бо боялася залів. Почала з on-ramp, де кожен рух мав легший варіант. За рік — перші змагання й місце в середині таблиці. Лишилась не заради медалі, а заради людей, з якими виявилось поруч.",
           photo: "// Ірина на помості —\nперший старт" },
         { name: "Андрій", tag: "Сильніший у 44, ніж у 34",
           from: "Біль у спині, втома",              to: "Особисті рекорди в присіді й тязі",
@@ -93,7 +93,7 @@ const RAW: Record<"uk" | "en", ResultsStrings> = {
       eyebrow: "Культура дошки",
       title: "Хто на",
       marked: "дошці",
-      body: "Атлети пишуть свій результат поряд з усіма. Ніхто не ховається. Зала змагається разом — і це тягне кожного вгору.",
+      body: "Кожен пише свій результат поряд із друзями. Не для того, щоб когось перемогти, — а щоб мати з ким пробігти цей забіг. Після класу — кава разом. Це і робить дошку тим, чим вона є.",
       panel: {
         label: "COMMUNITY OPEN · 25.1", cap: "Останній тиждень", scheme: "AMRAP 15",
         rows: [
@@ -107,9 +107,9 @@ const RAW: Record<"uk" | "en", ResultsStrings> = {
     },
     cta: {
       eyebrow: "Твоя черга",
-      title: "Хочеш бути\nна дошці?",
-      marked: "дошці",
-      sub: "Залиш контакти — тренер передзвонить і підбере час. Перше тренування безкоштовне, без зобовʼязань.",
+      title: "Приходь до\nсвоїх",
+      marked: "своїх",
+      sub: "Залиш контакти — тренер передзвонить і підбере час. Перше тренування безкоштовне, без зобовʼязань і без «а ти зможеш?».",
       name: "Імʼя", phone: "Телефон", when: "Коли тобі зручно?",
       whenPh: "Будній вечір", submit: "Записатись на безкоштовне",
       done: "Готово! Тренер зателефонує тобі найближчим часом.",
@@ -119,17 +119,17 @@ const RAW: Record<"uk" | "en", ResultsStrings> = {
   },
   en: {
     header: {
-      eyebrow: "Results & community",
-      title: "What R5",
-      marked: "builds",
-      lead: "Real people, real progress, and a room that competes together. This is what the people who stayed have done.",
+      eyebrow: "Journeys & community",
+      title: "The people who",
+      marked: "grew here",
+      lead: "Real people, real journeys, and a room you'll want to come back to. These are the stories of the ones who stayed — and why.",
       cta: "First session — free",
       photo: "// a full class —\nwarm light, work, community",
     },
     wins: {
-      eyebrow: "Earned, not gifted",
-      title: "The marquee",
-      marked: "wins",
+      eyebrow: "What this space has seen",
+      title: "Notable",
+      marked: "milestones",
       items: [
         { n: "#1",    l: "Masters 40+ in Ukraine",        who: "Dmytro · CFX Open 2026" },
         { n: "WORLD", l: "Strongman world champion",      who: "Athlete mentored by Dmytro" },
@@ -154,9 +154,9 @@ const RAW: Record<"uk" | "en", ResultsStrings> = {
       title: "Where they started —",
       marked: "where they are",
       items: [
-        { name: "Iryna",  tag: "From zero to her first meet",
+        { name: "Iryna",  tag: "From zero — and among people",
           from: "Never played a sport",        to: "First local Open behind her",
-          body: "She came because gyms scared her. Started on the on-ramp, where every movement had an easier version. A year later: her first competition and a mid-table finish. She stayed for the room, not the medal.",
+          body: "She came because gyms scared her. Started on the on-ramp, where every movement had an easier version. A year later: her first competition and a mid-table finish. She stayed for the people she found there, not the medal.",
           photo: "// Iryna on the platform —\nher first meet" },
         { name: "Andrii", tag: "Stronger at 44 than at 34",
           from: "Back pain, fatigue",          to: "PRs in the squat and deadlift",
@@ -185,7 +185,7 @@ const RAW: Record<"uk" | "en", ResultsStrings> = {
       eyebrow: "Board culture",
       title: "Who's on",
       marked: "the board",
-      body: "Athletes write their score next to everyone else's. Nobody hides. The room competes together — and that pulls everyone up.",
+      body: "Everyone writes their score next to their friends' — not to beat anyone, but to have people to race the same lap with. Coffee together after class. That's what makes the board what it is.",
       panel: {
         label: "COMMUNITY OPEN · 25.1", cap: "This week", scheme: "AMRAP 15",
         rows: [
@@ -199,9 +199,9 @@ const RAW: Record<"uk" | "en", ResultsStrings> = {
     },
     cta: {
       eyebrow: "Your turn",
-      title: "Want to be\non the board?",
-      marked: "board",
-      sub: "Leave your details — a coach will call and find a time that works. The first session is free, no strings.",
+      title: "Come and\nmeet them",
+      marked: "meet them",
+      sub: "Leave your details — a coach will call and find a time that works. Your first session is free, no strings and no 'can you handle it?'.",
       name: "Name", phone: "Phone", when: "When suits you?",
       whenPh: "Weekday evening", submit: "Book my free session",
       done: "Done! A coach will call you shortly.",

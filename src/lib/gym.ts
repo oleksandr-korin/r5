@@ -1,4 +1,5 @@
-/* R5 The Gym page — bilingual content. UA canonical · EN equal. */
+/* R5 The Gym page — bilingual content. UA canonical · EN equal.
+   Voice: warm, thoughtful, "ти/you" — thoughtful details, comfort, people. */
 import { replaceG, GYM_TERM } from "./strings";
 
 interface BoardRow { n: string; s: string; rx?: boolean; }
@@ -23,18 +24,18 @@ const RAW: Record<"uk" | "en", GymStrings> = {
       eyebrow: "R5 зсередини",
       title: "Ось наш",
       marked: "%G%",
-      sub: "Фанера, чавун, крейда в повітрі. Чорна стеля, тепле світло. Серйозна робота — без понтів.",
+      sub: "%G%, продуманий до дрібниць — від обладнання світових брендів до фільтрованої води, кави й місця, де хочеться залишитись після тренування.",
       cta: "Перше тренування — безкоштовно",
-      photo: "// зала R5 — широкий кадр:\nрами, фанера, чорна стеля, тепле світло",
+      photo: "// зала R5 — широкий кадр:\nобладнання, тепле світло, простір після класу",
     },
     whatis: {
       eyebrow: "Що це",
-      title: "Робочий %G%,",
-      marked: "не бутик",
-      body: "Тут немає дзеркальних залів і фонової музики для селфі. Є чавун, фанера й люди, які прийшли працювати. Прийдеш новачком — підкажемо все. Прийдеш із досвідом — буде куди рости.",
+      title: "%G%, який",
+      marked: "зустрічає тебе",
+      body: "R5 — не бутик із дзеркалами і не зала «на характер». Ми продумали кожну деталь: обладнання світових брендів, індивідуальні сейфи, фільтровану воду, душові преміум-класу й каву після тренування. Приходь новачком — покажемо все. Приходь із досвідом — буде куди рости.",
       ticks: [
-        "Серйозне тренування, не розвага",
-        "Від першого разу до помосту",
+        "Обладнання світових брендів",
+        "Зустрінемо на будь-якому рівні",
         "Спільнота, а не абонемент",
       ],
       photo: "// кадр із залу —\nлюди тренуються, тренер поряд",
@@ -42,19 +43,19 @@ const RAW: Record<"uk" | "en", GymStrings> = {
     beyond: {
       eyebrow: "Не лише зал",
       title: "Місце, куди хочеш",
-      marked: "повертатися",
-      body: "Дровʼяний камін, душові, тепло і місце для роботи. Тренування — це початок. Тут є де відновитися й переключити голову.",
+      marked: "повертатись",
+      body: "Індивідуальні сейфи, душові преміум-класу, фільтрована вода й кава після тренування. Тепла зона для роботи чи кави з друзями. Тренування — лише початок дня, який ти проведеш добре.",
       ticks: [
-        "Дровʼяний камін і м’яка зона",
-        "Душові та чисті роздягальні",
-        "Стіл і Wi-Fi для роботи після класу",
+        "Індивідуальні сейфи й рушники",
+        "Душові преміум-класу, фільтрована вода",
+        "Кава, коворкінг і зона відпочинку",
       ],
     },
     ritual: {
       eyebrow: "Ритуал",
       title: "Все на",
       marked: "дошці",
-      body: "Щодня на дошці — новий WOD. Ти пишеш свій результат поряд з усіма. Ніхто не ховається. Завтра виходиш бити вчорашнього себе. Це і є R5.",
+      body: "Щодня на дошці — новий WOD. Ти пишеш свій результат поряд із друзями — не щоб когось перемогти, а щоб мати з ким пробігти цей забіг. Після класу — кава разом. Це і є R5.",
       board: {
         label: "WOD · ПʼЯТНИЦЯ",
         scheme: "21–15–9",
@@ -76,9 +77,9 @@ const RAW: Record<"uk" | "en", GymStrings> = {
       items: [
         { t: "Рами та кільця", k: "// рами, кільця, канат" },
         { t: "Поміст", k: "// зона важкої атлетики" },
-        { t: "Гирі та чавун", k: "// стійка з гирями, диски" },
+        { t: "Обладнання", k: "// стійка з гирями, диски" },
         { t: "Дошка WOD", k: "// біла дошка, маркер, цифри" },
-        { t: "Відкритий простір", k: "// чистий простір підлоги" },
+        { t: "Простір для роботи", k: "// чистий простір підлоги" },
         { t: "Тепле світло", k: "// тунгстенові лампи, вечір" },
       ],
     },
@@ -89,8 +90,8 @@ const RAW: Record<"uk" | "en", GymStrings> = {
       steps: [
         { n: "01", t: "Розминка", d: "Мобільність і підготовка суглобів." },
         { n: "02", t: "Сила",     d: "Базові рухи, чиста техніка." },
-        { n: "03", t: "WOD",      d: "Робота дня — інтенсивно, під контролем." },
-        { n: "04", t: "Заминка",  d: "Розтяжка й відновлення." },
+        { n: "03", t: "WOD",      d: "Робота дня — під наглядом тренера, під твій рівень." },
+        { n: "04", t: "Заминка",  d: "Розтяжка, відновлення й кава, якщо треба." },
       ],
     },
     practical: {
@@ -103,7 +104,7 @@ const RAW: Record<"uk" | "en", GymStrings> = {
         { h: "Адреса",       items: ["вул. Робоча 5, Дніпро", "1 поверх, окремий вхід"] },
         { h: "Години",       items: ["Пн–Сб · 07:00–22:00", "Неділя — вихідний"] },
         { h: "Як дістатися", items: ["5 хв від центру", "Безкоштовна парковка біля входу"] },
-        { h: "Що взяти",     items: ["Кросівки й форму", "Воду й рушник", "Себе — решту дамо"] },
+        { h: "Комфорт",      items: ["Індивідуальні сейфи · рушники", "Фільтрована вода · кава", "Душові преміум · коворкінг"] },
       ],
     },
   },
@@ -112,18 +113,18 @@ const RAW: Record<"uk" | "en", GymStrings> = {
       eyebrow: "Inside R5",
       title: "This is our",
       marked: "%G%",
-      sub: "Plywood, cast iron, chalk in the air. Black ceiling, warm light. Serious work — no posing.",
+      sub: "A %G% thought through to the smallest detail — from world-brand equipment to filtered water, coffee, and a place you'll want to stay after training.",
       cta: "First session — free",
-      photo: "// the R5 floor — wide shot:\nrig, plywood, black ceiling, warm light",
+      photo: "// the R5 floor — wide shot:\nequipment, warm light, room to breathe after class",
     },
     whatis: {
       eyebrow: "What it is",
-      title: "A working %G%,",
-      marked: "not a boutique",
-      body: "No mirror halls, no background music for selfies. Just cast iron, plywood and people who came to work. Walk in new — we'll show you everything. Walk in experienced — there's room to grow.",
+      title: "A %G% that",
+      marked: "meets you",
+      body: "R5 isn't a boutique full of mirrors, and it isn't a grit-for-grit's-sake gym either. We've thought through every detail: world-brand equipment, individual lockers, filtered water, premium showers, and coffee after training. Walk in new — we'll show you everything. Walk in experienced — there's room to grow.",
       ticks: [
-        "Serious training, not entertainment",
-        "From first-timer to competitor",
+        "World-brand equipment",
+        "Meets you at every level",
         "A community, not a membership card",
       ],
       photo: "// candid floor shot —\npeople training, coach nearby",
@@ -132,18 +133,18 @@ const RAW: Record<"uk" | "en", GymStrings> = {
       eyebrow: "More than a gym",
       title: "A place you",
       marked: "come back to",
-      body: "A wood-burning stove, hot showers, warmth and somewhere to work. The session is the start — there's space for what comes after.",
+      body: "Individual lockers, premium showers, filtered water, and coffee after training. A warm corner to work or share a coffee with friends. The session is just the start of a day you'll spend well.",
       ticks: [
-        "A wood-burning stove and a soft corner",
-        "Hot showers and clean changing rooms",
-        "A desk and Wi-Fi for after class",
+        "Individual lockers and towels",
+        "Premium showers, filtered water",
+        "Coffee, a coworking corner and a soft space",
       ],
     },
     ritual: {
       eyebrow: "The ritual",
       title: "It's all on",
       marked: "the board",
-      body: "Every day there's a new WOD on the board. You write your score next to everyone else's. Nobody hides. Tomorrow you come back to beat yesterday's you. That's R5.",
+      body: "Every day there's a new WOD on the board. You write your score next to your friends' — not to beat anyone, but to have people to race the same lap with. Coffee together after class. That's R5.",
       board: {
         label: "WOD · FRIDAY",
         scheme: "21–15–9",
@@ -165,9 +166,9 @@ const RAW: Record<"uk" | "en", GymStrings> = {
       items: [
         { t: "Rig & rings", k: "// rig, rings, rope" },
         { t: "The platform", k: "// weightlifting platform" },
-        { t: "Kettlebells & iron", k: "// kettlebell rack, plates" },
+        { t: "Equipment", k: "// kettlebell rack, plates" },
         { t: "The WOD board", k: "// white board, marker, numbers" },
-        { t: "Open floor", k: "// clean stretch of floor" },
+        { t: "Room to work", k: "// clean stretch of floor" },
         { t: "Warm light", k: "// tungsten lamps, evening" },
       ],
     },
@@ -178,8 +179,8 @@ const RAW: Record<"uk" | "en", GymStrings> = {
       steps: [
         { n: "01", t: "Warm-up",   d: "Mobility and joint prep." },
         { n: "02", t: "Strength",  d: "Core lifts, clean technique." },
-        { n: "03", t: "WOD",       d: "The work of the day — intense, under control." },
-        { n: "04", t: "Cool-down", d: "Stretch and recovery." },
+        { n: "03", t: "WOD",       d: "The work of the day — coached, scaled to you." },
+        { n: "04", t: "Cool-down", d: "Stretch, recovery, and coffee if you need it." },
       ],
     },
     practical: {
@@ -192,7 +193,7 @@ const RAW: Record<"uk" | "en", GymStrings> = {
         { h: "Address",       items: ["5 Robocha St, Dnipro", "Ground floor, own entrance"] },
         { h: "Hours",         items: ["Mon–Sat · 07:00–22:00", "Sunday — closed"] },
         { h: "Getting here",  items: ["5 min from the centre", "Free parking at the door"] },
-        { h: "What to bring", items: ["Trainers and kit", "Water and a towel", "Just yourself — we'll handle the rest"] },
+        { h: "Comfort",       items: ["Individual lockers · towels", "Filtered water · coffee", "Premium showers · coworking"] },
       ],
     },
   },
